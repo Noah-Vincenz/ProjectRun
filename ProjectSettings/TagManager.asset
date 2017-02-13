@@ -59,3 +59,15 @@ TagManager:
   - name: fish
     uniqueID: 2406800769
     locked: 0
+  - name: Speech
+    uniqueID: 1199593833
+    locked: 0
+  - name: Z
+    uniqueID: 1553438299
+    locked: 0
+  - name: Text
+    uniqueID: 1042668685
+    locked: 0
+  - name: Panda
+    uniqueID: 678995621
+    locked: 0
