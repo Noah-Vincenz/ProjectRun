@@ -36,6 +36,7 @@ public class PandaController : MonoBehaviour {
 
 	void OnMouseDown()
 	{
+		Debug.Log ("Panda Clicks:" + click);
 		switch(click){
 		case 0://wake up panda
 			CancelInvoke ();
@@ -45,12 +46,16 @@ public class PandaController : MonoBehaviour {
 			++click;
 			break;
 		case 1://move to centre 
-			Debug.Log ("Panda Click event-2");
-			animator.SetTrigger ("Walk");
-			moveToPos (new Vector3(1.5f,-3.00f,0.00f)); // move to centre 
-			chair.GetComponent<BoxCollider2D>().enabled = true;
-			++click;
-			break;
+			if (animator.GetCurrentAnimatorStateInfo (0).IsName ("Idle-Awake") == true) {
+				rb.gravityScale = 0;
+				Debug.Log ("Panda Click event-2");
+				animator.SetTrigger ("Walk");
+				moveToPos (); // move to centre 
+				chair.GetComponent<BoxCollider2D> ().enabled = true;
+				++click;
+				break;
+			} else
+				break;
 		case 2: // show speech bubble 
 			Debug.Log ("Panda Click event-3");
 			speechBub.GetComponent<Renderer> ().enabled = true;
@@ -73,12 +78,11 @@ public class PandaController : MonoBehaviour {
 	 * move Gameobject to new position.
 	 * 
 	 **/
-	public void moveToPos(Vector3 newPos)
+	public void moveToPos()
 	{
 
 		// need to animate
-		rb.AddForce(Vector2.right * speed);
-		//transform.position = Vector3.Lerp(transform.position, newPos, speed);
+		rb.velocity=Vector3.right* speed;	
 	}
 	/**
 	 * Spawns Zs where panda sleeps
@@ -89,15 +93,8 @@ public class PandaController : MonoBehaviour {
 	}
 	void OnCollisionEnter2D(Collision2D coll)
 	{
-		Debug.Log("hit");
+		animator.SetTrigger ("Walk_ends");
 	}
-
-	private IEnumerator WaitForAnimation (Animation animation)
-	{
-		do
-		{
-			yield return null;
-		} while (animation.isPlaying);
-	}
+		
 
 }
