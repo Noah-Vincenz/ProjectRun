@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 675501785}
   - component: {fileID: 675501788}
   - component: {fileID: 675501787}
+  - component: {fileID: 675501789}
   m_Layer: 0
   m_Name: Hospital_Background
   m_TagString: Untagged
@@ -168,9 +169,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 2.06, y: -0.9}
+  m_Offset: {x: 2.318576, y: -0.8999998}
   serializedVersion: 2
-  m_Size: {x: 2.43, y: 0.21}
+  m_Size: {x: 1.9128474, y: 0.21000007}
 --- !u!61 &675501788
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -185,6 +186,20 @@ BoxCollider2D:
   m_Offset: {x: 1.48, y: 0.67}
   serializedVersion: 2
   m_Size: {x: 0.99, y: 0.38}
+--- !u!61 &675501789
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 675501784}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: -3.3225496}
+  serializedVersion: 2
+  m_Size: {x: 10.24, y: 0.18489525}
 --- !u!1 &754759690
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,6 +278,7 @@ GameObject:
   - component: {fileID: 1040202277}
   - component: {fileID: 1040202276}
   - component: {fileID: 1040202280}
+  - component: {fileID: 1040202281}
   m_Layer: 0
   m_Name: Panda
   m_TagString: Untagged
@@ -288,7 +304,7 @@ MonoBehaviour:
   Z: {fileID: 1316921097935524, guid: 7eca5416c18ca4bada5d8c9490db0078, type: 2}
   nextBtn: {fileID: 2121208717}
   spawnTime: 1.25
-  speed: 1
+  speed: 5000
 --- !u!61 &1040202277
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -345,7 +361,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1040202275}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.68, y: -1.74, z: 0}
+  m_LocalPosition: {x: -4.65, y: -1.65, z: 0}
   m_LocalScale: {x: 1.7125533, y: 1.7125533, z: 1.7125533}
   m_Children: []
   m_Father: {fileID: 0}
@@ -368,6 +384,26 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!50 &1040202281
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1040202275}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 1
+  m_Mass: 8.836692
+  m_LinearDrag: 1
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1044795722
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,7 +474,7 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
-  m_OcclusionCulling: 1
+  m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
@@ -828,7 +864,7 @@ BoxCollider2D:
   m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -1048,7 +1084,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
