@@ -6,7 +6,6 @@ public class PandaController : MonoBehaviour {
 	SpriteRenderer spriteRenderer;
 	BoxCollider2D bc;
 	int click = 0; 
-	bool moving = false;
 	Rigidbody2D rb;
 
 	public Animator animator;
@@ -94,6 +93,7 @@ public class PandaController : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D coll)
 	{
 		animator.SetTrigger ("Walk_ends");
+		rb.gravityScale = 1;
 	}
 		
 

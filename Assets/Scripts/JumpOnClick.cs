@@ -4,39 +4,46 @@ using UnityEngine;
 
 public class JumpOnClick : MonoBehaviour {
 
-	Animator anim;
 	Rigidbody2D rb;
-	public GameObject fish = null;
-
+	public GameObject fish;
+	public GameObject bubblesPreFab;
+	public float swimSpeed=1;
 	// Use this for initialization
 	void Start () {
-		anim = GetComponent<Animator>();
 		rb = GetComponent<Rigidbody2D> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
-
+		rb.AddForce(Vector2.right * swimSpeed);
 
 
 	}
 
 	void OnMouseDown(){
-			Vector3 vec = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-			CapsuleCollider2D col2d = fish.GetComponent<CapsuleCollider2D> ();
+		
+			rb.gravityScale = -3;
 
-			if (col2d.OverlapPoint(vec))
-			{
-			
-			rb.AddForce(Vector2.up * 500);
-			}
+		bubblesPreFab.transform.position= new Vector3(fish.transform.localPosition.x, transform.localPosition.y+1, transform.localPosition.z);
+			Instantiate(bubblesPreFab);
 
 	
 	}
 	void OnCollisionEnter2D(Collision2D coll)
 	{
-		Debug.Log (coll);
-		rb.AddForce (Vector2.down * 100);
+		if (coll.transform.gameObject.name=="FishTopCollider") {
+			rb.gravityScale = 3;
+			Debug.Log ("yws");
+		} 
+
+		else if (coll.transform.gameObject.name=="FishBottomCollider") {
+			rb.gravityScale = 0;
+		} 
+
+		else {
+			swimSpeed = -swimSpeed;
+			transform.localScale = new Vector3 (transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+		}
 	}
 }
