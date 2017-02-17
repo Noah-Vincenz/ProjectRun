@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PandaController : MonoBehaviour {
-	SpriteRenderer spriteRenderer;
-	BoxCollider2D bc;
-	int click = 0; 
-	Rigidbody2D rb;
+
+	private int click = 0; 
+	private Rigidbody2D rb;
 
 	public Animator animator;
 	public GameObject speechBub;
@@ -21,18 +20,10 @@ public class PandaController : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-		bc = gameObject.GetComponent<BoxCollider2D>();
 		rb = GetComponent<Rigidbody2D> ();
 		InvokeRepeating ("SpawnZ", 0, spawnTime);
 	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
 		
-	}
-
 	void OnMouseDown()
 	{
 		Debug.Log ("Panda Clicks:" + click);

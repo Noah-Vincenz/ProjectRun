@@ -6,17 +6,26 @@ public class RotatePainting : MonoBehaviour {
 	private Camera myCam;
 	private Vector3 screenPos;
 	private float   angleOffset;
-	public GameObject painting = null;
+	private Vector3 vec;
+	private CapsuleCollider2D coll; //collider on object
+	public GameObject painting;
+
 	void Start () {
+		
 		myCam=Camera.main;
 	}
 
+	//in charge or painting Rotation
 	void Update () { 
-		Vector3 vec = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-		CapsuleCollider2D col2d = painting.GetComponent<CapsuleCollider2D> ();
-		if (col2d.OverlapPoint (vec)) {
+		vec = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+		coll = painting.GetComponent<CapsuleCollider2D> ();
+
+		//Checks if click was on object only
+		if (coll.OverlapPoint (vec)) {
+				
 			//This fires only on the frame the button is clicked
 			if (Input.GetMouseButtonDown (0)) {
+				Debug.Log (myCam);
 				screenPos = myCam.WorldToScreenPoint (transform.position);
 				Vector3 v3 = Input.mousePosition - screenPos;
 				angleOffset = (Mathf.Atan2 (transform.right.y, transform.right.x) - Mathf.Atan2 (v3.y, v3.x)) * Mathf.Rad2Deg;
@@ -25,7 +34,7 @@ public class RotatePainting : MonoBehaviour {
 			if (Input.GetMouseButton (0)) {
 				Vector3 v3 = Input.mousePosition - screenPos;
 				float angle = Mathf.Atan2 (v3.y, v3.x) * Mathf.Rad2Deg;
-				transform.eulerAngles = new Vector3 (0, 0, angle + angleOffset);
+				transform.eulerAngles = new Vector3 (0, 0, angle+angleOffset );
 			}
 		}
 	}
