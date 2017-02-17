@@ -41,11 +41,12 @@ public class RotatePainting : MonoBehaviour {
 			}
 
 	}
-		if (transform.localRotation.z >= 0.999f && transform.localRotation.z < 1f) { // painting easter egg :)
+		if (transform.localRotation.z >= 0.999f && transform.localRotation.z < 1f && !(Input.GetMouseButton (0)) ) { // painting easter egg :) conditions: painting upsidedown && mousebutton released 
 			Debug.Log ("painting egg");
 			spriteRenderer.sprite = eggPainting; // changes painting when upside down
-		} else
-			spriteRenderer.sprite = normalPainting; // 
+		} else {
+			spriteRenderer.sprite = normalPainting;
+		}
 
 	}
 
