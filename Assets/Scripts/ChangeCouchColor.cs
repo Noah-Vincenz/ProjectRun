@@ -19,7 +19,6 @@ public class ChangeCouchColor : MonoBehaviour {
 		
 	//On Mouse click change color of couch...simply changes the sprite depending on previous sprite
 	void OnMouseDown(){
-		
 
 		if (spriteRenderer.sprite == couchcolor1)
 			spriteRenderer.sprite = couchcolor2;

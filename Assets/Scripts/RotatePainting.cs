@@ -8,17 +8,20 @@ public class RotatePainting : MonoBehaviour {
 	private float   angleOffset;
 	private Vector3 vec;
 	private CapsuleCollider2D coll; //collider on object
-	public GameObject painting;
+	SpriteRenderer spriteRenderer;
+	public Sprite normalPainting;
+	public Sprite eggPainting;
 
 	void Start () {
 		
 		myCam=Camera.main;
+		spriteRenderer = gameObject.GetComponent<SpriteRenderer>(); 
 	}
 
 	//in charge or painting Rotation
 	void Update () { 
 		vec = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-		coll = painting.GetComponent<CapsuleCollider2D> ();
+		coll = gameObject.GetComponent<CapsuleCollider2D> ();
 
 		//Checks if click was on object only
 		if (coll.OverlapPoint (vec)) {
@@ -36,7 +39,14 @@ public class RotatePainting : MonoBehaviour {
 				float angle = Mathf.Atan2 (v3.y, v3.x) * Mathf.Rad2Deg;
 				transform.eulerAngles = new Vector3 (0, 0, angle+angleOffset );
 			}
-		}
+
+	}
+		if (transform.localRotation.z >= 0.999f && transform.localRotation.z < 1f) { // painting easter egg :)
+			Debug.Log ("painting egg");
+			spriteRenderer.sprite = eggPainting; // changes painting when upside down
+		} else
+			spriteRenderer.sprite = normalPainting; // 
+
 	}
 
 

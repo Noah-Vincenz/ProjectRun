@@ -16,7 +16,7 @@ public class ButtonControl : MonoBehaviour {
 	void OnMouseDown(){
 		Debug.Log("Button pressed");
 
-		//button stuff
+		//TODO button stuff
 
 	}
 }
