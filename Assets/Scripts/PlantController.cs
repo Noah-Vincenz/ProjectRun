@@ -1,36 +1,29 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class PlantController : MonoBehaviour {
-
-	private Rigidbody2D rb ;
-
-	public float speed;
-	// Use this for initialization
-	void Start () {
-
-		rb = transform.GetComponent<Rigidbody2D>();
-		
+﻿using UnityEngine;
+using System.Collections;
+public class PlantController : MonoBehaviour
+{
+	bool dragEnabled = false;
+	Vector3 dragStartPosition;
+	float dragStartDistance;
+	void OnMouseDown()
+	{
+		dragEnabled = true;
+		dragStartPosition = transform.position;
+		dragStartDistance = (Camera.main.transform.position - transform.position).magnitude;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-	void OnMouseDown(){
-		slideRight ();
-	}
-	/*
-	 * mehtod to slide plant to right
-	 */
-	void slideRight(){
-		if (transform.localPosition.x < 7.13f) { // to stop plant going off screen
-
-			Vector3 newPos = new Vector3 (transform.position.x + speed, transform.position.y, transform.position.z);
-			transform.position = Vector3.MoveTowards (transform.position, newPos, speed * Time.deltaTime);
+	void Update()
+	{
+		if (Input.GetMouseButtonUp(0))
+		{
+			dragEnabled = false;
 		}
-
 	}
-}
+	void OnMouseDrag()
+	{
+		if (dragEnabled)
+		{
+			Vector3 worldDragTo = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, dragStartDistance));
+			transform.position = new Vector3(worldDragTo.x, dragStartPosition.y, dragStartPosition.z);
+		}
+	}
+} 

@@ -23,11 +23,11 @@ public class FishController : MonoBehaviour {
 
 	//fish jump and bubble creation
 	void OnMouseDown(){
-		
+		if(rb.position.y<1){
 		rb.gravityScale = -3;//On click set grafity to negative so that the fish can float
 		bubblesPreFab.transform.position= new Vector3(fish.transform.localPosition.x, transform.localPosition.y+1, transform.localPosition.z);//set location of soon to be bubble to location above fish
 		Instantiate(bubblesPreFab);//create bubble
-
+		}
 	}
 
 
