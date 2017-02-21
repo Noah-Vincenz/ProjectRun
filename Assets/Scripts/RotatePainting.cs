@@ -36,15 +36,10 @@ public class RotatePainting : MonoBehaviour {
 			if (Input.GetMouseButton (0)) {
 				Vector3 v3 = Input.mousePosition - screenPos;
 				float angle = Mathf.Atan2 (v3.y, v3.x) * Mathf.Rad2Deg;
-				transform.eulerAngles = new Vector3 (0, 0, angle+angleOffset );
+				transform.eulerAngles = new Vector3 (0, 0, angle + angleOffset);
 			}
 
-			if (transform.localRotation.z >= 0.99f && transform.localRotation.z < 1f && !(Input.GetMouseButton (0))) { // painting easter egg :) conditions: painting upsidedown && mousebutton released 
-				Debug.Log ("painting egg");
-				spriteRenderer.sprite = eggPainting; // changes painting when upside down
-			} else if (!(Input.GetMouseButton (0)) ) // mouse button not pressed  {
-				spriteRenderer.sprite = normalPainting; 
-			}
+		}
 
 	}
 		

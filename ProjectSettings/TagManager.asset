@@ -52,6 +52,9 @@ TagManager:
   - name: Background
     uniqueID: 1758231223
     locked: 0
+  - name: PandaBehindPainting
+    uniqueID: 192753055
+    locked: 0
   - name: Painting
     uniqueID: 3962939297
     locked: 0
