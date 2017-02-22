@@ -263,34 +263,6 @@ AnimationClip:
     script: {fileID: 0}
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: ca3c94233b4a62646bcc59eacc846093, type: 3}
-    attribute: m_Sprite
-    path: head/face/left eye
-    classID: 212
-    script: {fileID: 0}
-  - curve:
-    - time: 0
-      value: {fileID: 0}
-    attribute: m_Sprite
-    path: head/face/mouth
-    classID: 212
-    script: {fileID: 0}
-  - curve:
-    - time: 0
-      value: {fileID: 0}
-    attribute: m_Sprite
-    path: head/face/nose
-    classID: 212
-    script: {fileID: 0}
-  - curve:
-    - time: 0
-      value: {fileID: 0}
-    attribute: m_Sprite
-    path: head/face/right eye
-    classID: 212
-    script: {fileID: 0}
-  - curve:
-    - time: 0
       value: {fileID: 0}
     attribute: m_Sprite
     path: head/left ear
@@ -407,30 +379,6 @@ AnimationClip:
       classID: 212
       customType: 23
       isPPtrCurve: 1
-    - path: 3409852627
-      attribute: 0
-      script: {fileID: 0}
-      classID: 212
-      customType: 23
-      isPPtrCurve: 1
-    - path: 22642137
-      attribute: 0
-      script: {fileID: 0}
-      classID: 212
-      customType: 23
-      isPPtrCurve: 1
-    - path: 2738456469
-      attribute: 0
-      script: {fileID: 0}
-      classID: 212
-      customType: 23
-      isPPtrCurve: 1
-    - path: 2199340217
-      attribute: 0
-      script: {fileID: 0}
-      classID: 212
-      customType: 23
-      isPPtrCurve: 1
     - path: 1604150484
       attribute: 0
       script: {fileID: 0}
@@ -466,10 +414,6 @@ AnimationClip:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 21300000, guid: d0013bf7d8ad8f146ac7731320cad401, type: 3}
-    - {fileID: 21300000, guid: ca3c94233b4a62646bcc59eacc846093, type: 3}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 21300000, guid: 3b3316734a0218547a463012608e068a, type: 3}
