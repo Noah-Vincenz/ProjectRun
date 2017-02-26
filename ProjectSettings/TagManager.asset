@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Z
   - Bubble
+  - Collectable
+  - Bamboo
+  - Cube
   layers:
   - Default
   - TransparentFX
