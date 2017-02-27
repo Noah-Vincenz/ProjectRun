@@ -82,6 +82,9 @@ TagManager:
   - name: Text
     uniqueID: 1042668685
     locked: 0
+  - name: Scanner
+    uniqueID: 1136259857
+    locked: 0
   - name: Panda
     uniqueID: 678995621
     locked: 0
