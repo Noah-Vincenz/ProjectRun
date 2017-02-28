@@ -11,6 +11,7 @@ public class ScanPanda : MonoBehaviour {
 
 	Animator anim;
 	Rigidbody2D rb;
+	AnimationClip walkleft;
 
 	// Use this for initialization
 	void Start () {
@@ -73,6 +74,7 @@ public class ScanPanda : MonoBehaviour {
 			
 		if (canClimb){
 
+			rb.velocity = new Vector2(0, 0);
 			anim.SetBool("IsClimbing", true);
 			face.GetComponent<Animator>().SetBool("Walking", true);
 
