@@ -18,6 +18,8 @@ public class GreenTarget : MonoBehaviour {
 	SpriteRenderer spriteRenderer;
 	CircleCollider2D coll;
 	public Sprite star; 
+	public GameObject starCelebration;
+	private GameObject instantiatedObj;
 
 	void Start () {
 		pandaFaceEmotionObject = GameObject.Find ("PandaFaceReaction");
@@ -43,12 +45,13 @@ public class GreenTarget : MonoBehaviour {
 				happy= false;
 				normalFace.SetActive (true);
 				happyFace.SetActive (false);
+				Destroy (instantiatedObj);
 				Destroy (gameObject);
 			}
 		}
 
 		if (timeLeftTillDestroy <= 0) {
-			scoreKeeper.Score -=100;
+			scoreKeeper.Score -=100;;
 			Destroy (gameObject);
 		}
 
@@ -58,9 +61,9 @@ public class GreenTarget : MonoBehaviour {
 		Debug.Log ("s");
 		scoreKeeper.Score +=100;
 		happy = true;
-		gameObject.transform.localScale = new Vector3 (0.02f, 0.02f, 0.02f);
-		spriteRenderer.sprite = star;
+		spriteRenderer.enabled = false;	
 		coll.enabled = false;
+		instantiatedObj= Instantiate(starCelebration,gameObject.transform.position,starCelebration.transform.rotation);
 
 	}
 		
