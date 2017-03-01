@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour {
 	Text timer;
@@ -17,5 +18,9 @@ public class Timer : MonoBehaviour {
 		timeLeft -= Time.deltaTime;
 		timer.text = "Timer: " + Mathf.Round (timeLeft);
 		
+        if (Mathf.Round(timeLeft) == 0)
+        {
+            SceneManager.LoadScene("InjectionEnd");
+        }
 	}
 }
