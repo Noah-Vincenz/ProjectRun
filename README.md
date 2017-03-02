@@ -2,7 +2,7 @@
 ##Team:
 * Jonathon Mounty 
 * Hailey Punn
-* Nicholas Zuluaga
+* Nicolas Zuluaga
 * Rob Hanns
 * Chloe Workman
 * Iona Ryder
