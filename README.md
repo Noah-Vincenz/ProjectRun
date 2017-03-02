@@ -1,7 +1,7 @@
 # JohnCena
 ##Team:
-* Jonathon Mounty 
-* Hailey Punn
+* Jonathan Mounty 
+* Hailey Pun
 * Nicolas Zuluaga
 * Rob Hanns
 * Chloe Workman
