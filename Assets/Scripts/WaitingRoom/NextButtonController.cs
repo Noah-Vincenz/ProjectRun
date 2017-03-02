@@ -19,7 +19,7 @@ public class NextButtonController : MonoBehaviour {
 		
 	}
 	void OnMouseDown(){
-
+		Debug.Log ("Next button pressed! ");
 		ShowMenu ();
 
 	}

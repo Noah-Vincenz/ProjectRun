@@ -12,13 +12,15 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 	public GameObject text;
 	public GameObject nextBtn;
 	public GameObject chair;
+	public GameObject prompt;
 	public float spawnTime;
+	public float wait;
 	Animator anim;
 	Rigidbody2D rb;
 	bool needToMove = false;
 	bool waveClick = false;
-	bool waking = false;
-	private bool playingAnim = false; 
+	private bool interacted = false;
+
 
 
 
@@ -30,6 +32,7 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 		anim.SetBool("IsSleep", true);
 		face.GetComponent<Animator>().SetBool("isSleeping", true);
 		InvokeRepeating ("SpawnZ", 0, spawnTime); // calls the spawnZ method repeatedly
+		StartCoroutine("prompt_time");
 	}
 
 	void Update(){
@@ -55,10 +58,6 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 			anim.SetBool("IsWaving", false);
 			waveClick = false;
 		}
-			
-		if (!(playingAnim)) {
-			face.GetComponent<Animator> ().SetBool ("Sleep", false);
-		}
 
 	}
 	void OnMouseDown(){
@@ -71,14 +70,13 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 				Destroy (z.gameObject);  //kill all Z's
 			}
 			Debug.Log ("Panda Click event-1");
-			waking = true;
+//			waking = true;
 			anim.SetBool ("IsSleep", false);
 //			anim.SetBool ("awakeing", true);
 			anim.SetTrigger ("Wake");
-			face.GetComponent<Animator> ().SetBool ("Sleep", false);
-//			face.GetComponent<Animator> ().SetBool ("Walking", true);
-
+			interacted = true;
 			transform.position = new Vector3 (transform.localPosition.x, transform.localPosition.y + 1f, transform.localPosition.z);
+			Destroy (prompt.gameObject);
 			++click;
 			break;
 
@@ -139,6 +137,15 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 		face.GetComponent<Animator> ().SetBool ("isSleeping", false);
 		face.GetComponent<Animator> ().SetBool ("Happy", true);
 		face.GetComponent<Animator> ().SetBool ("Walking", false);
+	}
+	IEnumerator prompt_time()
+	{
+		Debug.Log("before wait ");
+		yield return new WaitForSeconds(wait);
+		Debug.Log("after wait ");
+		if (!(interacted)) {
+			prompt.GetComponent<SpriteRenderer> ().enabled = true;
+		}
 	}
 }
 

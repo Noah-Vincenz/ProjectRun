@@ -6,6 +6,7 @@ public class PlantController : MonoBehaviour {
 
 	private Rigidbody2D rb ;
 
+
 	public float speed;
 	// Use this for initialization
 	void Start () {
