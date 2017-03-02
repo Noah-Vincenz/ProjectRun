@@ -28,7 +28,6 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 		anim = GetComponent<Animator>();
 		rb = GetComponent<Rigidbody2D>();
 		anim.SetBool("IsSleep", true);
-		anim.SetBool("noIdle", true);
 		face.GetComponent<Animator>().SetBool("isSleeping", true);
 		InvokeRepeating ("SpawnZ", 0, spawnTime); // calls the spawnZ method repeatedly
 	}
