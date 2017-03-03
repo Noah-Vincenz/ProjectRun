@@ -13,6 +13,8 @@ public class PandaRadiationControl : MonoBehaviour {
 	public Text gameOverText;
 	public Text timerLabel;
 	private float timeLeft;
+	private Button tryAgainButton;
+	//private Button continueButton;
 
 	Animator anim;
 	Rigidbody2D rb;
@@ -20,6 +22,8 @@ public class PandaRadiationControl : MonoBehaviour {
 	// Use this for initialization
 	void Start()
 	{
+		tryAgainButton = GameObject.Find("TryAgainButton").GetComponentInChildren<Button>();
+		//continueButton = GameObject.Find("ContinueButton").GetComponentInChildren<Button>();
 		timeLeft = 30.0f;
 		count = 0;
 		SetCountText();
@@ -69,6 +73,7 @@ public class PandaRadiationControl : MonoBehaviour {
 		{
 			gameOverText.text = "Game Over. Try again!";
 			Time.timeScale = 0;
+			tryAgainButton.gameObject.SetActive (true);
 		}
 	}
 
@@ -82,6 +87,8 @@ public class PandaRadiationControl : MonoBehaviour {
 		else if (coll.gameObject.tag == "Cube") {
 			gameOverText.text = "Game Over. Try again!";
 			Time.timeScale = 0;
+			//Application.LoadLevel ("CatchRadiationGame");
+			tryAgainButton.gameObject.SetActive (true);
 		}
 
 			
@@ -95,6 +102,7 @@ public class PandaRadiationControl : MonoBehaviour {
 			winText.text = "You win! Captured all radiation!";
 			face.GetComponent<Animator> ().SetBool ("Happy", true);
 			//anim.SetBool ("isWaving", true);
+			//show continue button that links to next scene
 			Time.timeScale = 0;
 		}
 	}

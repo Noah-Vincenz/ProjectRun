@@ -178,7 +178,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4897412526034354, guid: 810d8a23729214dd79634b3f977312e8, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3
+      value: -2.99
       objectReference: {fileID: 0}
     - target: {fileID: 4897412526034354, guid: 810d8a23729214dd79634b3f977312e8, type: 2}
       propertyPath: m_LocalPosition.z
@@ -224,6 +224,16 @@ Prefab:
       propertyPath: timerLabel
       value: 
       objectReference: {fileID: 689369591}
+    - target: {fileID: 114062486005046514, guid: 810d8a23729214dd79634b3f977312e8,
+        type: 2}
+      propertyPath: tryAgainButton
+      value: 
+      objectReference: {fileID: 2094955251}
+    - target: {fileID: 50764699848151106, guid: 810d8a23729214dd79634b3f977312e8,
+        type: 2}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 810d8a23729214dd79634b3f977312e8, type: 2}
   m_IsPrefabParent: 0
@@ -375,8 +385,9 @@ GameObject:
   - component: {fileID: 445514638}
   - component: {fileID: 445514637}
   - component: {fileID: 445514636}
+  - component: {fileID: 445514639}
   m_Layer: 5
-  m_Name: Continue
+  m_Name: ContinueButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -398,8 +409,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 94, y: -38}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 100, y: -38}
+  m_SizeDelta: {x: 150, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &445514636
 MonoBehaviour:
@@ -475,6 +486,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 445514634}
+--- !u!114 &445514639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 445514634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d71c334ff96b4d09a7f858013b9bf34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &455679071
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,10 +621,10 @@ MonoBehaviour:
   delayRays: 1
   delayBamboos: 7
   delayCubes: 4
-  RadioActive: {fileID: 1908009848841450, guid: 92bc15f4b5b0c4b3c8c580abc01913a3,
+  RadioActive: {fileID: 1979432763460336, guid: ec8951ba4010f44619666811f9f4e0ac,
     type: 2}
-  Bamboo: {fileID: 1951348552630876, guid: 6e5e649b17c94460b96fb3077206e693, type: 2}
-  Cube: {fileID: 1718284960897640, guid: 1692015c4997c45f7bad42754e033160, type: 2}
+  Bamboo: {fileID: 1343025558597374, guid: 6e5e649b17c94460b96fb3077206e693, type: 2}
+  Cube: {fileID: 1950720884558126, guid: bcf8da8a4338448edb6804cc6db17384, type: 2}
 --- !u!222 &455679078
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -624,7 +646,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.05, y: 0.44}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &535303599
@@ -1336,7 +1358,7 @@ GameObject:
   - component: {fileID: 2094955253}
   - component: {fileID: 2094955256}
   m_Layer: 5
-  m_Name: Try Again Button
+  m_Name: TryAgainButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1358,8 +1380,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -100, y: -42}
-  m_SizeDelta: {x: 45.6, y: 26.8}
+  m_AnchoredPosition: {x: -100, y: -38}
+  m_SizeDelta: {x: 150, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2094955253
 MonoBehaviour:

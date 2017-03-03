@@ -7,7 +7,7 @@ public class Spawner : MonoBehaviour {
 
 	public float delayRays = 1f;
 	public float delayBamboos = 7f;
-	public float delayCubes = 4f;
+	public float delayCubes = 2f;
 	public GameObject RadioActive;
 	public GameObject Bamboo;
 	public GameObject Cube;
