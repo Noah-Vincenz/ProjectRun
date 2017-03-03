@@ -9,6 +9,7 @@ public class PandaLevel : MonoBehaviour
 	public bool checkKeys;
 	private int count;
 	//Rigidbody2D rb;
+
 	void Start(){
 		count = 0;
 	}

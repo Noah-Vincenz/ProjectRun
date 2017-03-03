@@ -5,7 +5,22 @@ using UnityEngine;
 public class FoodMovementScript : MonoBehaviour {
 
 	public double speed;
+
+	bool sad=false;
+	bool collided=false;
+	public GameObject pandaFaceEmotionObject;
+	public GameObject sadFace;
+	public GameObject normalFace;
+	public GameObject ScoreKeeperScoreBoard;
+	ScoreKeeper scoreKeeper;
 	// Update is called once per frame
+	void start (){
+		pandaFaceEmotionObject = GameObject.Find ("PandaFaceReaction");
+		sadFace = pandaFaceEmotionObject.transform.Find ("SadFace").gameObject;
+		normalFace = pandaFaceEmotionObject.transform.Find ("Normal Face").gameObject;
+		ScoreKeeperScoreBoard = GameObject.Find ("Canvas/ScoreBoard").gameObject;
+		scoreKeeper = ScoreKeeperScoreBoard.GetComponent<ScoreKeeper> ();
+	}
 	void Update () {
 		double posX = transform.position.x;
 		double updatedPos = posX - (speed/10);
@@ -16,6 +31,7 @@ public class FoodMovementScript : MonoBehaviour {
 	{
 		if (other.gameObject.CompareTag ("FoodEndpoint"))
 		{
+			scoreKeeper.Score += 100;
 			double newYPos = 0;
 			float rInteger = Random.value;
 			if (rInteger > 0.66) {
@@ -25,8 +41,24 @@ public class FoodMovementScript : MonoBehaviour {
 			} else {
 				newYPos = -4.9;
 			}
+
 			transform.position = new Vector2(66, (float) newYPos);
-			//print ("Collided");
+			print ("Collided");
+		}
+		else if (other.gameObject.CompareTag("Player")){
+			double newYPos = 0;
+			float rInteger = Random.value;
+			if (rInteger > 0.66) {
+				newYPos = -0.6;
+			} else if (rInteger > 0.33) {
+				newYPos = -2.8;
+			} else {
+				newYPos = -4.9;
+			}
+
+			transform.position = new Vector2(88, (float) newYPos);
+			print ("Collided");
+			sad = true;
 		}
 	}
 }
