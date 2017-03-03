@@ -82,6 +82,15 @@ TagManager:
   - name: Text
     uniqueID: 1042668685
     locked: 0
+  - name: NeedleBit
+    uniqueID: 3547253981
+    locked: 0
   - name: Panda
     uniqueID: 678995621
+    locked: 0
+  - name: Target
+    uniqueID: 3026934063
+    locked: 0
+  - name: InjectionCharacter
+    uniqueID: 1147285597
     locked: 0
