@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PandaLevel : MonoBehaviour
 {
-	public float dest;
+	public double dest;
 	public float speed;
 	public bool checkKeys;
 	private int count;
@@ -16,30 +16,30 @@ public class PandaLevel : MonoBehaviour
 	void Update()
 	{
 		double posX = transform.position.y;
-		if (posX < dest) {
+		if ((posX < dest)&&((dest - posX) > 0.1)) {
 			double updatedPos = posX + (speed/12);
 			transform.position = new Vector2(transform.position.x, (float) updatedPos);
 		} 
-		else if (posX > dest) {
+		else if ((posX > dest)&&((posX-dest) > 0.1)) {
 			double updatedPos = posX - (speed/12);
 			transform.position = new Vector2(transform.position.x, (float) updatedPos);
 		} 
 		if (checkKeys) {
 			if (Input.GetKey ("w")) {
 			
-				if (dest == 0) {
-					dest = 3;
+				if (dest == -0.7) {
+					dest = 1.6;
 				}
-				if (dest == -3) {
-					dest = 0;
+				if (dest == -2.8) {
+					dest = -0.7;
 				}
 			}
 			if (Input.GetKey ("s")) {
-				if (dest == 3) {
-					dest = 0;
+				if (dest == 1.6) {
+					dest = -0.7;
 				}
-				if (dest == 0) {
-					dest = -3;
+				if (dest == -0.7) {
+					dest = -2.8;
 				}
 
 			}

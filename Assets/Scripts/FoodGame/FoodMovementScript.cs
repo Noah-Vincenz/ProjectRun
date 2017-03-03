@@ -16,16 +16,16 @@ public class FoodMovementScript : MonoBehaviour {
 	{
 		if (other.gameObject.CompareTag ("FoodEndpoint"))
 		{
-			float newYPos = 0;
+			double newYPos = 0;
 			float rInteger = Random.value;
 			if (rInteger > 0.66) {
-				newYPos = 1;
+				newYPos = -0.6;
 			} else if (rInteger > 0.33) {
-				newYPos = -2;
+				newYPos = -2.8;
 			} else {
-				newYPos = (float) -4.9;
+				newYPos = -4.9;
 			}
-			transform.position = new Vector2(66, newYPos);
+			transform.position = new Vector2(66, (float) newYPos);
 			//print ("Collided");
 		}
 	}
