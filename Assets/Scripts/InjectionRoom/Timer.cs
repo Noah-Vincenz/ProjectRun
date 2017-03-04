@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour {
 	Text timer;
-	float timeLeft=60;
+	float timeLeft=10;
 	// Use this for initialization
 	void Start () {
 		timer = GetComponent<Text> ();

@@ -5726,8 +5726,9 @@ GameObject:
   - component: {fileID: 1086807944}
   - component: {fileID: 1086807943}
   - component: {fileID: 1086807945}
+  - component: {fileID: 1086807946}
   m_Layer: 5
-  m_Name: Text
+  m_Name: scoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5804,6 +5805,18 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 2, y: 2}
   m_UseGraphicAlpha: 1
+--- !u!114 &1086807946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1086807941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83cb9ea5ae125b742ba40688519bc0ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 1086807943}
 --- !u!1001 &1094274142
 Prefab:
   m_ObjectHideFlags: 0
