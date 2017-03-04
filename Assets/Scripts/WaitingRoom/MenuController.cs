@@ -26,6 +26,7 @@ public class MenuController : MonoBehaviour {
 		Debug.Log (tag);
 		nextBtn.setTag (tag); // give tag to nextBtn 
 		Destroy (menu.gameObject);
+		Destroy (prompt.gameObject);
 		text2Obj.SetActive (true);
 		speechBub.SetActive (true);
 	}
