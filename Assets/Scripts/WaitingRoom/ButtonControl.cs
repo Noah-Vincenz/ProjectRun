@@ -4,25 +4,26 @@ using UnityEngine;
 
 public class ButtonControl : MonoBehaviour {
 	private SpriteRenderer sr;
+	private SpriteRenderer sunSR;
 	public Sprite pressed;
 	public Sprite normal;
-	public GameObject sun;
-	public GameObject moon;
-	public float gravitySpeed;
-	private int click = 0; 
+	public Sprite moon;
+	public Sprite sun;
+	public GameObject sunObj;
 	public GameObject Sky;	
+
+	private int click = 0; 
 	private float fadeSpeed = 0.5f;
-	private Rigidbody2D rbMoon;
-	private Rigidbody2D rbSun;
 	private bool isPressed;
+	private Animator anim;
 
 
 	// Use this for initializa	tion
 	void Start () {
 		isPressed = false;
-		rbSun = sun.GetComponent<Rigidbody2D> ();
-		rbMoon = moon.GetComponent<Rigidbody2D> ();
 		sr = gameObject.GetComponent<SpriteRenderer> ();
+		sunSR = sunObj.GetComponent<SpriteRenderer> ();
+		anim = sunObj.GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -30,75 +31,78 @@ public class ButtonControl : MonoBehaviour {
 		var material = Sky.GetComponent<Renderer>().material;
 		var color = material.color;
 
-		Vector3 vec = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-		BoxCollider2D coll = gameObject.GetComponent<BoxCollider2D> ();
-
-		//Checks if click was on object only
-
-
-		if (click == 2) {
+		if (click == 2) { // fade sky to transparent to show night sky
 			if(color.a>=0)
-			material.color = new Color(color.r, color.g, color.b, color.a - (fadeSpeed * Time.deltaTime));
-			
+				material.color = new Color(color.r, color.g, color.b, color.a - (fadeSpeed * Time.deltaTime));
+
 		}
 
-		if (click == 0) {
+		if (click == 0) { // bring back day sky 
 			if(color.a<=1)
-			material.color = new Color(color.r, color.g, color.b, color.a+ (fadeSpeed * Time.deltaTime) );
+				material.color = new Color(color.r, color.g, color.b, color.a+ (fadeSpeed * Time.deltaTime) );
 		}
 
-		if (isPressed){
+		if (isPressed){ // change sprite for red button pressed 
 			sr.sprite = pressed;
-			if (rbSun.IsSleeping () && rbMoon.IsSleeping ()) {
-				isPressed = false;
-			}
 		}
 		else
 			sr.sprite = normal;
 	}
 
 	void OnMouseDown(){
-		isPressed =true;
+		isPressed =true; // change button sprite 
 		switch (click) {
-		case 0:
-			if (rbSun.IsSleeping() && rbMoon.IsSleeping()) {
-				
-				sun.GetComponent<Rigidbody2D> ().gravityScale = -gravitySpeed;
-				++click;
-				break;
 
-			} else
-				break;
-		case 1:
-			
-			if (rbSun.IsSleeping() && rbMoon.IsSleeping()) {
-				
-				sun.GetComponent<Rigidbody2D> ().gravityScale = gravitySpeed;
+		case 0: // sun rise 
+			if(anim.GetCurrentAnimatorStateInfo (0).IsName ("Idle_Down")){
+				sunSR.sprite = sun;
+				riseAnim();
 				++click;
-				break;
-			} 
-			else
-				break;
-		
-		case 2:
-			if (rbSun.IsSleeping() && rbMoon.IsSleeping()) {
-				
-				moon.GetComponent<Rigidbody2D> ().gravityScale = -gravitySpeed;
+			}
+			break;
+		case 1: // sun set 
+			if (anim.GetCurrentAnimatorStateInfo (0).IsName ("Idle_Up")) {
+				setAnim ();
 				++click;
-				break;
-			} else
-				break;
+			}
+			break;
 		
-		case 3:
-			if (rbSun.IsSleeping()&& rbMoon.IsSleeping()) {
-				
-				moon.GetComponent<Rigidbody2D> ().gravityScale = gravitySpeed;
+		case 2: // moon rise 
+			if (anim.GetCurrentAnimatorStateInfo (0).IsName ("Idle_Down")) {
+				sunSR.sprite = moon;
+				riseAnim ();
+				++click;
+			}
+			break;
+		
+		case 3: // moon set 
+			if (anim.GetCurrentAnimatorStateInfo (0).IsName ("Idle_Up")) {
+				setAnim ();
 				click = 0;
-				break;
-			} else
-				break;
-
+			}
+			break;
 		}
 
+	
+	}
+	/**
+	 * method to trigger rise animation 
+	 */
+	void setAnim(){
+		anim.SetTrigger ("Set");
+		anim.SetBool ("Up", false);
+		anim.SetBool ("Down", true);
+	}
+	/**
+	 * mehtod to trigger set animation
+	 */
+	void riseAnim(){
+		anim.SetTrigger ("Rise");
+		anim.SetBool ("Up", true);
+		anim.SetBool ("Down", false);
+
+	}
+	void OnMouseUp(){
+		isPressed = false;
 	}
 }

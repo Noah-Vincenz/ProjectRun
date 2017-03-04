@@ -20,6 +20,7 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 	bool needToMove = false;
 	bool waveClick = false;
 	private bool interacted = false;
+	bool finalMove = false;
 
 
 
@@ -44,7 +45,7 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 			face.GetComponent<Animator>().SetBool("Walking", true);
 
 		}
-		if (transform.localPosition.x >= 1.3f) {
+		if (transform.localPosition.x >= 1.3f && !finalMove) {
 			needToMove = false;
 			rb.velocity = new Vector2 (0, 0);
 			face.GetComponent<Animator> ().SetBool ("Walking", false);
@@ -58,6 +59,12 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 			anim.SetBool("IsWaving", false);
 			waveClick = false;
 		}
+		if (finalMove) {
+			Debug.Log ("FinalMove"); 
+			rb.velocity = Vector2.right * speed;
+			face.GetComponent<Animator>().SetBool("Walking", true);
+		}
+
 
 	}
 	void OnMouseDown(){
@@ -81,25 +88,21 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 			break;
 
 		case 1: 
-			Debug.Log ("Panda Click event-2");
-			needToMove = true;
-			anim.SetBool("noIdle", false);
-			chair.GetComponent<BoxCollider2D> ().enabled = true; //sets chair colider to acitve 
-			++click;
+//			if (anim.GetCurrentAnimatorStateInfo (0).IsName ("Idle")) {
+				Debug.Log ("Panda Click event-2");
+				needToMove = true;
+				anim.SetBool ("noIdle", false);
+				chair.GetComponent<BoxCollider2D> ().enabled = true; //sets chair colider to acitve 
+				++click;
+//			}
 			break;
 		case 2: // show speech bubble 
-			if (anim.GetCurrentAnimatorStateInfo (0).IsName ("Idle") == true) {
+			if (anim.GetCurrentAnimatorStateInfo (0).IsName ("Idle")) {
 				Debug.Log ("Panda Click event-3");
-				speechBub.GetComponent<Renderer> ().enabled = true;// renders speech bubble 
+				speechBub.SetActive(true);// renders speech bubble 
 				happyFace();
 				++click;
 			}
-			break;
-		case 3:// show text 
-			Debug.Log ("Panda Click event-4");
-			text.GetComponent<Renderer> ().enabled = true;// renders text 
-			nextBtn.GetComponent<Renderer> ().enabled = true;
-			++click;
 			break;
 
 		default :
@@ -144,8 +147,12 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 		yield return new WaitForSeconds(wait);
 		Debug.Log("after wait ");
 		if (!(interacted)) {
-			prompt.GetComponent<SpriteRenderer> ().enabled = true;
+			prompt.SetActive (true);
 		}
+	}
+	public void walkOff(){
+		Debug.Log ("Walkoff called");
+		finalMove = true;
 	}
 }
 
