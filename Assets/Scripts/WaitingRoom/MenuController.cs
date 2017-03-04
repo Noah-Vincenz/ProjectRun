@@ -7,62 +7,36 @@ public class MenuController : MonoBehaviour {
 	public GameObject prompt;
 	public float wait;
 	public WaitingRoom_Panda_Controller panda;
+	public NextButtonController nextBtn;
+	public GameObject speechBub;
+	public GameObject text2Obj;
+	public GameObject menu;
+	public Sprite text; 
 
 	bool clicked = false;
 
 	// Use this for initialization
 	void Start () {
 		Debug.Log ("START!");
-		StartCoroutine ("select_Prompt");
-	}
-
-	// Update is called once per frame
-	void Update () {
-		if (clicked) {
-			Debug.Log ("Calling walk off");
-			panda.walkOff (); // make panda leave 
-		}
+		StartCoroutine ("select_Prompt"); // start prompt enum
 	}
 	void OnMouseDown(){
 
-		string tag = this.tag;
+		string tag = this.tag; // get the tag of object picked 
 		Debug.Log (tag);
-
-		switch (tag) {
-
-		case "DMSA":
-			clicked = true;
-			//TODO Next scene for DMSA branch 
-			break;
-
-		case "Meckel" :
-			clicked = true;
-			//TODO Next scene for Meckel branch 
-			break;
-
-		case "RENOGRAMin" :
-			clicked = true;
-			//TODO Next scene for Renogram Indirect branch 
-			break;
-
-		case "Renogram" :
-			clicked = true;
-			//TODO Next scene for Renogram branch 
-			break;
-
-		default:
-			Debug.Log ("Bad Tag: " + tag); // should'nt happen 
-			break;
-		}
-
+		nextBtn.setTag (tag); // give tag to nextBtn 
+		Destroy (menu.gameObject);
+		text2Obj.SetActive (true);
+		speechBub.SetActive (true);
 	}
-
+	/*
+	 * Enum for delay of menu select prompt 
+	 */
 	IEnumerator select_Prompt()
 	{
-		Debug.Log("before wait ");
+		
 		yield return new WaitForSeconds(wait);
-		Debug.Log("after wait ");
-		if (!(clicked)) {
+		if (!(clicked)) { // if nothing is picked 
 			Debug.Log("Select prompt active");
 			prompt.SetActive (true);
 		}

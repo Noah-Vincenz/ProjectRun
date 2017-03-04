@@ -4,22 +4,10 @@ using UnityEngine;
 
 public class PlantController : MonoBehaviour {
 
-//	private Rigidbody2D rb ;
-
-
 	public float speed;
-	// Use this for initialization
-	void Start () {
-
-//		rb = transform.GetComponent<Rigidbody2D>();
-
-	}
-
-	// Update is called once per frame
-	void Update () {
-
-	}
-
+	/**
+	 * slide right on click 
+	 */
 	void OnMouseDown(){
 		slideRight ();
 	}
@@ -27,10 +15,10 @@ public class PlantController : MonoBehaviour {
 	 * mehtod to slide plant to right
 	 */
 	void slideRight(){
-		if (transform.localPosition.x < 7f) { // to stop plant going off screen
+		if (transform.localPosition.x < 7.5f) { // to stop plant going off screen
 
-			Vector3 newPos = new Vector3 (transform.position.x + speed, transform.position.y, transform.position.z);
-			transform.position = Vector3.MoveTowards (transform.position, newPos, speed * Time.deltaTime);
+			Vector3 newPos = new Vector3 (transform.position.x + speed, transform.position.y, transform.position.z); 
+			transform.position = Vector3.MoveTowards (transform.position, newPos, speed * Time.deltaTime); // move to new pos 
 		}
 
 	}

@@ -14,13 +14,11 @@ public class ButtonControl : MonoBehaviour {
 
 	private int click = 0; 
 	private float fadeSpeed = 0.5f;
-	private bool isPressed;
 	private Animator anim;
 
 
 	// Use this for initializa	tion
 	void Start () {
-		isPressed = false;
 		sr = gameObject.GetComponent<SpriteRenderer> ();
 		sunSR = sunObj.GetComponent<SpriteRenderer> ();
 		anim = sunObj.GetComponent<Animator> ();
@@ -41,22 +39,16 @@ public class ButtonControl : MonoBehaviour {
 			if(color.a<=1)
 				material.color = new Color(color.r, color.g, color.b, color.a+ (fadeSpeed * Time.deltaTime) );
 		}
-
-		if (isPressed){ // change sprite for red button pressed 
-			sr.sprite = pressed;
-		}
-		else
-			sr.sprite = normal;
 	}
 
 	void OnMouseDown(){
-		isPressed =true; // change button sprite 
+		sr.sprite = pressed; // button down 
 		switch (click) {
 
 		case 0: // sun rise 
 			if(anim.GetCurrentAnimatorStateInfo (0).IsName ("Idle_Down")){
-				sunSR.sprite = sun;
-				riseAnim();
+				sunSR.sprite = sun; // set image to sun
+				riseAnim(); // call set animation method
 				++click;
 			}
 			break;
@@ -69,8 +61,8 @@ public class ButtonControl : MonoBehaviour {
 		
 		case 2: // moon rise 
 			if (anim.GetCurrentAnimatorStateInfo (0).IsName ("Idle_Down")) {
-				sunSR.sprite = moon;
-				riseAnim ();
+				sunSR.sprite = moon; // set image to moon 
+				riseAnim (); // call rise animation method 
 				++click;
 			}
 			break;
@@ -82,8 +74,12 @@ public class ButtonControl : MonoBehaviour {
 			}
 			break;
 		}
-
-	
+	}
+	/*
+	 * sets sprite back when mb is released 
+	 */
+	void OnMouseUp(){
+		sr.sprite = normal; //button up
 	}
 	/**
 	 * method to trigger rise animation 
@@ -102,7 +98,5 @@ public class ButtonControl : MonoBehaviour {
 		anim.SetBool ("Down", false);
 
 	}
-	void OnMouseUp(){
-		isPressed = false;
-	}
+
 }
