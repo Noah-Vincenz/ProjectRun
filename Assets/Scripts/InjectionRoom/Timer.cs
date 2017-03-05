@@ -41,7 +41,7 @@ public class Timer : MonoBehaviour {
 			}
 
 			if (timeLeftforTransition <= 0) {
-				SceneManager.LoadScene ("InjectionEnd");
+				SceneManager.LoadScene ("gameEnd");
 			}
         }
 	}

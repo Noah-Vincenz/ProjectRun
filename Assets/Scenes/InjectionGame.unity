@@ -2140,8 +2140,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: -0.14, y: -0.46}
-  m_UseGraphicAlpha: 1
+  m_EffectDistance: {x: 0.2, y: 0.2}
+  m_UseGraphicAlpha: 0
 --- !u!114 &1454771166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2174,7 +2174,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: TIME OUT!
+  m_Text: Time's up!
 --- !u!222 &1454771167
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3349,7 +3349,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 72, y: 16.1}
+  m_AnchoredPosition: {x: 97, y: 20}
   m_SizeDelta: {x: 290.1, y: 34.8}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &2124687212
