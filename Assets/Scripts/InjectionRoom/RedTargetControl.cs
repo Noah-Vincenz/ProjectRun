@@ -57,7 +57,6 @@ public class RedTargetControl : MonoBehaviour {
 
 	}
 	void OnMouseDown(){
-		Debug.Log (Screen.width);	
 		scoreKeeper.Score -=100;
 		sad = true;
 		spriteRenderer.enabled=false;

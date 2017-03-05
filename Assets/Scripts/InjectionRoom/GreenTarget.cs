@@ -18,7 +18,6 @@ public class GreenTarget : MonoBehaviour {
 	ScoreKeeper scoreKeeper;
 	SpriteRenderer spriteRenderer;
 	CircleCollider2D coll;
-	public Sprite star; 
 	public GameObject starCelebration;
 	private GameObject instantiatedObj;
 

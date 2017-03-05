@@ -6,9 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour {
 	Text timer;
-	float timeLeft=5;
-	float timeLeftforTransition=1;
-	public GameObject background;	
+	public float timeLeft=5;
+	float timeLeftforTransition=4;
+	public GameObject background;
+	public GameObject endText;
+	public Text scoreText;
 
 	// Use this for initialization
 	void Start () {
@@ -31,12 +33,20 @@ public class Timer : MonoBehaviour {
 
 		else
         {
-			background.SetActive(enabled);
+			endText.SetActive (enabled);
 			timeLeftforTransition -= Time.deltaTime;
-			material.color = new Color(color.r, color.g, color.b, color.a + (1f * Time.deltaTime));
+			if (timeLeftforTransition <= 2) {
+				background.SetActive (enabled);
+				material.color = new Color (color.r, color.g, color.b, color.a + (1f * Time.deltaTime));
+			}
+
 			if (timeLeftforTransition <= 0) {
 				SceneManager.LoadScene ("InjectionEnd");
 			}
         }
+	}
+
+	public float getTime(){
+		return timeLeft;
 	}
 }
