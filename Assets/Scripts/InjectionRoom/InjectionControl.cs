@@ -11,18 +11,20 @@ public class InjectionControl : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	RaycastHit hit;
-	Ray ray;
-
 	void Update() {
 		Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		Vector3 mousePosNeed = new Vector3 (mousePos.x+xPos, mousePos.y+1, mousePos.z);
 		mousePosNeed.z = 5f;
 		transform.position = mousePosNeed;
 
-		if (Input.GetMouseButtonDown(0)) {
-			anim.SetBool ("IsInjecting", true);
+		if (Input.GetMouseButtonUp(0)) {
+			anim.SetTrigger ("Inject");
+			anim.SetTrigger("refill");
+
 		}
+
+	
+
 
 	}
 

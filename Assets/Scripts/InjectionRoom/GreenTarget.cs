@@ -11,6 +11,7 @@ public class GreenTarget : MonoBehaviour {
 	GameObject pandaFaceEmotionObject;
 	GameObject happyFace;
 	GameObject normalFace;
+	GameObject sadFace;
 	float timeLeftAnimation=2;
 	float timeLeftTillDestroy=5;
 	GameObject ScoreKeeperScoreBoard;
@@ -25,6 +26,7 @@ public class GreenTarget : MonoBehaviour {
 		pandaFaceEmotionObject = GameObject.Find ("PandaFaceReaction");
 		happyFace = pandaFaceEmotionObject.transform.Find ("Happy Face").gameObject;
 		normalFace = pandaFaceEmotionObject.transform.Find ("Normal Face").gameObject;
+		sadFace = pandaFaceEmotionObject.transform.Find ("SadFace").gameObject;
 		ScoreKeeperScoreBoard = GameObject.Find ("Canvas/ScoreBoard").gameObject;
 		scoreKeeper = ScoreKeeperScoreBoard.GetComponent<ScoreKeeper> ();
 		spriteRenderer = gameObject.GetComponent<SpriteRenderer>(); 
@@ -37,12 +39,14 @@ public class GreenTarget : MonoBehaviour {
 		if (happy) {
 			if (timeLeftAnimation >= 1) {
 				timeLeftAnimation -= Time.deltaTime;
+				sadFace.SetActive (false);
 				normalFace.SetActive (false);
 				happyFace.SetActive (true);
 			} 
 			else {
 				timeLeftAnimation = 2;
 				happy= false;
+				sadFace.SetActive (false);
 				normalFace.SetActive (true);
 				happyFace.SetActive (false);
 				Destroy (instantiatedObj);
@@ -58,12 +62,12 @@ public class GreenTarget : MonoBehaviour {
 		
 	}
 	void OnMouseDown(){
-		Debug.Log ("s");
 		scoreKeeper.Score +=100;
 		happy = true;
 		spriteRenderer.enabled = false;	
 		coll.enabled = false;
 		instantiatedObj= Instantiate(starCelebration,gameObject.transform.position,starCelebration.transform.rotation);
+		
 
 	}
 		
