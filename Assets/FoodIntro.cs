@@ -2,66 +2,76 @@
 using UnityEngine.UI;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class FoodIntro : MonoBehaviour {
 
 	private int click = 0;
-	public ButtonControl nextButton;
+	private Rigidbody2D rb;
 
 	public GameObject speechBub;
 	public GameObject text1;
 	public GameObject text2;
 	public GameObject arrow;
+	private bool firstClick = true;
 
 
 	// Use this for initialization
 	void Start () {
-//		ButtonControl btn = nextButton.GetComponent<Button> ();
-//		btn.onClick.AddListener (Clicked);
+		rb = GetComponent<Rigidbody2D> ();
 
 	}
-
-	void Clicked(){
-		speechBub.GetComponent<Renderer> ().enabled = true;// renders speech bubble
-		text1.GetComponent<Renderer> ().enabled = false;// renders text 1
-		text2.GetComponent<Renderer> ().enabled = true;
-		arrow.GetComponent<Renderer> ().enabled = true; //renders the arrow
-	}
-
+//
+//	void Clicked(){
+//		speechBub.GetComponent<Renderer> ().enabled = true;// renders speech bubble
+//		text1.GetComponent<Renderer> ().enabled = false;// renders text 1
+//		text2.GetComponent<Renderer> ().enabled = true;
+//		arrow.GetComponent<Renderer> ().enabled = true; //renders the arrow
+//	}
+//
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetMouseButtonDown(0)){
-		Debug.Log("0 button clicked");
+		if (Input.GetMouseButtonDown(0) && click == 0){
+			Debug.Log("0 button clicked" + firstClick);
 			speechBub.GetComponent<Renderer> ().enabled = true;// renders speech bubble
 			text1.GetComponent<Renderer> ().enabled = true;// renders text 2
 			arrow.GetComponent<Renderer> ().enabled = true; //renders the arrow
 			++click;
 		}
-
+//		(Input.GetMouseButtonDown (0) && click == 1) {
+//			Debug.Log ("Panda Click event 2");
+//			firstClick = false;
+//			Destroy (text1.gameObject);
+//			text2.GetComponent<Renderer> ().enabled = true;// renders text 2
+//			++click;
+//		}
 	}
 
-	void onMouseDown(){
+
+	void OnMouseDown(){
 
 		Debug.Log ("Clicks:" + click);
 		switch (click) {
 
-		case 0: // show speech bubble 
-			Debug.Log ("Panda Click event 1");
-			speechBub.GetComponent<Renderer> ().enabled = true;// renders speech bubble
-			text1.GetComponent<Renderer> ().enabled = true;// renders text 2
-			arrow.GetComponent<Renderer> ().enabled = true; //renders the arrow
-			++click;
-			break;
-//		case 1:// show text 
-//			Debug.Log ("Panda Click event 2");
-//			text2.GetComponent<Renderer> ().enabled = true;// renders text 2
+//		case 0: // show speech bubble 
+//			Debug.Log ("Panda Click event 1");
+//			speechBub.GetComponent<Renderer> ().enabled = true;// renders speech bubble
+//			text1.GetComponent<Renderer> ().enabled = true;// renders text 2
+//			arrow.GetComponent<Renderer> ().enabled = true; //renders the arrow
 //			++click;
 //			break;
-
-		default :
-			speechBub.GetComponent<Renderer> ().enabled = true;// renders speech bubble
+		case 1:// show text 
+			Debug.Log ("Panda Click event 2");
+//			firstClick = false;
+			Destroy (text1.gameObject);
+			text2.GetComponent<Renderer> ().enabled = true;// renders text 2
+			++click;
 			break;
+//
+//		default :
+//			speechBub.GetComponent<Renderer> ().enabled = true;// renders speech bubble
+//			break;
 
 		}
 
