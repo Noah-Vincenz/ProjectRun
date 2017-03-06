@@ -30,7 +30,7 @@ public class FishController : MonoBehaviour {
 	void OnMouseDown(){
 		if(rb.position.y<1){
 			rb.gravityScale = -3;//On click set grafity to negative so that the fish can float
-			bubblesPreFab.transform.position= new Vector3(fish.transform.localPosition.x, transform.localPosition.y+1, transform.localPosition.z);//set location of soon to be bubble to location above fish
+			bubblesPreFab.transform.position= new Vector3(fish.transform.localPosition.x, transform.localPosition.y+0.85f, transform.localPosition.z);//set location of soon to be bubble to location above fish
 //			anim.SetBool("Jumping",true);
 			if (swimSpeed < 0)
 				anim.SetTrigger("Left Jump");
