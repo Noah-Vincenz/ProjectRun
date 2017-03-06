@@ -56,7 +56,7 @@ public class FoodMovementScript : MonoBehaviour {
 				newYPos = -4.9;
 			}
 
-			transform.position = new Vector2(88, (float) newYPos);
+			transform.position = new Vector2(65, (float) newYPos);
 			print ("Collided");
 			sad = true;
 		}
