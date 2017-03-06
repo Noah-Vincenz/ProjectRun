@@ -1179,7 +1179,7 @@ GameObject:
   - component: {fileID: 821551413}
   m_Layer: 11
   m_Name: RENOGRAMSign
-  m_TagString: REMOGRAM
+  m_TagString: RENOGRAM
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
