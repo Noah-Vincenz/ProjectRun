@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Z
   - Bubble
+  - DMSA
+  - Meckel
+  - RENOGRAMin
+  - RENOGRAM
   layers:
   - Default
   - TransparentFX

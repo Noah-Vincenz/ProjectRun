@@ -5,6 +5,7 @@ using UnityEngine;
 public class FishController : MonoBehaviour {
 
 	private Rigidbody2D rb;
+	private Animator anim;
 	public GameObject fish;
 	public GameObject bubblesPreFab;
 	public float swimSpeed=1;
@@ -12,21 +13,31 @@ public class FishController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
+		anim = GetComponent<Animator> ();
+
 	}
 	
 	// fish swimming
 	void Update () {
-		
+
 		rb.AddForce(Vector2.right * swimSpeed); //Fish swimming
+		anim.SetFloat("Speed", swimSpeed);
+
 
 	}
 
 	//fish jump and bubble creation
 	void OnMouseDown(){
 		if(rb.position.y<1){
-		rb.gravityScale = -3;//On click set grafity to negative so that the fish can float
-		bubblesPreFab.transform.position= new Vector3(fish.transform.localPosition.x, transform.localPosition.y+1, transform.localPosition.z);//set location of soon to be bubble to location above fish
-		Instantiate(bubblesPreFab);//create bubble
+			rb.gravityScale = -3;//On click set grafity to negative so that the fish can float
+			bubblesPreFab.transform.position= new Vector3(fish.transform.localPosition.x, transform.localPosition.y+0.85f, transform.localPosition.z);//set location of soon to be bubble to location above fish
+//			anim.SetBool("Jumping",true);
+			if (swimSpeed < 0)
+				anim.SetTrigger("Left Jump");
+			else
+				anim.SetTrigger("Right Jump");
+			anim.SetBool ("Jumping", true);
+			Instantiate(bubblesPreFab);//create bubble
 		}
 	}
 
@@ -36,17 +47,21 @@ public class FishController : MonoBehaviour {
 		//If collsion with collider above fish tank, then set grafity to positive so that fish falls
 		if (coll.transform.gameObject.name=="FishTopCollider") {
 			rb.gravityScale = 3;
+			anim.SetBool ("Jumping", false);
+		
 		} 
 
 		//If collision with collider on fish tank floor level, then set gravity to zero so fish will simply swim 
 		else if (coll.transform.gameObject.name=="FishBottomCollider") {
 			rb.gravityScale = 0;
+
 		} 
 
 		//If collision with sides of tank, flip sprite and negate swim speed so fish will swim the oppsite way
 		else {
 			swimSpeed = -swimSpeed;
-			transform.localScale = new Vector3 (transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+
+
 		}
 	}
 }
