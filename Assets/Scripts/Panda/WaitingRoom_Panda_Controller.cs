@@ -42,13 +42,13 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 		if (needToMove) { // bool for first walk (right)
 			Debug.Log ("Moving.."); 
 			rb.velocity = Vector2.right * speed;
-			face.GetComponent<Animator>().SetBool("Walking", true);
+			walkFace ();
 
 		}
 		if (transform.localPosition.x >= 1.3f && !finalMove) { // stop first walk to right 
 			needToMove = false;
 			rb.velocity = new Vector2 (0, 0);
-			face.GetComponent<Animator> ().SetBool ("Walking", false);
+			awakeFace ();
 			}
 
 		if (Input.GetMouseButtonDown(0) && waveClick) { // check if panda is clicked for wave 
@@ -62,7 +62,7 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 		if (finalMove) { // final move test, after game select 
 			Debug.Log ("FinalMove"); 
 			rb.velocity = Vector2.left * speed;
-			face.GetComponent<Animator>().SetBool("Walking", true);
+			walkFace ();
 		}
 		if (transform.position.x < -10.5f) { // test if panda is off screen to kill 
 			Destroy (this.gameObject);
