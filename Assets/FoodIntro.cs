@@ -13,6 +13,8 @@ public class FoodIntro : MonoBehaviour {
 	public GameObject text1;
 	public GameObject text2;
 	public GameObject arrow;
+	public GameObject FoodInstructions;
+	public GameObject startButton;
 	private bool firstClick = true;
 
 
@@ -66,6 +68,16 @@ public class FoodIntro : MonoBehaviour {
 //			firstClick = false;
 			Destroy (text1.gameObject);
 			text2.GetComponent<Renderer> ().enabled = true;// renders text 2
+			++click;
+			break;
+		case 2:// show text 
+			Debug.Log ("Panda Click event 3");
+			//			firstClick = false;
+			Destroy (text2.gameObject);
+			Destroy (speechBub.gameObject);
+			Destroy (arrow.gameObject);
+			FoodInstructions.GetComponent<Renderer> ().enabled = true;// renders instructions
+			startButton.GetComponent<Renderer>().enabled = true; //renders start button
 			++click;
 			break;
 //
