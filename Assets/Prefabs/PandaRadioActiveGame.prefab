@@ -961,6 +961,8 @@ MonoBehaviour:
   winText: {fileID: 0}
   gameOverText: {fileID: 0}
   timerLabel: {fileID: 0}
+  tryAgainButton: {fileID: 0}
+  continueButton: {fileID: 0}
 --- !u!212 &212054235528421414
 SpriteRenderer:
   m_ObjectHideFlags: 1

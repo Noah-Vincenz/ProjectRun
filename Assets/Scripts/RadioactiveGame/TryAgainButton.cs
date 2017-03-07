@@ -8,7 +8,6 @@ public class TryAgainButton : MonoBehaviour {
 	void Start () {
 		gameObject.SetActive (false);
 		Button btn = gameObject.GetComponent<Button>();
-		btn.GetComponentInChildren<Text>().text = "Try Again";
 		btn.onClick.AddListener(TaskOnClick);
 	}
 

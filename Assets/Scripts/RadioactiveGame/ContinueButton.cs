@@ -8,7 +8,6 @@ public class ContinueButton : MonoBehaviour {
 	void Start () {
 		gameObject.SetActive (false);
 		Button btn = gameObject.GetComponent<Button>();
-		btn.GetComponentInChildren<Text>().text = "Continue";
 		btn.onClick.AddListener(TaskOnClick);
 	}
 
