@@ -108,4 +108,8 @@ public class PandaRadiationControl : MonoBehaviour {
 		rb.velocity = new Vector2 (0, 0);
 		face.GetComponent<Animator> ().SetBool ("Walking", false);
 	}
+	public void StartTimer() {
+		timeLeft = 30.0f;
+	}
 }
+	

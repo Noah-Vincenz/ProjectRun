@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TryAgainButton : MonoBehaviour {
 
@@ -12,7 +13,10 @@ public class TryAgainButton : MonoBehaviour {
 	}
 
 	void TaskOnClick(){
-		Application.LoadLevel ("CatchRadiationGame");
+		SceneManager.LoadScene ("CatchRadiationGame");
+		//Application.LoadLevel ("CatchRadiationGame");
 		Time.timeScale = 1;
 	}
+
+
 }

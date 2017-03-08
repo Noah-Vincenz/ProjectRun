@@ -97,3 +97,6 @@ TagManager:
   - name: InjectionCharacter
     uniqueID: 1147285597
     locked: 0
+  - name: ForeGround
+    uniqueID: 2107361017
+    locked: 0

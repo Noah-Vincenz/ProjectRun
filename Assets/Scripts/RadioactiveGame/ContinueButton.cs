@@ -12,6 +12,6 @@ public class ContinueButton : MonoBehaviour {
 	}
 
 	void TaskOnClick(){
-		Application.LoadLevel (Application.loadedLevel);
+		//Application.LoadLevel (Application.loadedLevel);
 	}
 }
