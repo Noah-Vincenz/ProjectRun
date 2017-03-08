@@ -15,6 +15,9 @@ public class PandaRadiationControl : MonoBehaviour {
 	private float timeLeft;
 	public Button tryAgainButton;
 	public Button continueButton;
+	public GameObject fiveCeleb;
+	private GameObject instantiatedObj;
+	float timeLeftTillDestroy=1;
 
 	Animator anim;
 	Rigidbody2D rb;
@@ -60,19 +63,38 @@ public class PandaRadiationControl : MonoBehaviour {
 			//face.GetComponent<Animator> ().SetBool ("Sad", true);
 
 		}
+
+		if (instantiatedObj != null) {
+			timeLeftTillDestroy -= Time.deltaTime;
+			if (timeLeftTillDestroy <= 0) {
+				Destroy (instantiatedObj);
+				timeLeftTillDestroy = 1;
+			}
+		}
 	}
 
 	void OnCollisionEnter2D(Collision2D coll) {
-		count = count + 1;
-		Destroy(coll.gameObject);
-		SetCountText ();
-		if (coll.gameObject.tag == "Bamboo") {
-			timeLeft += 5;
-		}
-		else if (coll.gameObject.tag == "Cube") {
-			gameOverText.text = "You were hit by a bomb.\nTry again?";
-			finishGame ();
-			//face.GetComponent<Animator> ().SetBool ("Sad", true);
+		if (coll.transform.gameObject.name == "rightBoundary" || coll.transform.gameObject.name == "leftBoundary") {
+			Debug.Log ("d");
+		} else {
+			
+			Destroy (coll.gameObject);
+			if(coll.gameObject.tag == "Collectable"){
+				count = count + 1;
+				SetCountText ();
+			}
+
+			else if (coll.gameObject.tag == "Bamboo") {
+				Vector3 pandaPos = new Vector3 (gameObject.transform.position.x, gameObject.transform.position.y, -2);
+				instantiatedObj= Instantiate(fiveCeleb,pandaPos,fiveCeleb.transform.rotation);
+				timeLeft += 5;
+			} 
+
+			else if (coll.gameObject.tag == "Cube") {
+				gameOverText.text = "You were hit by a bomb.\nTry again?";
+				finishGame ();
+				//face.GetComponent<Animator> ().SetBool ("Sad", true);
+			}
 		}
 
 			
