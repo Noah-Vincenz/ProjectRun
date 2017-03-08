@@ -4,29 +4,4 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-<<<<<<< HEAD
-  - enabled: 0
-    path: Assets/Sprites/MainScreenAndEnvelope/MainScreen.unity
-  - enabled: 0
-    path: Assets/Sprites/MainScreenAndEnvelope/Envelope.unity
-  - enabled: 0
-    path: Assets/Scenes/Main.unity
-  - enabled: 0
-    path: Assets/Scenes/envelope.unity
-  - enabled: 1
-    path: Assets/OpenedLetter.unity
-  - enabled: 1
-    path: Assets/envelope.unity
-  - enabled: 0
-    path: Assets/Scenes/OpenedLetter.unity
-  - enabled: 1
-    path: Assets/Scenes/WaitingRoom.unity
-=======
-  - enabled: 1
-    path: Assets/Scenes/Injection.unity
-  - enabled: 1
-    path: Assets/Scenes/InjectionGame.unity
-  - enabled: 1
-    path: Assets/Scenes/InjectionEnd.unity
->>>>>>> master
+  m_Scenes: []
