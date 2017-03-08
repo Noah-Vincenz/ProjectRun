@@ -26,7 +26,7 @@ public class TargetCreationControl : MonoBehaviour {
 			timeLeftTillNextSetOfTargets -= Time.deltaTime;
 
 			if (timeLeftTillNextSetOfTargets <= 0) {
-				int whatColourTargt = Random.Range (0, 3); //red=1 green=0
+				int whatColourTargt = Random.Range (0, 4); //red=1 green=0
 				double ZValueThatIs0InGame = 28.12524;
 				float ZvalueAsFloat = (float)ZValueThatIs0InGame;
 				print (whatColourTargt);
@@ -34,7 +34,7 @@ public class TargetCreationControl : MonoBehaviour {
 				if (whatColourTargt == 1) {
 					Vector3 screenPosition = Camera.main.ScreenToWorldPoint (new Vector3 (Random.Range (350, 850), Random.Range (50, 400), ZvalueAsFloat));
 					redTargetIn=(GameObject) Instantiate(redTarget, screenPosition, redTarget.transform.rotation);
-				} else if (whatColourTargt == 0||whatColourTargt == 2) {
+				} else if (whatColourTargt == 0||whatColourTargt == 2||whatColourTargt == 3) {
 					Vector3 screenPosition = Camera.main.ScreenToWorldPoint (new Vector3 (Random.Range (350, 850), Random.Range (50, 400), ZvalueAsFloat));
 					greenTargetIn=(GameObject) Instantiate (greenTarget, screenPosition, redTarget.transform.rotation);
 				}
