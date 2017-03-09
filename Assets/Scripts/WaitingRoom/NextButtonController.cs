@@ -16,10 +16,11 @@ public class NextButtonController : MonoBehaviour {
 	void OnMouseDown(){
 		switch (clicks){
 
-		case 0 :// show menu 
-			menu.SetActive(true);
+		case 0:// show menu 
+			menu.SetActive (true);
 			speechBubble.SetActive (false); 
 			Destroy (textOne.gameObject);
+			speechBubble.transform.localScale += new Vector3(0f,-0.45f,0f);
 			++clicks;
 			break;
 		case 1: // panda leave 
