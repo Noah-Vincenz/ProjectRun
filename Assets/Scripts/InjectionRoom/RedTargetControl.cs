@@ -10,7 +10,6 @@ public class RedTargetControl : MonoBehaviour {
 	public GameObject pandaFaceEmotionObject;
 	public GameObject sadFace;
 	public GameObject normalFace;
-	GameObject happyFace;
 	float timeLeftAnimation=2;
 	float timeLeftTillDestroy=3;
 	public GameObject ScoreKeeperScoreBoard;
@@ -22,7 +21,6 @@ public class RedTargetControl : MonoBehaviour {
 		pandaFaceEmotionObject = GameObject.Find ("PandaFaceReaction");
 		sadFace = pandaFaceEmotionObject.transform.Find ("SadFace").gameObject;
 		normalFace = pandaFaceEmotionObject.transform.Find ("Normal Face").gameObject;
-		happyFace = pandaFaceEmotionObject.transform.Find ("Happy Face").gameObject;
 		ScoreKeeperScoreBoard = GameObject.Find ("Canvas/ScoreBoard").gameObject;
 		scoreKeeper = ScoreKeeperScoreBoard.GetComponent<ScoreKeeper> ();
 		spriteRenderer = gameObject.GetComponent<SpriteRenderer>(); 
@@ -36,14 +34,12 @@ public class RedTargetControl : MonoBehaviour {
 		if (sad) {
 			if (timeLeftAnimation >= 1) {
 				timeLeftAnimation -= Time.deltaTime;
-				happyFace.SetActive (false);
 				normalFace.SetActive (false);
 				sadFace.SetActive (true);
 			} 
 			else {
 				timeLeftAnimation = 2;
 				sad= false;
-				happyFace.SetActive (false);
 				normalFace.SetActive (true);
 				sadFace.SetActive (false);
 				Destroy (gameObject);
@@ -57,6 +53,7 @@ public class RedTargetControl : MonoBehaviour {
 
 	}
 	void OnMouseDown(){
+		Debug.Log (Screen.width);	
 		scoreKeeper.Score -=100;
 		sad = true;
 		spriteRenderer.enabled=false;

@@ -98,6 +98,3 @@ TagManager:
   - name: InjectionCharacter
     uniqueID: 1147285597
     locked: 0
-  - name: Fade
-    uniqueID: 1874301565
-    locked: 0

@@ -8,30 +8,21 @@ public class countdown : MonoBehaviour {
 
     public Text time = null;
     float timeLeft = 5;
-    public static string gameName = null;
 
     void Update()
     {
         if (Mathf.Round(timeLeft) == 1)
         {
-            Invoke("loadScene", 1.5f);
+            SceneManager.LoadScene("InjectionGame");
         }
-        else
-        {
-            timeLeft -= Time.deltaTime;
-            changeText();
-        }
+
+        timeLeft -= Time.deltaTime;
+        changeText();
 
     }
 
     void changeText()
     {
         time.text = "" + Mathf.Round(timeLeft);
-    }
-
-    void loadScene()
-    {
-        gameName = "InjectionGame";
-        SceneManager.LoadScene("InjectionGame");
     }
 }
