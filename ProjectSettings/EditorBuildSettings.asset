@@ -11,3 +11,10 @@ EditorBuildSettings:
     path: Assets/Scenes/envelope.unity
   - enabled: 1
     path: Assets/Scenes/OpenedLetter.unity
+- enabled: 1
+    path: Assets/Scenes/gameEnd.unity
+- enabled: 1
+    path: Assets/Scenes/Injection.unity
+    - enabled: 1
+    path: Assets/Scenes/InjectionGame.unity
+
