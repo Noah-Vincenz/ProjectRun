@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Timer : MonoBehaviour {
+public class FoodGameTimer : MonoBehaviour {
 	Text timer;
 	float timeLeft=60;
 	// Use this for initialization
