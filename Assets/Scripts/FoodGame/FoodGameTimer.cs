@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class FoodGameTimer : MonoBehaviour {
+public class Timer : MonoBehaviour {
 	Text timer;
-	float timeLeft=60;
+	float timeLeft=45;
 	// Use this for initialization
 	void Start () {
 		timer = GetComponent<Text> ();
@@ -20,7 +20,7 @@ public class FoodGameTimer : MonoBehaviour {
 		
         if (Mathf.Round(timeLeft) == 0)
         {
-            SceneManager.LoadScene("InjectionEnd");
+            //SceneManager.LoadScene("InjectionEnd");
         }
 	}
 }
