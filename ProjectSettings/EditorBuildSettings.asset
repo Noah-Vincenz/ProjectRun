@@ -11,3 +11,7 @@ EditorBuildSettings:
     path: Assets/Scenes/InjectionGame.unity
   - enabled: 1
     path: Assets/Scenes/InjectionEnd.unity
+  - enabled: 1
+    path: Assets/Scenes/IntroCatchRadiationGame.unity
+  - enabled: 1
+    path: Assets/Scenes/CatchRadiationGame.unity
