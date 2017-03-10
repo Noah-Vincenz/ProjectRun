@@ -10,4 +10,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/InjectionGame.unity
   - enabled: 1
-    path: Assets/Scenes/InjectionEnd.unity
+    path: Assets/Scenes/gameEnd.unity
