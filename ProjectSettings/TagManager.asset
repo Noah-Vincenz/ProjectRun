@@ -6,9 +6,6 @@ TagManager:
   tags:
   - Z
   - Bubble
-  - Collectable
-  - Bamboo
-  - Cube
   layers:
   - Default
   - TransparentFX
@@ -22,7 +19,7 @@ TagManager:
   - Moon
   - SunAndMoonCollider
   - panda
-  - Background
+  - 
   - 
   - 
   - 
@@ -96,7 +93,4 @@ TagManager:
     locked: 0
   - name: InjectionCharacter
     uniqueID: 1147285597
-    locked: 0
-  - name: ForeGround
-    uniqueID: 2107361017
     locked: 0
