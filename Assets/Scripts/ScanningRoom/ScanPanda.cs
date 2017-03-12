@@ -10,6 +10,7 @@ public class ScanPanda : MonoBehaviour {
 
 	Animator anim;
 	Rigidbody2D rb;
+
 	// Use this for initialization
 	void Start () {
 
@@ -18,9 +19,11 @@ public class ScanPanda : MonoBehaviour {
 		canClimb = false;
 
 	}
+		
 
 	// Update is called once per frame
 	void Update () {
+		
 		anim.SetFloat("Speed", rb.velocity.x);
 
 		if (Input.GetMouseButtonDown (0)) {
@@ -29,7 +32,6 @@ public class ScanPanda : MonoBehaviour {
 			face.GetComponent<Animator>().SetBool("Walking", true);
 
 		}
-
 		if (canClimb){
 
 			rb.velocity = new Vector2(0, 0);
@@ -44,4 +46,5 @@ public class ScanPanda : MonoBehaviour {
 		canClimb = true;
 
 	}
+
 }
