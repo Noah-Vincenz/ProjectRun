@@ -11,6 +11,9 @@ public class ClockHand : MonoBehaviour {
 	//boolean storing whether the hand is in the correct position
 	public bool isCorrect = false;
 
+	//boolean storing whether the hand can move
+	public bool canMove = false;
+
 	//internal variables for tracking mouse movement
 	private Vector2 mousePos;
 	private Vector2 screenPos;
@@ -20,6 +23,7 @@ public class ClockHand : MonoBehaviour {
 
 	void Start () {
 		uBound = correctPos + snapAngle;
+		Debug.Log (correctPos + " + " + snapAngle + " = " + correctPos);
 		lBound = correctPos - snapAngle;
 
 		if (lBound < 0)
@@ -28,14 +32,16 @@ public class ClockHand : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		//find the position of the mouse, and the relative position of the mouse on the screen
-		mousePos = Input.mousePosition;
-		screenPos = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, transform.position.z - Camera.main.transform.position.z));
+		if (canMove) {
+			//find the position of the mouse, and the relative position of the mouse on the screen
+			mousePos = Input.mousePosition;
+			screenPos = Camera.main.ScreenToWorldPoint (new Vector3 (mousePos.x, mousePos.y, transform.position.z - Camera.main.transform.position.z));
 
-		//find the related angle from the hand to the mouse
-		transform.rotation = Quaternion.Euler(0,0,Mathf.Atan2((screenPos.y - transform.position.y), (screenPos.x - transform.position.x)) * Mathf.Rad2Deg -90);
+			//find the related angle from the hand to the mouse
+			transform.rotation = Quaternion.Euler (0, 0, Mathf.Atan2 ((screenPos.y - transform.position.y), (screenPos.x - transform.position.x)) * Mathf.Rad2Deg - 90);
+		}
 
-		//if the angle of the mouse is within the snap range, snap to the correct angle, and return the position is correct
+		//if the angle of the hand is within the snap range, snap to the correct angle, and return the position is correct
 		if (checkPos()) {
 			transform.rotation = Quaternion.Euler (0, 0, correctPos);
 			isCorrect = true;
