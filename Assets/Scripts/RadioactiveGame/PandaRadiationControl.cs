@@ -18,6 +18,8 @@ public class PandaRadiationControl : MonoBehaviour {
 	public GameObject fiveCeleb;
 	private GameObject instantiatedObj;
 	float timeLeftTillDestroy=1;
+	public Spawner spawner;
+	private bool gameOver = false;
 
 	Animator anim;
 	Rigidbody2D rb;
@@ -55,7 +57,9 @@ public class PandaRadiationControl : MonoBehaviour {
 		if (Input.GetKeyUp ("right")) {
 			StopMoving ();
 		}
-		timeLeft -= Time.deltaTime;
+		if (gameOver == false) {
+			timeLeft -= Time.deltaTime;
+		}
 		timerLabel.text = "Time Left: " + Mathf.Round(timeLeft) + " secs";
 		if(timeLeft < 0)
 		{
@@ -80,7 +84,7 @@ public class PandaRadiationControl : MonoBehaviour {
 		} else {
 			
 			Destroy (coll.gameObject);
-			if(coll.gameObject.tag == "Collectable"){
+			if(coll.gameObject.tag == "Collectable" && gameOver == false){
 				count = count + 1;
 				SetCountText ();
 			}
@@ -113,7 +117,9 @@ public class PandaRadiationControl : MonoBehaviour {
 	}
 
 	void finishGame() {
-		Time.timeScale = 0;
+		//Time.timeScale = 0.01f;
+		gameOver = true;
+		spawner.CancelInvoke ();
 		tryAgainButton.gameObject.SetActive (true);
 		continueButton.gameObject.SetActive (true);
 	}
