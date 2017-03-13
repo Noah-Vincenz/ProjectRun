@@ -8,7 +8,6 @@ public class countdown : MonoBehaviour {
 
     public Text time = null;
     float timeLeft = 5;
-    public static string gameName = null;
 
     void Update()
     {
@@ -31,7 +30,6 @@ public class countdown : MonoBehaviour {
 
     void loadScene()
     {
-        gameName = "InjectionGame";
         SceneManager.LoadScene("InjectionGame");
     }
 }

@@ -11,11 +11,17 @@ public class getScore : MonoBehaviour {
 	void Start () {
 
         background = GameObject.Find("Background");
-        if (countdown.gameName == "InjectionGame")
+        if (ScoreKeeper.recentGame== "InjectionGame")
         {
             background.GetComponent<SpriteRenderer>().sprite = backgrounds[0];
-            scoreText.text = "Your score is : " + ScoreKeeper.injectionScore;
-            ScoreKeeper.injectionScore = 0;
+            scoreText.text = "Your score is : " + ScoreKeeper.finalScore;
+            ScoreKeeper.finalScore = 0;
+        } else
+        if (ScoreKeeper.recentGame == "FoodGame")
+        {
+            background.GetComponent<SpriteRenderer>().sprite = backgrounds[2];
+            scoreText.text = "Your score is : " + ScoreKeeper.finalScore;
+            ScoreKeeper.finalScore = 0;
         }
 	}
 
