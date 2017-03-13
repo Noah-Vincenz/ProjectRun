@@ -10,6 +10,11 @@ TagManager:
   - Meckel
   - RENOGRAMin
   - RENOGRAM
+  - FoodEndpoint
+  - Collectable
+  - Bamboo
+  - Cube
+  - Food
   layers:
   - Default
   - TransparentFX

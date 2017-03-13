@@ -55,4 +55,25 @@ public class PandaLevel : MonoBehaviour
 		}
 		
 	}
+
+	public void WalkUp() {
+		if (dest == -0.7) {
+			dest = 1.6;
+		}
+		else if (dest == -2.8) {
+			dest = -0.7;
+		}
+
+	}
+
+	public void WalkDown() {
+		if (dest == 1.6) {
+			dest = -0.7;
+		}
+		else if (dest == -0.7) {
+			dest = -2.8;
+		}
+
+	}
+
 }
