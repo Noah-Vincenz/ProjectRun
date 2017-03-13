@@ -47,7 +47,7 @@ public class NextButtonController : MonoBehaviour {
 			
 				case "Meckel":
 						Debug.Log("LOAD Meckel");
-					SceneManager.LoadScene ("FoodGameIntroduction");
+					SceneManager.LoadScene ("45minClockScene");
 						//TODO Next scene for Meckel branch 
 						break;
 			
