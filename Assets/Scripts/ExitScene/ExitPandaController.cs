@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class ExitPandaController : MonoBehaviour {
@@ -36,5 +37,11 @@ public class ExitPandaController : MonoBehaviour {
 
 		}
 		
+	}
+
+	void OnDestroy(){
+
+		SceneManager.LoadScene ("ZoomOutExit");
+
 	}
 }
