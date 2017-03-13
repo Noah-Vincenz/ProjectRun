@@ -25,6 +25,7 @@ public class PandaRadiationControl : MonoBehaviour {
 	// Use this for initialization
 	void Start()
 	{
+		Time.timeScale = 1;
 		timeLeft = 30.0f;
 		count = 0;
 		SetCountText();

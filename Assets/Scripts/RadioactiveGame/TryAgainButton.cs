@@ -14,8 +14,8 @@ public class TryAgainButton : MonoBehaviour {
 
 	void TaskOnClick(){
 		SceneManager.LoadScene ("CatchRadiationGame");
+		//Time.timeScale = 1;
 		//Application.LoadLevel ("CatchRadiationGame");
-		Time.timeScale = 1;
 	}
 
 
