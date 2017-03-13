@@ -351,16 +351,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ba9efc4f4a79e42a591d800f6582ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 
+  sceneToLoad: FoodGameIntroduction
   wellDone: {fileID: 1745788511}
   background: {fileID: 2066143729}
   arrowObj: {fileID: 1622355717047014, guid: aa57ce9d318414245abb120030fcfeb3, type: 2}
   minuteHand: {fileID: 2135236059}
   hourHand: {fileID: 514018955}
   minuteDisabled: 1
-  hourDisabled: 1
-  minuteSnap: 180
-  hourSnap: 180
+  hourDisabled: 0
+  minuteSnap: 0
+  hourSnap: 240
   snapAngle: 20
 --- !u!1 &1662820852
 GameObject:
