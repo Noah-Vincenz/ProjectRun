@@ -8,6 +8,8 @@ public class PandaLevel : MonoBehaviour
 	public float speed;
 	public bool checkKeys;
 	private int count;
+
+	private bool upPressed, downPressed;
 	//Rigidbody2D rb;
 	void Start(){
 		count = 0;
@@ -24,27 +26,38 @@ public class PandaLevel : MonoBehaviour
 			double updatedPos = posX - (speed/12);
 			transform.position = new Vector2(transform.position.x, (float) updatedPos);
 		} 
-		if (checkKeys) {
-			if (Input.GetKey ("w")) {
-			
+//		if (checkKeys) {
+			if (Input.GetKey ("w") && !upPressed) {
+				upPressed = true;
+
 				if (dest == -0.7) {
 					dest = 1.6;
 				}
-				if (dest == -2.8) {
+				else if (dest == -2.8) {
 					dest = -0.7;
 				}
 			}
-			if (Input.GetKey ("s")) {
+			if (Input.GetKey ("s") && !downPressed) {
+				downPressed = true;
+
 				if (dest == 1.6) {
 					dest = -0.7;
 				}
-				if (dest == -0.7) {
+				else if (dest == -0.7) {
 					dest = -2.8;
 				}
 
 			}
-			checkKeys = false;
-		} 
+//			checkKeys = false;
+//		} 
+
+		if (Input.GetKeyUp ("w")) {
+			upPressed = false;
+		}
+		if (Input.GetKeyUp ("s")) {
+			downPressed = false;
+		}
+
 		else {
 			if (count == 3) {
 				checkKeys = true;
