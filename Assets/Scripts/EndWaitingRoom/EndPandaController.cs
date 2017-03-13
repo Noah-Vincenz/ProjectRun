@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class EndPandaController : MonoBehaviour {
@@ -87,6 +88,6 @@ public class EndPandaController : MonoBehaviour {
 	 */
 	void OnDestroy(){
 		Debug.Log ("Load next scene");
-		//TODO load next scene
+		SceneManager.LoadScene ("ExitScene");
 	}
 }
