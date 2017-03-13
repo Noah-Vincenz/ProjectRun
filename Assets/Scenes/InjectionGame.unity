@@ -1526,7 +1526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eda239fdadf58524995097e542124d4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLeft: 5
+  timeLeft: 45
   background: {fileID: 420278868}
   endText: {fileID: 1454771163}
   scoreText: {fileID: 0}
@@ -1780,7 +1780,7 @@ Prefab:
     - target: {fileID: 114192897031708112, guid: 1a7f345ba2e46f946b4392c94642c3e9,
         type: 2}
       propertyPath: timeLeft
-      value: 5
+      value: 45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a7f345ba2e46f946b4392c94642c3e9, type: 2}
