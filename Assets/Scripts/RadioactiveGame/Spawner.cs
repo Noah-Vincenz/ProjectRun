@@ -27,5 +27,9 @@ public class Spawner : MonoBehaviour {
 	void Spawn3() {
 		Instantiate (Cube, new Vector3 (Random.Range (-4, 4), 5, 0), Quaternion.identity);
 	}
-
+	/*
+	public void cancelInvoke() {
+		CancelInvoke ();
+	}
+	*/
 }
