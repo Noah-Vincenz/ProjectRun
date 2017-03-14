@@ -70,7 +70,7 @@ public class ScanPanda : MonoBehaviour {
 
 		if (timeLeftforTransition <= 0) {
 			
-			SceneManager.LoadScene ("CatchRadiationGame");
+			SceneManager.LoadScene ("IntroCatchRadiationGame");
 
 		}
 

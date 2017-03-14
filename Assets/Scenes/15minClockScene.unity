@@ -357,10 +357,10 @@ MonoBehaviour:
   arrowObj: {fileID: 1622355717047014, guid: aa57ce9d318414245abb120030fcfeb3, type: 2}
   minuteHand: {fileID: 2135236059}
   hourHand: {fileID: 514018955}
-  minuteDisabled: 1
+  minuteDisabled: 0
   hourDisabled: 1
-  minuteSnap: 180
-  hourSnap: 180
+  minuteSnap: 270
+  hourSnap: 0
   snapAngle: 20
 --- !u!1 &1662820852
 GameObject:
