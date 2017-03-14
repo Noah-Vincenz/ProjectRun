@@ -70,6 +70,9 @@ TagManager:
   - name: Button
     uniqueID: 2030200659
     locked: 0
+  - name: Bed
+    uniqueID: 2430769171
+    locked: 0
   - name: Objects
     uniqueID: 517131919
     locked: 0
