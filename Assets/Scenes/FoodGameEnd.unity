@@ -138,7 +138,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6d7dd1e1ad524974886d1725a7f33235, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 349e5d4b4c07d8d4fb3022c2a50eb242, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -455,7 +455,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 2078914625
+  randomSeed: 352908817
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3195,7 +3195,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -2024140934
+  randomSeed: -132828138
   InitialModule:
     serializedVersion: 3
     enabled: 1

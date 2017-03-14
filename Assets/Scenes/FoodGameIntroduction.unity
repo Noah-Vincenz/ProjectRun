@@ -371,7 +371,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6d7dd1e1ad524974886d1725a7f33235, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 349e5d4b4c07d8d4fb3022c2a50eb242, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -655,7 +655,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c44ff13b8412e432fb9ee6cac2a9da00, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b74f79e5542e5e24597ffb026e4c5f73, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -666,8 +666,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1956852919}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.36, y: -1.8, z: -1}
-  m_LocalScale: {x: 0.5872443, y: 0.8164882, z: 1}
+  m_LocalPosition: {x: -1.2, y: 1.52, z: -1}
+  m_LocalScale: {x: 0.6532938, y: 0.9443438, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -719,7 +719,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 80e9a52ddfb6f4426a3965511a183d29, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 938a23012200fbb479a938a5399df156, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -730,8 +730,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2024220641}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.62, y: -1.42, z: -1}
-  m_LocalScale: {x: 0.6295141, y: 0.6726468, z: 1}
+  m_LocalPosition: {x: -1.25, y: 1.44, z: -1}
+  m_LocalScale: {x: 1.0338278, y: 1.3980819, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -750,7 +750,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4966869339078472, guid: 4689ac7b568f00d47bae85308b809d96, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -5.6771216
+      value: -6.39
       objectReference: {fileID: 0}
     - target: {fileID: 4966869339078472, guid: 4689ac7b568f00d47bae85308b809d96, type: 2}
       propertyPath: m_LocalPosition.y
