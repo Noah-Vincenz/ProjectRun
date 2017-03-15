@@ -225,7 +225,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cfdbbb96394024042b6367573d843075, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f8195d4df945789409f90c2c312e9b93, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -424,7 +424,7 @@ MonoBehaviour:
   minuteDisabled: 1
   hourDisabled: 0
   minuteSnap: 0
-  hourSnap: 240
+  hourSnap: 270
   snapAngle: 20
 --- !u!1 &1662820852
 GameObject:
