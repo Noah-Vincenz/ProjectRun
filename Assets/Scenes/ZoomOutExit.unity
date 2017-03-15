@@ -231,6 +231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 655093569}
   - component: {fileID: 655093568}
+  - component: {fileID: 655093570}
   m_Layer: 0
   m_Name: speech bubble 1
   m_TagString: Untagged
@@ -280,12 +281,26 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 655093567}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.899994, y: 1.9300079, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
+  m_LocalPosition: {x: 4.75, y: 1.9300079, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.75, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &655093570
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 655093567}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 6.7799997, y: 4.05}
 --- !u!1 &706369356
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,7 +567,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 195, y: 75}
+  m_AnchoredPosition: {x: 242.3, y: 117}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &795518635
@@ -576,10 +591,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 96fd40801cbac4b2eb8a8433a4b71085, type: 3}
-    m_FontSize: 14
+    m_FontSize: 20
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 1
@@ -880,6 +895,7 @@ GameObject:
   - component: {fileID: 1704644240}
   - component: {fileID: 1704644239}
   - component: {fileID: 1704644241}
+  - component: {fileID: 1704644242}
   m_Layer: 0
   m_Name: mainscreenlastcrop2
   m_TagString: Untagged
@@ -930,7 +946,7 @@ Transform:
   m_GameObject: {fileID: 1704644238}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.86, z: 0}
-  m_LocalScale: {x: 3.4654715, y: 3.3198853, z: 1}
+  m_LocalScale: {x: 3.1974206, y: 3.3198853, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -947,6 +963,20 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0.014576712, y: 1.0442739}
+  serializedVersion: 2
+  m_Size: {x: 5.359606, y: 0.25457248}
+--- !u!61 &1704644242
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1704644238}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0.014576712, y: -1.43}
   serializedVersion: 2
   m_Size: {x: 5.359606, y: 0.25457248}
 --- !u!1001 &1928093882
