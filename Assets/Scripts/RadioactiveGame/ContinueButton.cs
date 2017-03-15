@@ -50,7 +50,7 @@ public class ContinueButton : MonoBehaviour {
 		}
 
 		if (timeLeftforTransition <= 0) {
-			SceneManager.LoadScene ("endWaitingRoom");
+			SceneManager.LoadScene ("MovingScanOut");
 		}
 	}
 
