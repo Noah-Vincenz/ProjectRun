@@ -13,6 +13,7 @@ public class ScanPanda : MonoBehaviour {
 	float timeLeftHitTrigger=2;
 	private bool readyForTransition;
 
+	bool canWalk;
 	Animator anim;
 	Rigidbody2D rb;
 
@@ -22,7 +23,8 @@ public class ScanPanda : MonoBehaviour {
 		anim = GetComponent<Animator>();
 		rb = GetComponent<Rigidbody2D>();
 		canClimb = false;
-
+		canWalk = false;
+	
 		var material1 = background.GetComponent<Renderer>().material;
 		var color1 = material1.color;
 		background.GetComponent<Renderer> ().material.color = new Color (color1.r, color1.g, color1.b, color1.a -color1.a);
@@ -39,7 +41,7 @@ public class ScanPanda : MonoBehaviour {
 		
 		anim.SetFloat("Speed", rb.velocity.x);
 
-		if (Input.GetMouseButtonDown (0)) {
+		if (canWalk) {
 
 			rb.velocity = Vector2.left * speed;
 			face.GetComponent<Animator>().SetBool("Walking", true);
@@ -79,6 +81,12 @@ public class ScanPanda : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D col){
 
 		canClimb = true;
+
+	}
+
+	public void canWalkOn(){
+
+		canWalk = true;
 
 	}
 

@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  leftPos: -2
+  leftPos: -2.5
   rightPos: 3
 --- !u!212 &558428954
 SpriteRenderer:

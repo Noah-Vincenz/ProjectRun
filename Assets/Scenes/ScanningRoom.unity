@@ -271,6 +271,7 @@ GameObject:
   - component: {fileID: 532098249}
   - component: {fileID: 532098248}
   - component: {fileID: 532098247}
+  - component: {fileID: 532098250}
   m_Layer: 0
   m_Name: scanner1
   m_TagString: Untagged
@@ -289,9 +290,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: -1.654276, y: 0}
+  m_Offset: {x: -3.0445879, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1.5162054, y: 10.0599985}
+  m_Size: {x: 4.29683, y: 10.0599985}
 --- !u!212 &532098248
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -340,6 +341,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &532098250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 532098246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68fdadb3285014b8382f583008a7eb9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scanScript: {fileID: 1770382865}
 --- !u!1 &811735506
 GameObject:
   m_ObjectHideFlags: 0
