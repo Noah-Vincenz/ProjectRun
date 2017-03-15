@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SlidingLeftDoor : MonoBehaviour {
 
-	public Vector2 aPosition1;
+	private Vector2 aPosition1;
 
 	// Use this for initialization
 	void Start () {

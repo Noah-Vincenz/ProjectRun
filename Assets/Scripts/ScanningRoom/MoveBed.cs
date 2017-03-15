@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoveBed : MonoBehaviour {
 
 	private bool dirRight;
-	public float speed;
+	private float speed;
 	public float leftPos;
 	public float rightPos;
 
