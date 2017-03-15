@@ -13,7 +13,7 @@ public class MoveBed : MonoBehaviour {
 	void Start () {
 
 		dirRight = true;
-		speed = 2.0f;
+		speed = 1.0f;
 
 	}
 	
