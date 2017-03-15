@@ -272,6 +272,7 @@ GameObject:
   - component: {fileID: 532098248}
   - component: {fileID: 532098247}
   - component: {fileID: 532098250}
+  - component: {fileID: 532098251}
   m_Layer: 0
   m_Name: scanner1
   m_TagString: Untagged
@@ -353,6 +354,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scanScript: {fileID: 1770382865}
+--- !u!61 &532098251
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 532098246}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 2.7362885, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 16.061848, y: 11.56}
 --- !u!1 &811735506
 GameObject:
   m_ObjectHideFlags: 0
