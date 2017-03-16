@@ -349,7 +349,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: ab3d7398decfe2b41ac979d455a141a2,
+      objectReference: {fileID: 21300000, guid: 79efe254de057984b9bfb2e23db1f8c8,
         type: 3}
     - target: {fileID: 1181961073097900, guid: 0155451e9280c644eafc17d255c2ba28, type: 2}
       propertyPath: m_IsActive
@@ -358,6 +358,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0155451e9280c644eafc17d255c2ba28, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &721666137 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1181961073097900, guid: 0155451e9280c644eafc17d255c2ba28,
+    type: 2}
+  m_PrefabInternal: {fileID: 721666136}
 --- !u!1 &1662820852
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,6 +372,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1662820854}
   - component: {fileID: 1662820853}
+  - component: {fileID: 1662820855}
   m_Layer: 0
   m_Name: clockface
   m_TagString: Untagged
@@ -424,6 +430,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1662820855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1662820852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ced20c64a63132248aefda567237f1d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: 
+  waitTime: 4
+  background: {fileID: 721666137}
 --- !u!1 &1745788511
 GameObject:
   m_ObjectHideFlags: 0
