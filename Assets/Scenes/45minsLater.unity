@@ -251,7 +251,6 @@ GameObject:
   m_Component:
   - component: {fileID: 514018957}
   - component: {fileID: 514018956}
-  - component: {fileID: 514018958}
   m_Layer: 0
   m_Name: hourhand
   m_TagString: Untagged
@@ -307,21 +306,6 @@ Transform:
   m_Father: {fileID: 1662820854}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &514018958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 514018955}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42cceed87d385574b874d62c38ced315, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  snapAngle: 0
-  correctPos: 0
-  isCorrect: 0
-  canMove: 0
 --- !u!1001 &721666136
 Prefab:
   m_ObjectHideFlags: 0
@@ -513,7 +497,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2135236061}
   - component: {fileID: 2135236060}
-  - component: {fileID: 2135236062}
   m_Layer: 0
   m_Name: minutehand
   m_TagString: Untagged
@@ -569,18 +552,3 @@ Transform:
   m_Father: {fileID: 1662820854}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!114 &2135236062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2135236059}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42cceed87d385574b874d62c38ced315, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  snapAngle: 0
-  correctPos: 0
-  isCorrect: 0
-  canMove: 0
