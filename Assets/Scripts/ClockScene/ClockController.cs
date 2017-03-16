@@ -100,7 +100,7 @@ public class ClockController : MonoBehaviour {
 			}
 
 			//if the hour hand is correct, the clock is satisfied
-			if (hourHand.GetComponent<ClockHand> ().isCorrect) {
+			if (hourHand.GetComponent<ClockHand> ().isCorrect && minuteHand.GetComponent<ClockHand>().isCorrect) {
 				Debug.Log("Clock in satisfied state");
 				minuteHint.SetActive(false);
 				hourHint.SetActive(false);
