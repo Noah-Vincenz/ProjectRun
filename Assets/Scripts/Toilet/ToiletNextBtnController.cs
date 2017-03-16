@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ToiletNextBtnController : MonoBehaviour {
-//	public ToiletPandaController panda;
+	public ToiletPandaController pandaSC;
 	public GameObject playerPanda;
 	public GameObject text1;
 	public GameObject text2;
+	public GameObject text3;
 	public GameObject speechBubble;
+	public GameObject prompt2;
+	public GameObject screen;
 
 	int clicks;
 
@@ -29,17 +32,26 @@ public class ToiletNextBtnController : MonoBehaviour {
 
 			playerPanda.SetActive (true);
 			Destroy (text1.gameObject);
-			text2.SetActive (true);
 			speechBubble.SetActive (false);
+			text2.SetActive (true);
 			++clicks;
 			break;
 			
 		case 1: 
-				
-				++clicks;
+			Destroy (text2.gameObject);
+			speechBubble.SetActive (false);
+			text3.SetActive (true);
+			prompt2.SetActive (true);
+			screen.GetComponent<BoxCollider2D> ().enabled = true;
+			++clicks;
 			break;
 
+		case 2:
+			Destroy (speechBubble.gameObject);
+			pandaSC.walkOff ();
+			break;
 		default : 
+			Debug.Log ("Click");
 			break;
 
 		}
