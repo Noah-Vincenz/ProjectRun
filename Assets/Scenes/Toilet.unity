@@ -250,12 +250,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40283ca88c8644fa4b729ef81be616d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panda: {fileID: 105623755}
+  panda: {fileID: 0}
   prompt: {fileID: 1688965261}
   prompt2: {fileID: 983570738}
   speechBubble: {fileID: 1821729253}
   scanTxt: {fileID: 1724523060}
-  screen: {fileID: 11612641}
   finalText: {fileID: 1423060405}
   wait: 5
 --- !u!61 &11612646
@@ -285,7 +284,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 105623754}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af5ddf50190724afba7d53979d829afe, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ec772d9ce5094e71a5e210aa8b2f0de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   face: {fileID: 1006208468}
@@ -383,7 +382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b82073717cc1e480b86499cbb9c93dbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pandaSC: {fileID: 105623755}
+  pandaSC: {fileID: 0}
   playerPanda: {fileID: 105623754}
   text1: {fileID: 431274063}
   text2: {fileID: 1724523060}
