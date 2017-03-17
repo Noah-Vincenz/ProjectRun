@@ -415,7 +415,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1589684572
+  randomSeed: -430164626
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3216,7 +3216,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -675702822
+  randomSeed: -1094506004
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -5842,9 +5842,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1086807943}
   backgrounds:
-  - {fileID: 0}
+  - {fileID: 21300000, guid: b6f03ac4bd9b172469c47aecc0f5821b, type: 3}
   - {fileID: 21300000, guid: a645e15268e517c44ba69339ccef885a, type: 3}
-  - {fileID: 21300000, guid: 903b0d2f60dc44247a8723c80db6d1a9, type: 3}
+  - {fileID: 21300000, guid: c97985b6a2b274308be67e3599babd15, type: 3}
   background: {fileID: 1597373767}
 --- !u!1001 &1094274142
 Prefab:
@@ -6079,7 +6079,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1597373769}
   - component: {fileID: 1597373768}
-  - component: {fileID: 1597373770}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -6136,17 +6135,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1597373770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1597373767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e3e785472b7c044bb627dcfca0dd08f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1716569557
 GameObject:
   m_ObjectHideFlags: 0

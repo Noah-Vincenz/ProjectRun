@@ -7,6 +7,7 @@ public class TopTriangleMove : MonoBehaviour {
 
 	private int clicks = 0;
 	Animator anim;
+	public GameObject frontLetter;
 	public Sprite top;
     SpriteRenderer sp;
 	// Use this for initialization
@@ -24,13 +25,19 @@ public class TopTriangleMove : MonoBehaviour {
 	void OnMouseDown(){
 		switch (clicks) {
 		case 0:
-			anim.SetTrigger ("Open");
-			anim.SetBool ("Opened", true);
-			++clicks;
+			if (!frontLetter.activeInHierarchy) {
+				anim.SetTrigger ("Open");
+				anim.SetBool ("Opened", true);
+				++clicks;
+				break;
+			}
 			break;
 		case 1:
-			SceneManager.LoadScene ("OpenedLetter");
-			++clicks;
+			if (anim.GetCurrentAnimatorStateInfo (0).IsName ("idleTop")) {
+				SceneManager.LoadScene ("OpenedLetter");
+				++clicks;
+				break;
+			}
 			break;
 		default:
 			break;

@@ -597,7 +597,7 @@ GameObject:
   - component: {fileID: 1134263828}
   - component: {fileID: 1134263827}
   m_Layer: 0
-  m_Name: Injection Office temp
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -689,6 +689,16 @@ Prefab:
     - target: {fileID: 4966869339078472, guid: 4689ac7b568f00d47bae85308b809d96, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 50734484827944978, guid: 4689ac7b568f00d47bae85308b809d96,
+        type: 2}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50734484827944978, guid: 4689ac7b568f00d47bae85308b809d96,
+        type: 2}
+      propertyPath: m_GravityScale
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4689ac7b568f00d47bae85308b809d96, type: 2}

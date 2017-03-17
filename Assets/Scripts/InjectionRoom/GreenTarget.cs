@@ -54,7 +54,7 @@ public class GreenTarget : MonoBehaviour {
 		}
 
 		if (timeLeftTillDestroy <= 0) {
-			scoreKeeper.Score -=100;;
+			scoreKeeper.Score -=100;
 			Destroy (gameObject);
 		}
 

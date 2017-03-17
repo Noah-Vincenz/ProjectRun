@@ -8,7 +8,7 @@ public class startRadiationGame : MonoBehaviour {
 
 	public Button myButton;
 	public Text time = null;
-	float timeLeft = 5;
+	float timeLeft = 3;
 	bool clicked=false;
 
 	void Start()
