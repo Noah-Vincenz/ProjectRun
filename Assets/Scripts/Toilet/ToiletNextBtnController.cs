@@ -19,11 +19,7 @@ public class ToiletNextBtnController : MonoBehaviour {
 	void Start () {
 		clicks = 0; 
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 
 	void OnMouseDown(){
 		switch (clicks){
@@ -33,20 +29,11 @@ public class ToiletNextBtnController : MonoBehaviour {
 			playerPanda.SetActive (true);
 			Destroy (text1.gameObject);
 			speechBubble.SetActive (false);
-			text2.SetActive (true);
-			++clicks;
-			break;
-			
-		case 1: 
-			Destroy (text2.gameObject);
-			speechBubble.SetActive (false);
-			text3.SetActive (true);
-			prompt2.SetActive (true);
-			screen.GetComponent<BoxCollider2D> ().enabled = true;
+//			text2.SetActive (true);
 			++clicks;
 			break;
 
-		case 2:
+		case 1: // end scene walk off
 			Destroy (speechBubble.gameObject);
 			pandaSC.walkOff ();
 			break;
