@@ -19,10 +19,10 @@ public class Spawner : MonoBehaviour {
 	}
 		
 	void Spawn1() {
-		Instantiate (RadioActive, new Vector3 (Random.Range (-9, 9), 5, 0), Quaternion.identity);
+		Instantiate (RadioActive, new Vector3 (Random.Range (-6, 6), 5, 0), Quaternion.identity);
 	}
 	void Spawn2() {
-		Instantiate (Bamboo, new Vector3 (Random.Range (-9, 9), 5, 0), Quaternion.identity);
+		Instantiate (Bamboo, new Vector3 (Random.Range (-6, 6), 5, 0), Quaternion.identity);
 	}
 	void Spawn3() {
 		Instantiate (Cube, new Vector3 (Random.Range (-4, 4), 5, 0), Quaternion.identity);

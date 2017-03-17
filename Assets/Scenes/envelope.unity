@@ -384,6 +384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e477011fdc1c97d4d96ac682435a714d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  frontLetter: {fileID: 1803883036}
   top: {fileID: 21300000, guid: 9658ca59cf7fcc84088c79ba78cf9a69, type: 3}
 --- !u!95 &1454763420
 Animator:

@@ -27,7 +27,7 @@ public class PandaLevel : MonoBehaviour
 			transform.position = new Vector2(transform.position.x, (float) updatedPos);
 		} 
 //		if (checkKeys) {
-			if (Input.GetKey ("w") && !upPressed) {
+		if ((Input.GetKey ("w")||Input.GetKey("up") )&& !upPressed) {
 				upPressed = true;
 
 				if (dest == -0.7) {
@@ -37,7 +37,7 @@ public class PandaLevel : MonoBehaviour
 					dest = -0.7;
 				}
 			}
-			if (Input.GetKey ("s") && !downPressed) {
+		if ((Input.GetKey ("s")||Input.GetKey("down") ) && !downPressed) {
 				downPressed = true;
 
 				if (dest == 1.6) {
@@ -51,10 +51,10 @@ public class PandaLevel : MonoBehaviour
 //			checkKeys = false;
 //		} 
 
-		if (Input.GetKeyUp ("w")) {
+		if (Input.GetKeyUp ("w")||Input.GetKeyUp("up")) {
 			upPressed = false;
 		}
-		if (Input.GetKeyUp ("s")) {
+		if (Input.GetKeyUp ("s")||Input.GetKeyUp("down")) {
 			downPressed = false;
 		}
 

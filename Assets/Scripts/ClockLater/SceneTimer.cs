@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class SceneTimer : MonoBehaviour {
 	public string sceneToLoad;
-	public float waitTime = 4;
+	public float waitTime = 6;
 	public GameObject background;
 
 	private float loadTime;
-	private float timeLeftForTransition;
+	private float timeLeftForTransition = 6;
 	private Material material;
 	private Color color;
 
@@ -26,7 +26,6 @@ public class SceneTimer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Time.time > waitTime) {
 			material = background.GetComponent<Renderer>().material;
 			color = material.color;
 			timeLeftForTransition -= Time.deltaTime;
@@ -38,6 +37,6 @@ public class SceneTimer : MonoBehaviour {
 			if (timeLeftForTransition <= 0) {
 				SceneManager.LoadScene (sceneToLoad);
 			}
-		}
+
 	}
 }

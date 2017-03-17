@@ -35,9 +35,12 @@ public class LetterMove : MonoBehaviour {
 	void OnMouseDown(){
 		switch (clicks){
 		case 0:
-			anim.SetTrigger ("flip");
-			anim.SetBool ("flipped", true);
-			++clicks;
+			if (anim.GetCurrentAnimatorStateInfo (0).IsName ("IddleDropped")) {
+				anim.SetTrigger ("flip");
+				anim.SetBool ("flipped", true);
+				++clicks;
+				break;
+			}
 			break;
 		//case 1:
 			//sp.sprite = openLet;
@@ -52,7 +55,7 @@ public class LetterMove : MonoBehaviour {
 	void swapobjects(){
 		swapBottom.GetComponent<SpriteRenderer> ().enabled=true;
 		swapTop.GetComponent<SpriteRenderer> ().enabled = true;
-		Destroy (this.gameObject);
+		gameObject.SetActive (false);
 
 	}
 
