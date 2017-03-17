@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40283ca88c8644fa4b729ef81be616d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panda: {fileID: 0}
+  panda: {fileID: 105623755}
   prompt: {fileID: 1688965261}
   prompt2: {fileID: 983570738}
   speechBubble: {fileID: 1821729253}
@@ -382,7 +382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b82073717cc1e480b86499cbb9c93dbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pandaSC: {fileID: 0}
+  pandaSC: {fileID: 105623755}
   playerPanda: {fileID: 105623754}
   text1: {fileID: 431274063}
   text2: {fileID: 1724523060}
