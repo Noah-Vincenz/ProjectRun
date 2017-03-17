@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PeePeeScreenController : MonoBehaviour {
+public class ToiletNoScanPeePeeScreenController : MonoBehaviour {
+
 	Animator anim;
 	public ToiletPandaController panda;
 	public GameObject prompt;
 	public GameObject prompt2;
 	public GameObject speechBubble;
-	public GameObject scanTxt;
 	public GameObject finalText;
 	public float wait;
 	int clicks;
@@ -37,9 +37,9 @@ public class PeePeeScreenController : MonoBehaviour {
 			GetComponent<BoxCollider2D> ().enabled = false;
 			++clicks;
 			break;
-			
+
 		}
-			
+
 
 	}
 
@@ -59,8 +59,7 @@ public class PeePeeScreenController : MonoBehaviour {
 
 	void inProgreesText(){
 		Debug.Log ("Call to inProgText");
-//		speechBubble.SetActive (true);
-		scanTxt.SetActive(true);
+		//		speechBubble.SetActive (true);
 	}
 	void activateBubble(){
 
@@ -76,7 +75,6 @@ public class PeePeeScreenController : MonoBehaviour {
 		yield return new WaitForSeconds(wait);
 		GetComponent<BoxCollider2D> ().enabled = true;
 		prompt2.SetActive (true);
-		Destroy (scanTxt.gameObject);
 		finalText.SetActive (true);
 	}
 }
