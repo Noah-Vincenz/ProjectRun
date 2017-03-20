@@ -43,12 +43,12 @@ public class NextButtonController : MonoBehaviour {
 						
 				case "DMSA":
 					Debug.Log("LOAD DMSA");
-					SceneManager.LoadScene ("45minClockScene");
+					SceneManager.LoadScene ("AnestheticCream");
 						break;
 			
 				case "Meckel":
 						Debug.Log("LOAD Meckel");
-					SceneManager.LoadScene ("45minClockScene");
+					SceneManager.LoadScene ("AnestheticCream");
 						//TODO Next scene for Meckel branch 
 						break;
 			
