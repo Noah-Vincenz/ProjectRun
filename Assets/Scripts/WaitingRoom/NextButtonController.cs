@@ -43,6 +43,7 @@ public class NextButtonController : MonoBehaviour {
 						
 				case "DMSA":
 					Debug.Log("LOAD DMSA");
+					SceneManager.LoadScene ("45minClockScene");
 						break;
 			
 				case "Meckel":
@@ -102,6 +103,8 @@ public class NextButtonController : MonoBehaviour {
 	public void loadNext(){
 		Debug.Log ("calling loadnext");
 		Debug.Log (itemTag);
+		GameObject procedure =  GameObject.Find ("SceneManager");
+		procedure.GetComponent<SceneManagerController> ().setProcedure(itemTag);
 		readyToMove = true;
 
 	}

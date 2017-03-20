@@ -15,6 +15,7 @@ TagManager:
   - Bamboo
   - Cube
   - Food
+  - GameProcedure
   layers:
   - Default
   - TransparentFX
