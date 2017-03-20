@@ -2353,6 +2353,9 @@ MonoBehaviour:
   animBelt: {fileID: 898387925}
   animPanda: {fileID: 645382893}
   prompt: {fileID: 303964838}
+  prompt2: {fileID: 303964838}
+  wait: 2
+  wait2: 3
 --- !u!61 &1574948475
 BoxCollider2D:
   m_ObjectHideFlags: 0

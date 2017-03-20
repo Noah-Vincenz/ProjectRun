@@ -12,12 +12,13 @@ public class BeltSceneController : MonoBehaviour {
 	public Animator animPanda;
 	float timeLeftforTransition=2;
 	float timeLeftForMovingScanner=3;
-	float timeTillPrompt=3;
-	float blinkTextTime=1;
-	private bool promptNeeded=true;
 	private bool readyToTransition;
 	private bool startMovingTimer=false;
 	public GameObject prompt;
+	bool interacted = false;
+	public float wait;
+	bool interacted2 = false;
+	public float wait2;
 
 	// Use this for initialization
 	void Start () {
@@ -25,11 +26,12 @@ public class BeltSceneController : MonoBehaviour {
 		var material1 = background.GetComponent<Renderer>().material;
 		var color1 = material1.color;
 		background.GetComponent<Renderer> ().material.color = new Color (color1.r, color1.g, color1.b, color1.a -color1.a);
-		
+		StartCoroutine ("prompt_time"); 
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
 		var material = background.GetComponent<Renderer> ().material;
 		var color = material.color;
 		if (readyToTransition) {
@@ -39,7 +41,7 @@ public class BeltSceneController : MonoBehaviour {
 		}
 
 		if (timeLeftforTransition <= 0) {
-			SceneManager.LoadScene ("IntroCatchRadiationGame");
+			SceneManager.LoadScene ("MovingScanIn");
 		}
 
 		if (startMovingTimer) {
@@ -49,30 +51,53 @@ public class BeltSceneController : MonoBehaviour {
 				startMovingTimer	 = false;
 			}
 		}
-
+			
 	
 	}
 
 	void OnMouseDown(){
+		
+			interacted = true; // stops prompt 
+			prompt.SetActive (false);
 
-		Debug.Log ("Clicks:" + click);
+
 		switch (click) {
 
 		case 1:// show text 
+			StartCoroutine ("prompt2_time"); 
 			animBelt.SetTrigger ("attachBelt");
 			++click;
 			break;
 		case 2:// show text 
 			if (animBelt.GetCurrentAnimatorStateInfo (0).IsName ("endIdle")) {
+				interacted = true; // stops prompt 
+				prompt.SetActive (false);
 				animPanda.SetTrigger ("happy");
 				animScanner.SetTrigger ("IsTimeToMove");
 				startMovingTimer = true;
-				promptNeeded = false;
+				++click;
 				break;
 			}
 			break;
 
 		}
 	}
+
+	IEnumerator prompt_time()
+	{
+		yield return new WaitForSeconds(wait);
+		if (!(interacted)) {
+			prompt.SetActive (true);
+		}
+	}
+
+	IEnumerator prompt2_time() //4 seconds
+	{
+		yield return new WaitForSeconds(wait2);
+		if (!(interacted2)) {
+			prompt.SetActive (true);
+		}
+	}
+
 }
 
