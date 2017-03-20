@@ -44,12 +44,12 @@ public class ClockController : MonoBehaviour {
 		minuteHand.GetComponent<ClockHand> ().correctPos = minuteSnap;
 		minuteHand.GetComponent<ClockHand> ().snapAngle = snapAngle;
 
-		minuteHint = Instantiate (arrowObj, new Vector3 ((5 * Mathf.Sin ((minuteSnap - 180) * Mathf.Deg2Rad) + 3), (5 * Mathf.Cos (minuteSnap * Mathf.Deg2Rad)), 0), Quaternion.Euler (0, 0, minuteSnap));
+		minuteHint = Instantiate (arrowObj, new Vector3 ((float) (4.2 * Mathf.Sin ((minuteSnap - 180) * Mathf.Deg2Rad) + 3), (float) (4 * Mathf.Cos (minuteSnap * Mathf.Deg2Rad)), 0), Quaternion.Euler (0, 0, minuteSnap));
 
 		hourHand.GetComponent<ClockHand> ().correctPos = hourSnap;
 		hourHand.GetComponent<ClockHand> ().snapAngle = snapAngle;
 
-		hourHint = Instantiate (arrowObj, new Vector3((5 * Mathf.Sin ((hourSnap - 180) * Mathf.Deg2Rad) + 3),(5*Mathf.Cos(hourSnap * Mathf.Deg2Rad)),0), Quaternion.Euler(0,0,hourSnap));
+		hourHint = Instantiate (arrowObj, new Vector3((float) (4.2 * Mathf.Sin ((hourSnap - 180) * Mathf.Deg2Rad) + 3), (float) (4*Mathf.Cos(hourSnap * Mathf.Deg2Rad)),0), Quaternion.Euler(0,0,hourSnap));
 
 		minuteHand.GetComponent<ClockHand>().isCorrect = minuteDisabled;
 		hourHand.GetComponent<ClockHand>().isCorrect = hourDisabled;
