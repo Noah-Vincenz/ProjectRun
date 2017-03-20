@@ -5,12 +5,16 @@ using UnityEngine.UI;
 
 public class tapCream : MonoBehaviour {
     Texture2D texture;
-    public  Sprite sprite;
+    public Sprite sprite;
     Vector2 hotspot = Vector2.zero;
     public Collider2D[] colliders;
+    public SpriteRenderer cursor = null;
+    public Text text2 = null;
+    public Text text3 = null;
+  
     private void Start()
     {
-       createTexture();
+       //createTexture();
     }
 
     /**
@@ -29,11 +33,14 @@ public class tapCream : MonoBehaviour {
 
     private void OnMouseDown()
     {
-        Cursor.SetCursor(texture, hotspot, CursorMode.Auto);
+        //Cursor.SetCursor(texture, hotspot, CursorMode.Auto);
         colliders[0].enabled = true;
         colliders[1].enabled = true;
         colliders[2].enabled = true;
         colliders[3].enabled = true;
+        cursor.enabled = true;
+        text2.enabled = false;
+        text3.enabled = true;
     }
     void createTexture()
     {

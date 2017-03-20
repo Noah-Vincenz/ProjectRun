@@ -9,17 +9,17 @@ public class creamTransparency : MonoBehaviour {
     public static float leftLegVal = 0;
     public static float rightArmVal = 0;
     public static float rightLegVal = 0;
-    public Image[] creams;
+    public GameObject[] creams;
     // Use this for initialization
     void Start()
     {
-        Color color = creams[0].color;
-        color.a = 0;
-        creams[0].color = color;
-        creams[1].color = color;
-        creams[2].color = color;
-        creams[3].color = color;
-       
+        Material mat = creams[0].GetComponent<Renderer>().material;
+        Color color = mat.color;
+        creams[0].GetComponent<Renderer>().material.color = new Color(color.r, color.g, color.b, 0);
+        creams[1].GetComponent<Renderer>().material.color = new Color(color.r, color.g, color.b, 0);
+        creams[2].GetComponent<Renderer>().material.color = new Color(color.r, color.g, color.b, 0);
+        creams[3].GetComponent<Renderer>().material.color = new Color(color.r, color.g, color.b, 0);
+
     }
 	
 	// Update is called once per frame
@@ -27,27 +27,40 @@ public class creamTransparency : MonoBehaviour {
 
         if (this.name == "LeftArmCream")
         {
-            Color color = creams[0].color;
-            color.a = (leftArmVal/150);
-            creams[0].color = color;
-        } else
+            Material mat = creams[0].GetComponent<Renderer>().material;
+            Color color = mat.color;
+            if ((leftArmVal / 150) <= 1)
+            {
+                creams[0].GetComponent<Renderer>().material.color = new Color(color.r, color.g, color.b, (leftArmVal / 150));
+            }
+        }
+        else
         if (this.name == "LeftLegCream")
         {
-            Color color = creams[1].color;
-            color.a = (leftLegVal / 150);
-            creams[1].color = color;
+            Material mat = creams[1].GetComponent<Renderer>().material;
+            Color color = mat.color;
+            if ((leftLegVal / 150) <= 1)
+            {
+                creams[1].GetComponent<Renderer>().material.color = new Color(color.r, color.g, color.b, (leftLegVal / 150));
+            }
         } else
         if (this.name == "RightArmCream")
         {
-            Color color = creams[2].color;
-            color.a = (rightArmVal / 150);
-            creams[2].color = color;
+            Material mat = creams[2].GetComponent<Renderer>().material;
+            Color color = mat.color;
+            if ((rightArmVal / 150) <= 1)
+            {
+                creams[2].GetComponent<Renderer>().material.color = new Color(color.r, color.g, color.b, (rightArmVal / 150));
+            }
         } else
         if (this.name == "RightLegCream")
         {
-            Color color = creams[3].color;
-            color.a = (rightLegVal / 150);
-            creams[3].color = color;
+            Material mat = creams[3].GetComponent<Renderer>().material;
+            Color color = mat.color;
+            if ((rightLegVal / 150) <= 1)
+            {
+                creams[3].GetComponent<Renderer>().material.color = new Color(color.r, color.g, color.b, (rightLegVal / 150));
+            }
 
         }
 
