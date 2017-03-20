@@ -26,6 +26,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/IntroCatchRadiationGame.unity
   - enabled: 1
+    path: Assets/Scenes/AnestheticCream.unity
+  - enabled: 1
     path: Assets/Scenes/CatchRadiationGame.unity
   - enabled: 1
     path: Assets/Scenes/Injection.unity
