@@ -8,6 +8,8 @@ public class ClockController : MonoBehaviour {
 
 	public GameObject wellDone;
 
+	public GameObject cover;
+
 	public GameObject background;
 
 	public GameObject arrowObj;
@@ -56,6 +58,8 @@ public class ClockController : MonoBehaviour {
 
 		minuteHand.GetComponent<ClockHand> ().enabled = true;
 		hourHand.GetComponent<ClockHand> ().enabled = true;
+
+		cover.GetComponent<SpriteRenderer> ().enabled = false;
 
 		if (minuteDisabled)
 			mode = 1;
@@ -106,6 +110,7 @@ public class ClockController : MonoBehaviour {
 				hourHint.SetActive(false);
 				waitUntil = Time.time + 4;
 				wellDone.GetComponent<SpriteRenderer> ().enabled = true;
+				cover.GetComponent<SpriteRenderer> ().enabled = true;
 				mode = 3;
 			}
 		}
