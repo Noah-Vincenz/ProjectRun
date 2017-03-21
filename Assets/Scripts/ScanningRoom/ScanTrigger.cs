@@ -8,7 +8,7 @@ public class ScanTrigger : MonoBehaviour {
 
 	void OnMouseDown(){
 
-		scanScript.canWalkOn ();
+		scanScript.canWalkOn (); //Activate this method when it has been clicked on
 
 	}
 
