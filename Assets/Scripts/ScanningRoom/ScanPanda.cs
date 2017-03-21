@@ -17,7 +17,6 @@ public class ScanPanda : MonoBehaviour {
 	Animator anim;
 	Rigidbody2D rb;
 
-	// Use this for initialization
 	void Start () {
 
 		anim = GetComponent<Animator>();
@@ -31,9 +30,7 @@ public class ScanPanda : MonoBehaviour {
 		readyForTransition = false;
 
 	}
-		
 
-	// Update is called once per frame
 	void Update () {
 
 		var material = background.GetComponent<Renderer>().material;
@@ -44,13 +41,13 @@ public class ScanPanda : MonoBehaviour {
 		if (canWalk) {
 
 			rb.velocity = Vector2.left * speed;
-			face.GetComponent<Animator>().SetBool("Walking", true);
+			face.GetComponent<Animator>().SetBool("Walking", true); //if true, walk to the left 
 
 		}
 		if (canClimb){
 
 			rb.velocity = new Vector2(0, 0);
-			anim.SetBool("IsClimbing", true);
+			anim.SetBool("IsClimbing", true); //when it approaches the collider climbing animation is activated
 			face.GetComponent<Animator>().SetBool("Walking", true);
 			timeLeftHitTrigger -= Time.deltaTime;
 
@@ -72,7 +69,7 @@ public class ScanPanda : MonoBehaviour {
 
 		if (timeLeftforTransition <= 0) {
 			
-			SceneManager.LoadScene ("BeltScene");
+			SceneManager.LoadScene ("BeltScene"); //load belt scene once it has climbed onto the bed
 
 		}
 

@@ -44,12 +44,7 @@ public class MoveBedIn : MonoBehaviour {
 			timeLeftforTransition -= Time.deltaTime;
 
 		}
-
-		if (timeLeftforTransition <= 0) {
-
-			SceneManager.LoadScene ("IntroCatchRadiationGame");
-
-		}
+			
 
 	}
 }

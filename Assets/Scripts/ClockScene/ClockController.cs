@@ -8,6 +8,8 @@ public class ClockController : MonoBehaviour {
 
 	public GameObject wellDone;
 
+	public GameObject cover;
+
 	public GameObject background;
 
 	public GameObject arrowObj;
@@ -44,18 +46,20 @@ public class ClockController : MonoBehaviour {
 		minuteHand.GetComponent<ClockHand> ().correctPos = minuteSnap;
 		minuteHand.GetComponent<ClockHand> ().snapAngle = snapAngle;
 
-		minuteHint = Instantiate (arrowObj, new Vector3 ((5 * Mathf.Sin ((minuteSnap - 180) * Mathf.Deg2Rad) + 3), (5 * Mathf.Cos (minuteSnap * Mathf.Deg2Rad)), 0), Quaternion.Euler (0, 0, minuteSnap));
+		minuteHint = Instantiate (arrowObj, new Vector3 ((float) (4.2 * Mathf.Sin ((minuteSnap - 180) * Mathf.Deg2Rad) + 3), (float) (4 * Mathf.Cos (minuteSnap * Mathf.Deg2Rad)), 0), Quaternion.Euler (0, 0, minuteSnap));
 
 		hourHand.GetComponent<ClockHand> ().correctPos = hourSnap;
 		hourHand.GetComponent<ClockHand> ().snapAngle = snapAngle;
 
-		hourHint = Instantiate (arrowObj, new Vector3((5 * Mathf.Sin ((hourSnap - 180) * Mathf.Deg2Rad) + 3),(5*Mathf.Cos(hourSnap * Mathf.Deg2Rad)),0), Quaternion.Euler(0,0,hourSnap));
+		hourHint = Instantiate (arrowObj, new Vector3((float) (4.2 * Mathf.Sin ((hourSnap - 180) * Mathf.Deg2Rad) + 3), (float) (4*Mathf.Cos(hourSnap * Mathf.Deg2Rad)),0), Quaternion.Euler(0,0,hourSnap));
 
 		minuteHand.GetComponent<ClockHand>().isCorrect = minuteDisabled;
 		hourHand.GetComponent<ClockHand>().isCorrect = hourDisabled;
 
 		minuteHand.GetComponent<ClockHand> ().enabled = true;
 		hourHand.GetComponent<ClockHand> ().enabled = true;
+
+		cover.GetComponent<SpriteRenderer> ().enabled = false;
 
 		if (minuteDisabled)
 			mode = 1;
@@ -106,6 +110,7 @@ public class ClockController : MonoBehaviour {
 				hourHint.SetActive(false);
 				waitUntil = Time.time + 4;
 				wellDone.GetComponent<SpriteRenderer> ().enabled = true;
+				cover.GetComponent<SpriteRenderer> ().enabled = true;
 				mode = 3;
 			}
 		}
