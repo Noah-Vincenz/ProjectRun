@@ -41,7 +41,7 @@ public class BeltSceneController : MonoBehaviour {
 		}
 
 		if (timeLeftforTransition <= 0) {
-			SceneManager.LoadScene ("MovingScanIn");
+			SceneManager.LoadScene ("IntroCatchRadiationGame");
 		}
 
 		if (startMovingTimer) {

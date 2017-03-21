@@ -36,6 +36,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/gameEnd.unity
   - enabled: 1
+    path: Assets/Scenes/MovingScan.unity
+  - enabled: 1
+    path: Assets/Scenes/MovingScanIn.unity
+  - enabled: 1
+    path: Assets/Scenes/MovingScanOut.unity
+  - enabled: 1
+    path: Assets/Scenes/Toilet.unity
+  - enabled: 1
+    path: Assets/Scenes/ToiletNoScan.unity
+  - enabled: 1
     path: Assets/Scenes/15minClockScene.unity
   - enabled: 1
     path: Assets/Scenes/1hrLater.unity

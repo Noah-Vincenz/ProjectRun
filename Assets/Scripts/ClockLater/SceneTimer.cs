@@ -35,7 +35,7 @@ public class SceneTimer : MonoBehaviour {
 			}
 
 			if (timeLeftForTransition <= 0) {
-				SceneManager.LoadScene (sceneToLoad);
+				SceneManager.LoadScene ("MovingScanOut");
 			}
 
 	}

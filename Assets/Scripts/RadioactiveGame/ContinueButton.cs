@@ -50,7 +50,33 @@ public class ContinueButton : MonoBehaviour {
 		}
 
 		if (timeLeftforTransition <= 0) {
-			SceneManager.LoadScene ("MovingScanOut");
+			switch (SceneManagerController.Instance.getProcedure()) { // switch dependant on selected game 
+
+			case "DMSA":
+				Debug.Log("LOAD DMSA");
+				SceneManager.LoadScene ("30minsLater");
+				break;
+
+			case "Meckel":
+				Debug.Log("LOAD Meckel");
+				SceneManager.LoadScene ("45minsLater");
+				//TODO Next scene for Meckel branch 
+				break;
+
+			case "RENOGRAMin":
+				SceneManager.LoadScene ("30minsLater");
+				//TODO Next scene for Renogram Indirect branch 
+				break;
+
+			case "RENOGRAM":
+				SceneManager.LoadScene ("30minsLater");
+				//TODO Next scene for Renogram branch 
+				break;
+
+			default:
+				SceneManager.LoadScene ("WaitingRoom");
+				break;
+			}
 		}
 	}
 

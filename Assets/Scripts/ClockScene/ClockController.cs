@@ -112,6 +112,7 @@ public class ClockController : MonoBehaviour {
 
 		//scene end code
 		if (mode == 3 && Time.time > waitUntil) {
+			Scene scene = SceneManager.GetActiveScene ();
 			material = background.GetComponent<Renderer>().material;
 			color = material.color;
 			timeLeftForTransition -= Time.deltaTime;
@@ -121,7 +122,46 @@ public class ClockController : MonoBehaviour {
 			}
 
 			if (timeLeftForTransition <= 0) {
-				SceneManager.LoadScene (sceneToLoad);
+				if (scene.name== "45minClockScene") {
+					switch (SceneManagerController.Instance.getProcedure ()) { // switch dependant on selected game 
+
+					case "DMSA":
+						Debug.Log ("LOAD DMSA");
+						SceneManager.LoadScene ("Injection");
+						break;
+
+					case "Meckel":
+						Debug.Log ("LOAD Meckel");
+						SceneManager.LoadScene ("Injection");
+					//TODO Next scene for Meckel branch 
+						break;
+
+					case "RENOGRAMin":
+						SceneManager.LoadScene ("Injection");
+					//TODO Next scene for Renogram Indirect branch 
+						break;
+
+					case "RENOGRAM":
+						SceneManager.LoadScene ("Injection");
+					//TODO Next scene for Renogram branch 
+						break;
+
+					default:
+						SceneManager.LoadScene (sceneToLoad);
+						break;
+					}
+				} else {
+					switch (SceneManagerController.Instance.getProcedure ()) {
+
+					case "DMSA":
+						Debug.Log ("LOAD DMSA");
+						SceneManager.LoadScene ("ScanningRoom");
+						break;
+					default:
+						SceneManager.LoadScene (sceneToLoad);
+						break;
+					}
+				}
 			}
 		}
 	}

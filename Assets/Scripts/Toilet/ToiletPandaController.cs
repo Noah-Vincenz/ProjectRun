@@ -85,7 +85,22 @@ public class ToiletPandaController : MonoBehaviour {
 	 * method to call function in nextBtn script to load the next scene.
 	 */
 	void OnDestroy(){
-		SceneManager.LoadScene ("ScanningRoom");
+		switch (SceneManagerController.Instance.getProcedure()) { // switch dependant on selected game 
+
+		case "RENOGRAMin":
+			SceneManager.LoadScene ("EndWaitingRoom");
+			//TODO Next scene for Renogram Indirect branch 
+			break;
+
+		case "RENOGRAM":
+			SceneManager.LoadScene ("MovingScan");
+			//TODO Next scene for Renogram branch 
+			break;
+
+		default:
+			SceneManager.LoadScene ("WaitingRoom");
+			break;
+		}
 	}
 		
 }

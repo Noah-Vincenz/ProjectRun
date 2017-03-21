@@ -47,7 +47,33 @@ public class MoveBedOut : MonoBehaviour {
 			
 		if (timeLeftforTransition <= 0) {
 
-			SceneManager.LoadScene ("endWaitingRoom");
+			switch (SceneManagerController.Instance.getProcedure()) { // switch dependant on selected game 
+
+			case "DMSA":
+				Debug.Log("LOAD DMSA");
+				SceneManager.LoadScene ("EndWaitingRoom");
+				break;
+
+			case "Meckel":
+				Debug.Log("LOAD Meckel");
+				SceneManager.LoadScene ("EndWaitingRoom");
+				//TODO Next scene for Meckel branch 
+				break;
+
+			case "RENOGRAMin":
+				SceneManager.LoadScene ("Toilet");
+				//TODO Next scene for Renogram Indirect branch 
+				break;
+
+			case "RENOGRAM":
+				SceneManager.LoadScene ("ToiletNoScan");
+				//TODO Next scene for Renogram branch 
+				break;
+
+			default:
+				SceneManager.LoadScene ("WaitingRoom");
+				break;
+			}
 
 		}
 

@@ -39,33 +39,7 @@ public class NextButtonController : MonoBehaviour {
 		}
 
 		if (timeLeftforTransition <= 0) {
-			switch (itemTag) { // switch dependant on selected game 
-						
-				case "DMSA":
-					Debug.Log("LOAD DMSA");
-					SceneManager.LoadScene ("AnestheticCream");
-						break;
-			
-				case "Meckel":
-						Debug.Log("LOAD Meckel");
-					SceneManager.LoadScene ("AnestheticCream");
-						//TODO Next scene for Meckel branch 
-						break;
-			
-					case "RENOGRAMin":
-						Debug.Log("LOAD Renogram Indirect");
-						//TODO Next scene for Renogram Indirect branch 
-						break;
-			
-					case "RENOGRAM":
-						Debug.Log("LOAD Renogram");
-						//TODO Next scene for Renogram branch 
-						break;
-			
-					default:
-						Debug.Log ("Bad Tag: " + tag); // should'nt happen 
-						break;
-					}
+			SceneManager.LoadScene ("AnestheticCream");
 		}
 
 	}

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SceneManagerController : MonoBehaviour {
-	private static SceneManagerController Instance = null;
+	public static SceneManagerController Instance = null;
 
 	private string procedure ;
 
