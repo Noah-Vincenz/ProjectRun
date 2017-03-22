@@ -10,6 +10,7 @@ public class NextButtonController : MonoBehaviour {
 	public GameObject textTwo;
 	public GameObject speechBubble;
 	public GameObject background; // background for transition
+	public GameObject sofa;
 	bool readyToMove;
 	public WaitingRoom_Panda_Controller panda;
 
@@ -47,10 +48,11 @@ public class NextButtonController : MonoBehaviour {
 	void OnMouseDown(){
 		switch (clicks){
 
-		case 0 :// show menu 
-			menu.SetActive(true);
+		case 0:// show menu 
+			menu.SetActive (true);
 			speechBubble.SetActive (false); 
 			Destroy (textOne.gameObject);
+			sofa.GetComponent<BoxCollider2D> ().enabled = false;
 			++clicks;
 			break;
 		case 1: // panda leave 
