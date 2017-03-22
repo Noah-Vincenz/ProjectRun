@@ -10,7 +10,8 @@ public class StartBtnScript : MonoBehaviour {
 
 	public GameObject background;
 
-	float timeLeftforTransition=2;
+	public Text time = null;
+	float timeLeft = 3;
 	private bool readyToTransition;
 
 
@@ -29,14 +30,18 @@ public class StartBtnScript : MonoBehaviour {
 		var material = background.GetComponent<Renderer>().material;
 		var color = material.color;
 		if (readyToTransition) {
-			Debug.Log ("Ending Scene");
-			background.SetActive (enabled);
-			material.color = new Color (color.r, color.g, color.b, color.a + (1f * Time.deltaTime));
-			timeLeftforTransition -= Time.deltaTime;
-		}
-
-		if (timeLeftforTransition <= 0) {
-			SceneManager.LoadScene ("FoodGame");
+			if (Mathf.Round (timeLeft) == 0) {
+				time.text = "GO!";
+				timeLeft -= Time.deltaTime;
+			} else if (Mathf.Round (timeLeft) == -1) {
+				Debug.Log ("Ending Scene");
+				background.SetActive (enabled);
+				material.color = new Color (color.r, color.g, color.b, color.a + (1f * Time.deltaTime));
+				Invoke ("loadScene", 1.5f);
+			} else {
+				timeLeft -= Time.deltaTime;
+				changeText ();
+			}
 		}
 	}
 
@@ -44,5 +49,15 @@ public class StartBtnScript : MonoBehaviour {
 	void OnMouseDown() {
 		Debug.Log ("Clicks on startBtn");
 		readyToTransition = true;
+	}
+
+	void changeText()
+	{
+		time.text = "" + Mathf.Round(timeLeft);
+	}
+
+	void loadScene()
+	{
+		SceneManager.LoadScene("FoodGame");
 	}
 }
