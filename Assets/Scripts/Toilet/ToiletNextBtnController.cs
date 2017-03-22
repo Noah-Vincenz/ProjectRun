@@ -35,6 +35,7 @@ public class ToiletNextBtnController : MonoBehaviour {
 
 		case 1: // end scene walk off
 			Destroy (speechBubble.gameObject);
+			Destroy (text3.gameObject);
 			pandaSC.walkOff ();
 			break;
 		default : 

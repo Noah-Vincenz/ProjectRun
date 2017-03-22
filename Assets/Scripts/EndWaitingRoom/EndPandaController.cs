@@ -8,7 +8,7 @@ public class EndPandaController : MonoBehaviour {
 	public float speed;
 	public GameObject face;
 	public GameObject speechBub;
-	public GameObject text;
+	//public GameObject text;
 
 	int click = 0;
 	bool walkOne;

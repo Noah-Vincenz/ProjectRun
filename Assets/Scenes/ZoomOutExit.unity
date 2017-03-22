@@ -602,7 +602,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: That's the end of your visit, goodbye!
+  m_Text: That's the end of our visit, goodbye!
 --- !u!222 &795518636
 CanvasRenderer:
   m_ObjectHideFlags: 0

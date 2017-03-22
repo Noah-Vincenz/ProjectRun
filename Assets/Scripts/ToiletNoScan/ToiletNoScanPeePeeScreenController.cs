@@ -77,6 +77,7 @@ public class ToiletNoScanPeePeeScreenController : MonoBehaviour {
 	void activateBubble(){
 
 		speechBubble.SetActive (true);
+		finalText.SetActive (true);
 
 	}
 
@@ -89,6 +90,6 @@ public class ToiletNoScanPeePeeScreenController : MonoBehaviour {
 		yield return new WaitForSeconds(wait);
 		GetComponent<BoxCollider2D> ().enabled = true;
 		prompt2.SetActive (true);
-		finalText.SetActive (true);
+		//finalText.SetActive (true);
 	}
 }

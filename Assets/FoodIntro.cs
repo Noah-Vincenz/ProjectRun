@@ -30,6 +30,7 @@ public class FoodIntro : MonoBehaviour {
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
 		StartCoroutine ("prompt_time");
+		speechBub.SetActive (false);
 
 	}
 	// Update is called once per frame
@@ -37,9 +38,10 @@ public class FoodIntro : MonoBehaviour {
 		if (Input.GetMouseButtonDown(0) && click == 0){
 			Debug.Log("0 button clicked" + firstClick);
 			interacted = true; //stops prompt
-			prompt.SetActive (false); //removes the prompt 
-			speechBub.GetComponent<Renderer> ().enabled = true;// renders speech bubble
-			text1.GetComponent<Renderer> ().enabled = true;// renders text 2
+			prompt.SetActive (false); //removes the prompt
+			speechBub.SetActive(true);
+			//speechBub.GetComponent<Renderer> ().enabled = true;// renders speech bubble
+			text1.SetActive(true);
 			arrow.GetComponent<Renderer> ().enabled = true; //renders the arrow
 			++click;
 		}
@@ -54,7 +56,8 @@ public class FoodIntro : MonoBehaviour {
 			Debug.Log ("Panda Click event 2");
 //			firstClick = false;
 			Destroy (text1.gameObject);
-			text2.GetComponent<Renderer> ().enabled = true;// renders text 2
+			text2.SetActive (true);
+			//text2.GetComponent<Renderer> ().enabled = true;// renders text 2
 			++click;
 			break;
 		case 2:// show text 
