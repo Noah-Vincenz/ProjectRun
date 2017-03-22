@@ -10,16 +10,18 @@ public class ChangeCouchColor : MonoBehaviour {
 	public Sprite couchcolor4; 
 	public GameObject couch;
 	SpriteRenderer spriteRenderer;
+	private AudioSource source;
 
 	// Use this for initialization
 	void Start () {
-		
+		source = GetComponent<AudioSource>();
+		source.time = 0.8f;
 		spriteRenderer = gameObject.GetComponent<SpriteRenderer>(); 
 	}
 		
 	//On Mouse click change color of couch...simply changes the sprite depending on previous sprite
 	void OnMouseDown(){
-
+		source.Play ();
 		if (spriteRenderer.sprite == couchcolor1)
 			spriteRenderer.sprite = couchcolor2;
 			

@@ -11,6 +11,9 @@ public class ButtonControl : MonoBehaviour {
 	public Sprite sun;
 	public GameObject sunObj;
 	public GameObject Sky;	
+	public AudioSource button;
+	public AudioSource day;
+	public AudioSource night;
 
 	private int click = 0; 
 	private float fadeSpeed = 0.5f;
@@ -43,18 +46,21 @@ public class ButtonControl : MonoBehaviour {
 
 	void OnMouseDown(){
 		sr.sprite = pressed; // button down 
+		button.Play();
 		switch (click) {
 
 		case 0: // sun rise 
 			if(anim.GetCurrentAnimatorStateInfo (0).IsName ("Idle_Down")){
 				sunSR.sprite = sun; // set image to sun
 				riseAnim(); // call set animation method
+				day.Play();
 				++click;
 			}
 			break;
 		case 1: // sun set 
 			if (anim.GetCurrentAnimatorStateInfo (0).IsName ("Idle_Up")) {
 				setAnim ();
+				day.Stop();
 				++click;
 			}
 			break;
@@ -63,6 +69,7 @@ public class ButtonControl : MonoBehaviour {
 			if (anim.GetCurrentAnimatorStateInfo (0).IsName ("Idle_Down")) {
 				sunSR.sprite = moon; // set image to moon 
 				riseAnim (); // call rise animation method 
+				night.Play();
 				++click;
 			}
 			break;
@@ -70,6 +77,7 @@ public class ButtonControl : MonoBehaviour {
 		case 3: // moon set 
 			if (anim.GetCurrentAnimatorStateInfo (0).IsName ("Idle_Up")) {
 				setAnim ();
+				night.Stop();
 				click = 0;
 			}
 			break;

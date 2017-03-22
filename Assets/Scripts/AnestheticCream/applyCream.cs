@@ -5,6 +5,13 @@ using UnityEngine;
 public class applyCream : MonoBehaviour {
 
     bool mouseDown = false;
+	private AudioSource source;
+
+	private void Start()
+	{
+		source = GetComponent<AudioSource>();
+		source.time = 3f;
+	}
 
     void OnMouseOver()
     {
@@ -42,6 +49,7 @@ public class applyCream : MonoBehaviour {
     void OnMouseDown()
     {
         mouseDown = true;
+		source.Play ();
     }
 
     void OnMouseUp()
@@ -51,6 +59,7 @@ public class applyCream : MonoBehaviour {
             fillBar.timeDown = 0;
         }
         mouseDown = false;
+		source.Stop ();
     }
 
 }

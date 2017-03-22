@@ -17,6 +17,7 @@ public class RedTargetControl : MonoBehaviour {
 	ScoreKeeper scoreKeeper;
 	SpriteRenderer spriteRenderer;
 	CircleCollider2D coll;
+	public AudioSource source;
 
 	void Start () {
 		pandaFaceEmotionObject = GameObject.Find ("PandaFaceReaction");
@@ -27,6 +28,7 @@ public class RedTargetControl : MonoBehaviour {
 		scoreKeeper = ScoreKeeperScoreBoard.GetComponent<ScoreKeeper> ();
 		spriteRenderer = gameObject.GetComponent<SpriteRenderer>(); 
 		coll = gameObject.GetComponent<CircleCollider2D> ();
+		source = GetComponent<AudioSource>();
 
 	}
 
@@ -57,6 +59,7 @@ public class RedTargetControl : MonoBehaviour {
 
 	}
 	void OnMouseDown(){
+		source.Play ();
 		scoreKeeper.Score -=100;
 		sad = true;
 		spriteRenderer.enabled=false;

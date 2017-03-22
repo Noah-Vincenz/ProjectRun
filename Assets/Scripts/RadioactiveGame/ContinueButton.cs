@@ -64,12 +64,12 @@ public class ContinueButton : MonoBehaviour {
 				break;
 
 			case "RENOGRAMin":
-				SceneManager.LoadScene ("30minsLater");
+				SceneManager.LoadScene ("20minsLater");
 				//TODO Next scene for Renogram Indirect branch 
 				break;
 
 			case "RENOGRAM":
-				SceneManager.LoadScene ("30minsLater");
+				SceneManager.LoadScene ("20minsLater");
 				//TODO Next scene for Renogram branch 
 				break;
 

@@ -20,6 +20,7 @@ public class GreenTarget : MonoBehaviour {
 	CircleCollider2D coll;
 	public GameObject starCelebration;
 	private GameObject instantiatedObj;
+	public AudioSource source;
 
 	void Start () {
 		pandaFaceEmotionObject = GameObject.Find ("PandaFaceReaction");
@@ -30,6 +31,7 @@ public class GreenTarget : MonoBehaviour {
 		scoreKeeper = ScoreKeeperScoreBoard.GetComponent<ScoreKeeper> ();
 		spriteRenderer = gameObject.GetComponent<SpriteRenderer>(); 
 		coll = gameObject.GetComponent<CircleCollider2D> ();
+		source = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -61,6 +63,7 @@ public class GreenTarget : MonoBehaviour {
 		
 	}
 	void OnMouseDown(){
+		source.Play ();
 		scoreKeeper.Score +=100;
 		happy = true;
 		spriteRenderer.enabled = false;	

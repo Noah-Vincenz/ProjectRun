@@ -9,11 +9,13 @@ public class FishController : MonoBehaviour {
 	public GameObject fish;
 	public GameObject bubblesPreFab;
 	public float swimSpeed=1;
+	private AudioSource source;
 
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
+		source = GetComponent<AudioSource>();
 
 	}
 	
@@ -38,6 +40,7 @@ public class FishController : MonoBehaviour {
 				anim.SetTrigger("Right Jump");
 			anim.SetBool ("Jumping", true);
 			Instantiate(bubblesPreFab);//create bubble
+			source.Play();
 		}
 	}
 

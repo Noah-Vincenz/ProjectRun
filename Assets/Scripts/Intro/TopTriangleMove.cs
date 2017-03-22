@@ -10,10 +10,12 @@ public class TopTriangleMove : MonoBehaviour {
 	public GameObject frontLetter;
 	public Sprite top;
     SpriteRenderer sp;
+	private AudioSource source;
 	// Use this for initialization
 	void Start () {
 		sp = GetComponent<SpriteRenderer>();
 		anim = GetComponent<Animator>();
+		source = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -26,6 +28,7 @@ public class TopTriangleMove : MonoBehaviour {
 		switch (clicks) {
 		case 0:
 			if (!frontLetter.activeInHierarchy) {
+				source.Play ();
 				anim.SetTrigger ("Open");
 				anim.SetBool ("Opened", true);
 				++clicks;
