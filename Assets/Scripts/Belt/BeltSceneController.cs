@@ -19,6 +19,7 @@ public class BeltSceneController : MonoBehaviour {
 	public float wait;
 	bool interacted2 = false;
 	public float wait2;
+	private AudioSource source;
 
 	// Use this for initialization
 	void Start () {
@@ -27,6 +28,8 @@ public class BeltSceneController : MonoBehaviour {
 		var color1 = material1.color;
 		background.GetComponent<Renderer> ().material.color = new Color (color1.r, color1.g, color1.b, color1.a -color1.a);
 		StartCoroutine ("prompt_time"); 
+		source = GetComponent<AudioSource>();
+		source.time = 3f;
 	}
 	
 	// Update is called once per frame
@@ -48,9 +51,11 @@ public class BeltSceneController : MonoBehaviour {
 			timeLeftForMovingScanner -= Time.deltaTime;
 			if (timeLeftForMovingScanner <= 0) {
 				readyToTransition = true;
+				source.Stop ();
 				startMovingTimer	 = false;
 			}
 		}
+			
 			
 	
 	}
@@ -70,6 +75,7 @@ public class BeltSceneController : MonoBehaviour {
 			break;
 		case 2:// show text 
 			if (animBelt.GetCurrentAnimatorStateInfo (0).IsName ("endIdle")) {
+				source.Play ();
 				interacted = true; // stops prompt 
 				prompt.SetActive (false);
 				animPanda.SetTrigger ("happy");

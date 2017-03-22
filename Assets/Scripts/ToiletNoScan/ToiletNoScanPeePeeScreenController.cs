@@ -12,16 +12,27 @@ public class ToiletNoScanPeePeeScreenController : MonoBehaviour {
 	public GameObject finalText;
 	public float wait;
 	int clicks;
+	public AudioSource roll;
+	public AudioSource pee;
+	public AudioSource flush;
+
 	// Use this for initialization
 	void Start () {
 		clicks = 0;
 		anim = GetComponent<Animator>();
+		roll.time = 1f;
+	}
+
+	void Update () {
+		if (roll.time >= 2.5f)
+			roll.Stop ();
 	}
 
 	void OnMouseDown(){
 		switch (clicks){
 
 		case 0:  // move screen over panda
+			roll.Play ();
 			anim.SetTrigger ("MoveScreen");
 			anim.SetBool ("moved", true);
 			StartCoroutine("scanWait");
@@ -31,6 +42,8 @@ public class ToiletNoScanPeePeeScreenController : MonoBehaviour {
 			break;
 
 		case 1: // moves screen back to original position
+			roll.Play ();
+			flush.Play ();
 			anim.SetTrigger ("moveBack");
 			anim.SetBool ("moved", false);
 			Destroy (prompt2.gameObject);
@@ -72,6 +85,7 @@ public class ToiletNoScanPeePeeScreenController : MonoBehaviour {
 	 */
 	IEnumerator scanWait()
 	{
+		pee.Play ();
 		yield return new WaitForSeconds(wait);
 		GetComponent<BoxCollider2D> ().enabled = true;
 		prompt2.SetActive (true);

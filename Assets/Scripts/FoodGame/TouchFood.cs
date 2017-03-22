@@ -16,6 +16,7 @@ public class TouchFood : MonoBehaviour {
 	ScoreKeeper scoreKeeper;
 	Timer timerScript;
 	SpriteRenderer spriteRenderer;
+	private AudioSource source;
 	bool sad=false;
 	float nTime;
 
@@ -28,6 +29,7 @@ public class TouchFood : MonoBehaviour {
 		ScoreKeeperScoreBoard = GameObject.Find ("Canvas/ScoreBoard").gameObject;
 		timerScript = GameObject.Find ("Canvas/Timer").gameObject.GetComponent<Timer> ();
 		scoreKeeper = ScoreKeeperScoreBoard.GetComponent<ScoreKeeper> ();
+		source = GetComponent<AudioSource>();
 
 	}
 	
@@ -57,6 +59,7 @@ public class TouchFood : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D coll) {
 
 		if(coll.gameObject.tag == "Food" && timerScript.getTime() > 1){
+				source.Play ();
 				scoreKeeper.Score -=100;
 				sad = true;
 			}

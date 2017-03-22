@@ -11,8 +11,10 @@ public class fillBar : MonoBehaviour {
     public Image panda = null;
     public Image next = null;
     public Text text = null;
+	private AudioSource source;
 
     void Start () {
+		source = GetComponent<AudioSource>();
         image.GetComponent<Image>();
         image.fillAmount = 0;
     }
@@ -27,6 +29,7 @@ public class fillBar : MonoBehaviour {
         } else
         if (image.fillAmount >= 0.5)
         {
+			source.Play ();
             panda.sprite = sprites[1];
         }
     }
