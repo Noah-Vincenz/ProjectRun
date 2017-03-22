@@ -64,7 +64,10 @@ public class BeltSceneController : MonoBehaviour {
 		
 			interacted = true; // stops prompt 
 			prompt.SetActive (false);
-
+			
+		if (click == 2) {
+			interacted2 = true;
+		}
 
 		switch (click) {
 
