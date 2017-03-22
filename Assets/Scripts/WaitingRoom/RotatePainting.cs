@@ -11,11 +11,13 @@ public class RotatePainting : MonoBehaviour {
 	SpriteRenderer spriteRenderer;
 	public Sprite normalPainting;
 	public Sprite eggPainting;
+	private AudioSource source;
 
 	void Start () {
 		
 		myCam=Camera.main;
 		spriteRenderer = gameObject.GetComponent<SpriteRenderer>(); 
+		source = GetComponent<AudioSource>();
 	}
 
 	//in charge or painting Rotation
@@ -41,10 +43,12 @@ public class RotatePainting : MonoBehaviour {
 			// easter egg if 
 			if (transform.localRotation.z >= 0.99f && transform.localRotation.z < 1f && !(Input.GetMouseButton (0))) { // painting easter egg :) conditions: painting upsidedown && mousebutton released 
 				Debug.Log ("painting egg");
+				source.pitch = -1;
 				spriteRenderer.sprite = eggPainting; // changes painting when upside down
-			} else if (!(Input.GetMouseButton (0)) ) // mouse button not pressed  {
+			} else if (!(Input.GetMouseButton (0))) { // mouse button not pressed  {
+				source.pitch = 1;
 				spriteRenderer.sprite = normalPainting; 
-			
+			}
 
 		}
 

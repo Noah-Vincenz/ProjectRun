@@ -15,6 +15,8 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 	public GameObject prompt;
 	public float spawnTime;
 	public float wait;
+	public AudioSource snore;
+	public AudioSource yawn;
 
 	Animator anim;
 	Rigidbody2D rb;
@@ -25,6 +27,7 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 	bool finalMove = false;
 	int click = 0; 
 
+
 	// Use this for initialization
 	void Start()
 	{
@@ -34,6 +37,7 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 		face.GetComponent<Animator>().SetBool("isSleeping", true);
 		InvokeRepeating ("SpawnZ", 0, spawnTime); // calls the spawnZ method repeatedly
 		StartCoroutine("prompt_time"); // start Coroutine for click me prompt 
+		yawn.time = 0.2f;
 	}
 
 	void Update(){
@@ -68,6 +72,8 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 			Destroy (this.gameObject);
 		}
 
+		if (yawn.time >= 1.4f)
+			yawn.Stop ();
 
 	}
 	void OnMouseDown(){
@@ -76,6 +82,8 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 		switch (click) {// switch for each click on panda 
 
 		case 0://wake up panda from sleep state 
+			snore.Stop ();
+			yawn.Play ();
 			CancelInvoke (); // Stops Z's from spawning
 			GameObject[] zObjects = GameObject.FindGameObjectsWithTag ("Z"); // array of all z objects
 			foreach (GameObject z in zObjects) { 

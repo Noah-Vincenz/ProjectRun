@@ -172,6 +172,7 @@ public class PandaRadiationControl : MonoBehaviour {
 				sad = true;
 				Vector3 bombPos = new Vector3 (coll.gameObject.transform.position.x, coll.gameObject.transform.position.y, -2);
 				instantiatedObj2= Instantiate(fireLoseParticle,bombPos,fireLoseParticle.transform.rotation);
+				instantiatedObj2.GetComponent<AudioSource> ().Play ();
 				gameOverText.text = "You were hit by a bomb.\nTry again?";
 				hitByBomb = true;
 				StopMoving ();

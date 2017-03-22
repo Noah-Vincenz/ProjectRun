@@ -11,28 +11,26 @@ public class tapCream : MonoBehaviour {
     public SpriteRenderer cursor = null;
     public Text text2 = null;
     public Text text3 = null;
+	private AudioSource source;
   
     private void Start()
     {
-       //createTexture();
+		source = GetComponent<AudioSource>();
+		source.time = 1f;
     }
 
-    /**
+    
 	void Update () {
-        if (Input.GetMouseButtonDown(0))
-        {
-            //Cursor.SetCursor(texture,hotspot,CursorMode.Auto);
-            
-            colliders[0].enabled = true;
-            colliders[1].enabled = true;
-            colliders[2].enabled = true; 
-            
-        }
+		if (source.time >= 2) {
+			source.Stop ();
+		}
+			
     }
-    **/
+
 
     private void OnMouseDown()
     {
+		source.Play ();
         //Cursor.SetCursor(texture, hotspot, CursorMode.Auto);
         colliders[0].enabled = true;
         colliders[1].enabled = true;

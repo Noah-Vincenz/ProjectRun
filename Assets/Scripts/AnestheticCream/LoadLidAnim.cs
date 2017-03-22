@@ -9,14 +9,19 @@ public class LoadLidAnim : MonoBehaviour {
     public Collider2D openCreamCol = null;
     public Text text = null;
     public Text text2 = null;
+	private AudioSource source;
+
 
     private void Start()
     {
         anim = GetComponent<Animator>();
+		source = GetComponent<AudioSource>();
     }
+
  
     void OnMouseDown()
     {
+		source.Play ();
         anim.Play("LidOpen");
         openCreamCol.enabled = true;
         text.enabled = false;

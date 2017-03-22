@@ -12,6 +12,7 @@ public class ScanPanda : MonoBehaviour {
 	float timeLeftforTransition=2;
 	float timeLeftHitTrigger=2;
 	private bool readyForTransition;
+	private AudioSource source;
 
 	bool canWalk;
 	Animator anim;
@@ -29,6 +30,8 @@ public class ScanPanda : MonoBehaviour {
 		background.GetComponent<Renderer> ().material.color = new Color (color1.r, color1.g, color1.b, color1.a -color1.a);
 		readyForTransition = false;
 
+		source = GetComponent<AudioSource>();
+
 	}
 
 	void Update () {
@@ -39,12 +42,13 @@ public class ScanPanda : MonoBehaviour {
 		anim.SetFloat("Speed", rb.velocity.x);
 
 		if (canWalk) {
-
+			
 			rb.velocity = Vector2.left * speed;
 			face.GetComponent<Animator>().SetBool("Walking", true); //if true, walk to the left 
 
 		}
 		if (canClimb){
+
 
 			rb.velocity = new Vector2(0, 0);
 			anim.SetBool("IsClimbing", true); //when it approaches the collider climbing animation is activated
@@ -56,6 +60,7 @@ public class ScanPanda : MonoBehaviour {
 		if (timeLeftHitTrigger <= 0) {
 
 			readyForTransition = true;
+
 
 		}
 
@@ -78,6 +83,7 @@ public class ScanPanda : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D col){
 
 		canClimb = true;
+		source.Play ();
 
 	}
 
