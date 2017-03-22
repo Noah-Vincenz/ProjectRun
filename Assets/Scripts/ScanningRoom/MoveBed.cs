@@ -9,7 +9,7 @@ public class MoveBed : MonoBehaviour {
 	private float speed;
 	public float leftPos;
 	public float rightPos;
-	float timeLeftforTransition=6;
+	float timeLeftforTransition=10;
 	private bool readyForTransition;
 	public GameObject background;
 

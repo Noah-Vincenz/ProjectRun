@@ -111,6 +111,7 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 			if (anim.GetCurrentAnimatorStateInfo (0).IsName ("Idle")) {
 				Debug.Log ("Panda Click event-3");
 				speechBub.SetActive(true);// renders speech bubble 
+				text.SetActive(true);
 				happyFace(); // method to make panda happy 
 				++click;
 			}
