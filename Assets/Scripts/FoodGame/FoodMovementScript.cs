@@ -26,7 +26,8 @@ public class FoodMovementScript : MonoBehaviour {
 				newYPos = -4.9;
 			}
 			transform.position = new Vector2(66, (float) newYPos);
-			//print ("Collided");
+			transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y,0);
+				
 		}
 	}
 }
