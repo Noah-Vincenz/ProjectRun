@@ -330,6 +330,7 @@ MonoBehaviour:
   textTwo: {fileID: 646050387}
   speechBubble: {fileID: 754759690}
   background: {fileID: 599377112}
+  sofa: {fileID: 1602809205}
   panda: {fileID: 1934421350}
 --- !u!61 &315122886
 BoxCollider2D:
@@ -1310,6 +1311,7 @@ MonoBehaviour:
   speechBub: {fileID: 754759690}
   text2Obj: {fileID: 646050387}
   menu: {fileID: 642478362}
+  sofa: {fileID: 1602809205}
   text: {fileID: 21300000, guid: 7388ecac327c84686a9789ad359ae67b, type: 3}
 --- !u!1 &993548582
 GameObject:
@@ -1409,6 +1411,7 @@ MonoBehaviour:
   speechBub: {fileID: 754759690}
   text2Obj: {fileID: 646050387}
   menu: {fileID: 642478362}
+  sofa: {fileID: 1602809205}
   text: {fileID: 21300000, guid: 7388ecac327c84686a9789ad359ae67b, type: 3}
 --- !u!1 &1040202275
 GameObject:
@@ -1420,7 +1423,7 @@ GameObject:
   - component: {fileID: 1040202279}
   - component: {fileID: 1040202278}
   m_Layer: 11
-  m_Name: Panda
+  m_Name: Tiger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1457,7 +1460,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 192753055
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d30ace37d27545a458e3b4ccd4be20d1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 99ceabcbda4854b5fa4a66425132f276, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1468,8 +1471,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1040202275}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.07, y: 1.47, z: 0}
-  m_LocalScale: {x: 0.053072862, y: 0.053072862, z: 0.053072862}
+  m_LocalPosition: {x: -5.227, y: 1.497, z: 0}
+  m_LocalScale: {x: 0.5345689, y: 0.5345689, z: 0.5345689}
   m_Children: []
   m_Father: {fileID: 1933161807}
   m_RootOrder: 2
@@ -2186,6 +2189,7 @@ MonoBehaviour:
   speechBub: {fileID: 754759690}
   text2Obj: {fileID: 646050387}
   menu: {fileID: 642478362}
+  sofa: {fileID: 1602809205}
   text: {fileID: 21300000, guid: 7388ecac327c84686a9789ad359ae67b, type: 3}
 --- !u!1 &1650487821 stripped
 GameObject:
@@ -2290,6 +2294,7 @@ MonoBehaviour:
   speechBub: {fileID: 754759690}
   text2Obj: {fileID: 646050387}
   menu: {fileID: 642478362}
+  sofa: {fileID: 1602809205}
   text: {fileID: 21300000, guid: 7388ecac327c84686a9789ad359ae67b, type: 3}
 --- !u!1 &1827845125
 GameObject:
