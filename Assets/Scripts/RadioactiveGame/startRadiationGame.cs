@@ -10,28 +10,32 @@ public class startRadiationGame : MonoBehaviour {
 	public Text time = null;
 	float timeLeft = 3;
 	bool clicked=false;
+	private AudioSource source;
 
 	void Start()
 	{
+		source = GetComponent<AudioSource> ();
 		Button btn = myButton.GetComponent<Button>();
 		btn.onClick.AddListener(TaskOnClick);
 	}
 
 	void Update(){
 		if (clicked) {
-			
-			if (Mathf.Round(timeLeft) == 0)
-			{
-				time.text = "GO!";
-				timeLeft -= Time.deltaTime;
-			}
-			else if (Mathf.Round (timeLeft) == -1) {
-				SceneManager.LoadScene ("CatchRadiationGame");
-			} 
+			if (!source.isPlaying&&timeLeft>2)
+				source.Play ();
 
-			else {
+			if (timeLeft <= 1&&timeLeft>0) {
 				timeLeft -= Time.deltaTime;
-				changeText ();
+				time.text = "GO!";
+			}
+
+			else if(timeLeft<=0){
+				SceneManager.LoadScene("CatchRadiationGame");
+			}
+			else
+			{
+				timeLeft -= Time.deltaTime;
+				changeText();
 			}
 		}
 	}

@@ -13,10 +13,12 @@ public class StartBtnScript : MonoBehaviour {
 	public Text time = null;
 	float timeLeft = 3;
 	private bool readyToTransition;
+	private AudioSource source;
 
 
 	// Use this for initialization
 	void Start () {
+		source = GetComponent<AudioSource> ();
 		rb = GetComponent<Rigidbody2D> ();
 		readyToTransition = false;
 		var material1 = background.GetComponent<Renderer>().material;
@@ -30,17 +32,24 @@ public class StartBtnScript : MonoBehaviour {
 		var material = background.GetComponent<Renderer>().material;
 		var color = material.color;
 		if (readyToTransition) {
-			if (Mathf.Round (timeLeft) == 0) {
-				time.text = "GO!";
+
+			if (!source.isPlaying&&timeLeft>2)
+				source.Play ();
+			
+			if (timeLeft <= 1&&timeLeft>0) {
 				timeLeft -= Time.deltaTime;
-			} else if (Mathf.Round (timeLeft) == -1) {
-				Debug.Log ("Ending Scene");
+				time.text = "GO!";
+			}
+
+			else if(timeLeft<=0){
 				background.SetActive (enabled);
 				material.color = new Color (color.r, color.g, color.b, color.a + (1f * Time.deltaTime));
 				Invoke ("loadScene", 1.5f);
-			} else {
+			}
+			else
+			{
 				timeLeft -= Time.deltaTime;
-				changeText ();
+				changeText();
 			}
 		}
 	}
