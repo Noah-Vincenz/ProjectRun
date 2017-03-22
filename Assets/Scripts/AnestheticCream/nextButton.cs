@@ -7,6 +7,10 @@ public class nextButton : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        creamTransparency.leftArmVal = 0;
+        creamTransparency.leftLegVal = 0;
+        creamTransparency.rightArmVal = 0;
+        creamTransparency.rightLegVal = 0;
         SceneManager.LoadScene("45minClockScene");
     }
 	
