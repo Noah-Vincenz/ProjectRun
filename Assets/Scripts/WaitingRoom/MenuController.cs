@@ -11,6 +11,7 @@ public class MenuController : MonoBehaviour {
 	public GameObject speechBub;
 	public GameObject text2Obj;
 	public GameObject menu;
+	public GameObject sofa;
 	public Sprite text; 
 
 	bool clicked = false;
@@ -29,6 +30,7 @@ public class MenuController : MonoBehaviour {
 		Destroy (prompt.gameObject);
 		text2Obj.SetActive (true);
 		speechBub.SetActive (true);
+		sofa.GetComponent<BoxCollider2D> ().enabled = true;
 	}
 	/*
 	 * Enum for delay of menu select prompt 
