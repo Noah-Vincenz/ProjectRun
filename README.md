@@ -10,6 +10,10 @@
 * Noah Vincenz
 * Samuel Larsen-Disney
 
+
+##Delivarables:
+###Please Review today! 
+[Click Here] (https://keats.kcl.ac.uk/mod/book/view.php?id=1420574&chapterid=64061) 
 ##Scrum:
 [Click Here] (https://app.scrumdo.com/organization/john-cena/dashboard#/overview)
 ##Google Doc:
