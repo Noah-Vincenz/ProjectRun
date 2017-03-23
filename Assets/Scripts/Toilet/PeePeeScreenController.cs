@@ -72,7 +72,6 @@ public class PeePeeScreenController : MonoBehaviour {
 
 	void inProgreesText(){
 		Debug.Log ("Call to inProgText");
-//		speechBubble.SetActive (true);
 		scanTxt.SetActive(true);
 	}
 	void activateBubble(){
@@ -92,6 +91,5 @@ public class PeePeeScreenController : MonoBehaviour {
 		GetComponent<BoxCollider2D> ().enabled = true;
 		prompt2.SetActive (true);
 		Destroy (scanTxt.gameObject);
-		//finalText.SetActive (true);
 	}
 }

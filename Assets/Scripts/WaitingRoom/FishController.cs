@@ -50,7 +50,7 @@ public class FishController : MonoBehaviour {
 		//If collsion with collider above fish tank, then set grafity to positive so that fish falls
 		if (coll.transform.gameObject.name=="FishTopCollider") {
 			rb.gravityScale = 3;
-			anim.SetBool ("Jumping", false);
+			anim.SetBool ("Jumping", false); // stop jump
 		
 		} 
 

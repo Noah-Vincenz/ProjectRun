@@ -29,7 +29,6 @@ public class ToiletNextBtnController : MonoBehaviour {
 			playerPanda.SetActive (true);
 			Destroy (text1.gameObject);
 			speechBubble.SetActive (false);
-//			text2.SetActive (true);
 			++clicks;
 			break;
 

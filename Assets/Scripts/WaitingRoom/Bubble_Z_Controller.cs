@@ -6,6 +6,7 @@ public class Bubble_Z_Controller : MonoBehaviour {
 	
 	private Rigidbody2D rb;
 	public int speed=1;
+
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
@@ -17,7 +18,9 @@ public class Bubble_Z_Controller : MonoBehaviour {
 		if (gameObject.transform.position.y > 10)
 			Destroy (gameObject);
 	}
-
+	/*
+	 *	destroy off screen !
+	 */
 	void OnMouseDown(){
 		if (gameObject.CompareTag("Bubble")) 
 			Destroy (gameObject); // destroy if bubble 

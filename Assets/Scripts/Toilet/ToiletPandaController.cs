@@ -29,14 +29,14 @@ public class ToiletPandaController : MonoBehaviour {
 
 		anim.SetFloat("Speed", rb.velocity.x);
 
-		if (walkIn) {
+		if (walkIn) { // inital walk in 
 			Debug.Log ("adding velocity");
 			rb.velocity = Vector2.left * speed;
 			walkFace ();
 
 		}
 
-		if (transform.localPosition.x <= 2.4f && walkIn) {
+		if (transform.localPosition.x <= 2.4f && walkIn) { // panda walk in and stop at toilet 
 			rb.velocity = new Vector2 (0, 0);
 			walkIn = false;
 			awakeFace ();
@@ -49,7 +49,7 @@ public class ToiletPandaController : MonoBehaviour {
 			rb.velocity = Vector2.right * speed;
 			walkFace ();
 		}
-		if (transform.localPosition.x >= 9.5f)
+		if (transform.localPosition.x >= 9.5f) // kill panda off screen 
 			Destroy (this.gameObject);
 	}
 
@@ -68,6 +68,9 @@ public class ToiletPandaController : MonoBehaviour {
 		face.GetComponent<Animator> ().SetBool ("Happy", true);
 		face.GetComponent<Animator> ().SetBool ("Walking", false);
 	}
+	/**
+	 * methods to move panda to and from toilet
+	 */
 	public void moveUp(){
 		Debug.Log ("moveUP called");
 		transform.position = new Vector3 (transform.localPosition.x, transform.localPosition.y+1.0f, transform.localPosition.z);
@@ -77,7 +80,10 @@ public class ToiletPandaController : MonoBehaviour {
 		Debug.Log ("moveUP called");
 		transform.position = new Vector3 (transform.localPosition.x, transform.localPosition.y-1.0f, transform.localPosition.z);
 	}
-	public void walkOff(){
+	/**
+	 * public method to get panda to leave screen
+	 */
+	public void walkOff(){ 
 		finalWalk = true;
 	}
 
