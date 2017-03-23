@@ -36,7 +36,7 @@ public class TopTriangleMove : MonoBehaviour {
 			}
 			break;
 		case 1:
-			if (anim.GetCurrentAnimatorStateInfo (0).IsName ("idleTop")) {
+			if (anim.GetCurrentAnimatorStateInfo (0).IsName ("idletoptri")) {
 				SceneManager.LoadScene ("OpenedLetter");
 				++clicks;
 				break;
