@@ -1587,7 +1587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fish: {fileID: 1411699808}
-  bubblesPreFab: {fileID: 1579105614118738, guid: a9f6d378aabdf75479214ce5a0f139e9,
+  bubblesPreFab: {fileID: 1679658722233526, guid: 3068623f96ac3488386679dae52d893a,
     type: 2}
   swimSpeed: 15
 --- !u!212 &1411699814
