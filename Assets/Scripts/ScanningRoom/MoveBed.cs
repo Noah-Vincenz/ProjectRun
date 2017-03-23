@@ -9,7 +9,8 @@ public class MoveBed : MonoBehaviour {
 	private float speed;
 	public float leftPos;
 	public float rightPos;
-	float timeLeftforTransition=10;
+	float timeLeftforTransition=1;
+	float count = 0;
 	private bool readyForTransition;
 	public GameObject background;
 
@@ -41,13 +42,16 @@ public class MoveBed : MonoBehaviour {
 
 		if(transform.position.x >= rightPos) {
 			dirRight = false; //move to the left when it's bigger or equal to the right maximum position
+
 		}
 
-		if(transform.position.x <= leftPos) {
-			
+		if(transform.position.x <= leftPos) {			
 			dirRight = true;
-			readyForTransition = true; //move to the right when it's bigger or equal to the left maximum position
+			count++;
+		}
 
+		if (count >= 2) {
+			readyForTransition = true; //move to the right when it's bigger or equal to the left maximum position
 		}
 
 		if (readyForTransition) {
