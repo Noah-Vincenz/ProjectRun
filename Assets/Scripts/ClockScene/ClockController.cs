@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ClockController : MonoBehaviour {
 	public string sceneToLoad;
@@ -35,6 +36,11 @@ public class ClockController : MonoBehaviour {
 	private float timeLeftForTransition;
 	private Material material;
 	private Color color;
+
+	public GameObject btnGameOb;
+	public Button next;
+	private bool readyToTrans=false;
+	public CanvasGroup fadeCanvas;
 
 	void Start() {
 		//fade code
@@ -91,42 +97,23 @@ public class ClockController : MonoBehaviour {
 		}
 
 		//if the mouse button is released
-		if (Input.GetMouseButtonUp (0)) {
-			//disable the movement of the hands
-			hourHand.GetComponent<ClockHand> ().canMove = false;
-			minuteHand.GetComponent<ClockHand> ().canMove = false;
-
-			//if the minute hand is correct, move to the second hand
-			if (minuteHand.GetComponent<ClockHand> ().isCorrect) {
-				mode = 1;
-				minuteHint.SetActive(false);
-				hourHint.SetActive(true);
-			}
-
-			//if the hour hand is correct, the clock is satisfied
-			if (hourHand.GetComponent<ClockHand> ().isCorrect && minuteHand.GetComponent<ClockHand>().isCorrect) {
-				Debug.Log("Clock in satisfied state");
-				minuteHint.SetActive(false);
-				hourHint.SetActive(false);
-				waitUntil = Time.time + 4;
-				wellDone.GetComponent<SpriteRenderer> ().enabled = true;
-				cover.GetComponent<SpriteRenderer> ().enabled = true;
-				mode = 3;
-			}
-		}
-
-		//scene end code
-		if (mode == 3 && Time.time > waitUntil) {
+		if (readyToTrans){
 			Scene scene = SceneManager.GetActiveScene ();
 			material = background.GetComponent<Renderer>().material;
 			color = material.color;
-			timeLeftForTransition -= Time.deltaTime;
+			if(Time.time>waitUntil){
+				timeLeftForTransition -= Time.deltaTime;
+			}
+
 			if (timeLeftForTransition <= 2) {
 				background.SetActive (true);
 				material.color = new Color (color.r, color.g, color.b, color.a + (1f * Time.deltaTime));
 			}
 
+
+
 			if (timeLeftForTransition <= 0) {
+				fadeCanvas.alpha = 0;
 				if (scene.name== "45minClockScene") {
 					switch (SceneManagerController.Instance.getProcedure ()) { // switch dependant on selected game 
 
@@ -138,17 +125,17 @@ public class ClockController : MonoBehaviour {
 					case "Meckel":
 						Debug.Log ("LOAD Meckel");
 						SceneManager.LoadScene ("Injection");
-					//TODO Next scene for Meckel branch 
+						//TODO Next scene for Meckel branch 
 						break;
 
 					case "RENOGRAMin":
 						SceneManager.LoadScene ("Injection");
-					//TODO Next scene for Renogram Indirect branch 
+						//TODO Next scene for Renogram Indirect branch 
 						break;
 
 					case "RENOGRAM":
 						SceneManager.LoadScene ("Injection");
-					//TODO Next scene for Renogram branch 
+						//TODO Next scene for Renogram branch 
 						break;
 
 					default:
@@ -169,5 +156,38 @@ public class ClockController : MonoBehaviour {
 				}
 			}
 		}
+
+
+		//scene end code
+
+
+		if (Input.GetMouseButtonUp (0)) {
+			//disable the movement of the hands
+			hourHand.GetComponent<ClockHand> ().canMove = false;
+			minuteHand.GetComponent<ClockHand> ().canMove = false;
+
+			//if the minute hand is correct, move to the second hand
+			if (minuteHand.GetComponent<ClockHand> ().isCorrect) {
+				mode = 1;
+				minuteHint.SetActive(false);
+				hourHint.SetActive(false);
+			}
+
+			//if the hour hand is correct, the clock is satisfied
+			if (hourHand.GetComponent<ClockHand> ().isCorrect && minuteHand.GetComponent<ClockHand>().isCorrect&&Time.time>waitUntil) {
+				Debug.Log("Clock in satisfied state");
+				minuteHint.SetActive(false);
+				hourHint.SetActive(false);
+				waitUntil = Time.time + 4;
+				wellDone.GetComponent<SpriteRenderer> ().enabled = true;
+				btnGameOb.SetActive (true);
+				cover.GetComponent<SpriteRenderer> ().enabled = true;
+				mode = 3;
+			}
+		}	
+	}
+
+	public void onClick(){
+		readyToTrans = true;
 	}
 }
