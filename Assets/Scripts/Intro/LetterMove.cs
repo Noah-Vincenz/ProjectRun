@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 
@@ -14,6 +15,9 @@ public class LetterMove : MonoBehaviour {
 	public Sprite openLet;
 	public GameObject swapBottom;
 	public GameObject swapTop;
+	public GameObject prompt;
+	public float wait;
+	bool clicked = false;
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +25,7 @@ public class LetterMove : MonoBehaviour {
 		anim.SetTrigger("Drop");
 		anim.SetBool("Dropped",true);
 		sp = GetComponent<SpriteRenderer>();
+		StartCoroutine ("prompt_time");
 	}
 	
 	// Update is called once per frame
@@ -36,8 +41,12 @@ public class LetterMove : MonoBehaviour {
 		switch (clicks){
 		case 0:
 			if (anim.GetCurrentAnimatorStateInfo (0).IsName ("IddleDropped")) {
+				clicked = true;
 				anim.SetTrigger ("flip");
 				anim.SetBool ("flipped", true);
+				prompt.SetActive (false);
+				prompt.GetComponent<Text> ().text = "Click to Open";
+
 				++clicks;
 				break;
 			}
@@ -57,6 +66,16 @@ public class LetterMove : MonoBehaviour {
 		swapTop.GetComponent<SpriteRenderer> ().enabled = true;
 		gameObject.SetActive (false);
 
+	}
+	/**
+	 * Enum to wait the given seconds argument before rendering the prompt
+	 */
+	IEnumerator prompt_time()
+	{
+		yield return new WaitForSeconds(wait);
+		if (!(clicked)) {
+			prompt.SetActive (true);
+		}
 	}
 
 }
