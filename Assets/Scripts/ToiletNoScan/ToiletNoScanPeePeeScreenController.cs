@@ -12,6 +12,8 @@ public class ToiletNoScanPeePeeScreenController : MonoBehaviour {
 	public GameObject finalText;
 	public float wait;
 	int clicks;
+
+	//music stuff
 	public AudioSource roll;
 	public AudioSource pee;
 	public AudioSource flush;
@@ -23,7 +25,7 @@ public class ToiletNoScanPeePeeScreenController : MonoBehaviour {
 		roll.time = 1f;
 	}
 
-	void Update () {
+	void Update () { // for music 
 		if (roll.time >= 2.5f)
 			roll.Stop ();
 	}
@@ -72,7 +74,6 @@ public class ToiletNoScanPeePeeScreenController : MonoBehaviour {
 
 	void inProgreesText(){
 		Debug.Log ("Call to inProgText");
-		//		speechBubble.SetActive (true);
 	}
 	void activateBubble(){
 
@@ -86,10 +87,9 @@ public class ToiletNoScanPeePeeScreenController : MonoBehaviour {
 	 */
 	IEnumerator scanWait()
 	{
-		pee.Play ();
+		pee.Play (); 
 		yield return new WaitForSeconds(wait);
 		GetComponent<BoxCollider2D> ().enabled = true;
 		prompt2.SetActive (true);
-		//finalText.SetActive (true);
 	}
 }

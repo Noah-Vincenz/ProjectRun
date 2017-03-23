@@ -33,14 +33,14 @@ public class NextButtonController : MonoBehaviour {
 		var color = material.color;
 		Debug.Log (readyToMove);
 
-		if (readyToMove) {
+		if (readyToMove) { // makes fade start !
 			background.SetActive (enabled);
 			material.color = new Color (color.r, color.g, color.b, color.a + (1f * Time.deltaTime));
 			timeLeftforTransition -= Time.deltaTime;
 		}
 
 		if (timeLeftforTransition <= 0) {
-			SceneManager.LoadScene ("AnestheticCream");
+			SceneManager.LoadScene ("AnestheticCream"); // load next scene 
 		}
 
 	}
@@ -64,10 +64,12 @@ public class NextButtonController : MonoBehaviour {
 			transform.GetComponent<SpriteRenderer> ().enabled = false;
 			break;
 
+		default:
+			break;
 		}
 	}
 	/*
-	 * setter for tag value 
+	 * setter for tag value- to save the procedure
 	 */
 	public void setTag(string _tag){
 
