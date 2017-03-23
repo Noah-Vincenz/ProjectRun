@@ -10,6 +10,7 @@ public class Timer : MonoBehaviour {
 	float timeLeftforTransition=4;
 	public GameObject background;
 	public GameObject endText;
+	public CanvasGroup canvas;
 	public Text scoreText;
 
 	// Use this for initialization
@@ -33,11 +34,16 @@ public class Timer : MonoBehaviour {
 
 		else
         {
-			endText.SetActive (enabled);
+			endText.SetActive (true);
 			timeLeftforTransition -= Time.deltaTime;
 			if (timeLeftforTransition <= 2) {
 				background.SetActive (enabled);
 				material.color = new Color (color.r, color.g, color.b, color.a + (1f * Time.deltaTime));
+
+			}
+
+			if (timeLeftforTransition <= 1.5) {
+				canvas.alpha = 0;
 			}
 
 			if (timeLeftforTransition <= 0) {
