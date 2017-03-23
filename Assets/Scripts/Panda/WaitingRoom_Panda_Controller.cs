@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WaitingRoom_Panda_Controller : MonoBehaviour {
 
@@ -25,6 +26,7 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 	bool waveClick = false;
 	bool interacted = false;
 	bool finalMove = false;
+	bool speech = false;
 	int click = 0; 
 
 
@@ -49,10 +51,14 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 			walkFace ();
 
 		}
-		if (transform.localPosition.x >= 1.3f && !finalMove) { // stop first walk to right 
+		if (transform.localPosition.x >= 1.3f && !finalMove & !speech) { // stop first walk to right 
 			needToMove = false;
 			rb.velocity = new Vector2 (0, 0);
 			awakeFace ();
+			speechBub.SetActive(true);// renders speech bubble 
+			text.SetActive(true);
+			happyFace(); // method to make panda happy 
+			speech = true;
 			}
 
 		if (Input.GetMouseButtonDown(0) && waveClick) { // check if panda is clicked for wave 
@@ -68,6 +74,7 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 			rb.velocity = Vector2.left * speed;
 			walkFace ();
 		}
+
 		if (transform.position.x < -10.5f) { // test if panda is off screen to kill 
 			Destroy (this.gameObject);
 		}
@@ -94,7 +101,11 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 			anim.SetTrigger ("Wake"); // start wake animation 
 			interacted = true; // stops prompt 
 			transform.position = new Vector3 (transform.localPosition.x, transform.localPosition.y + 1f, transform.localPosition.z);
-			Destroy (prompt.gameObject); 
+			prompt.SetActive (false);
+			interacted = false;
+			StartCoroutine ("prompt_time");
+			prompt.GetComponent<Text> ().text = "Click me!";
+			prompt.GetComponent<RectTransform>().localPosition = new Vector3 (-155f, -207.78f, 0f);
 			++click;
 			break;
 
@@ -102,21 +113,25 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 			if (endOfWake) { // if wake animation has completed 
 				Debug.Log ("Panda Click event-2");
 				needToMove = true;
+				interacted = true;
+				Destroy (prompt.gameObject);
 				anim.SetBool ("noIdle", false);
 				chair.GetComponent<BoxCollider2D> ().enabled = true; //sets chair colider to acitve 
-				++click;
-			}
-			break;
-		case 2: // show speech bubble 
-			if (anim.GetCurrentAnimatorStateInfo (0).IsName ("Idle")) {
-				Debug.Log ("Panda Click event-3");
-				speechBub.SetActive(true);// renders speech bubble 
-				text.SetActive(true);
-				happyFace(); // method to make panda happy 
-				++click;
-			}
-			break;
 
+
+				++click;
+			}
+			break;
+//		case 2: // show speech bubble 
+//			if (anim.GetCurrentAnimatorStateInfo (0).IsName ("Idle")) {
+//				Debug.Log ("Panda Click event-3");
+//				speechBub.SetActive(true);// renders speech bubble 
+//				text.SetActive(true);
+//				happyFace(); // method to make panda happy 
+//				++click;
+//			}
+//			break;
+//
 		default : // panda wave 
 			waveClick = true;
 			break;
