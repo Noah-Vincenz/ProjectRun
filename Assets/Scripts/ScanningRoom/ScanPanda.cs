@@ -53,13 +53,13 @@ public class ScanPanda : MonoBehaviour {
 			rb.velocity = new Vector2(0, 0);
 			anim.SetBool("IsClimbing", true); //when it approaches the collider climbing animation is activated
 			face.GetComponent<Animator>().SetBool("Walking", true);
-			timeLeftHitTrigger -= Time.deltaTime;
+			timeLeftHitTrigger -= Time.deltaTime; //timer counts down leading to fade out
 
 		}
 
 		if (timeLeftHitTrigger <= 0) {
 
-			readyForTransition = true;
+			readyForTransition = true; //start fade out when the timer hits 0
 
 
 		}
@@ -82,14 +82,14 @@ public class ScanPanda : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col){
 
-		canClimb = true;
+		canClimb = true; //once it enters box collider, start climbing animation
 		source.Play ();
 
 	}
 
 	public void canWalkOn(){
 
-		canWalk = true;
+		canWalk = true; 
 
 	}
 
