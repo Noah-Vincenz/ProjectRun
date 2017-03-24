@@ -5,17 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class nextButton : MonoBehaviour {
 
-	// Use this for initialization
 	void Start () {
-        creamTransparency.leftArmVal = 0;
-        creamTransparency.leftLegVal = 0;
+        creamTransparency.leftArmVal = 0; //Reset the values of cream transparency so when the game is played again
+        creamTransparency.leftLegVal = 0; //the transparency doesn't remain
         creamTransparency.rightArmVal = 0;
         creamTransparency.rightLegVal = 0;
-        SceneManager.LoadScene("45minClockScene");
+        SceneManager.LoadScene("45minClockScene"); //Load new scene
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }

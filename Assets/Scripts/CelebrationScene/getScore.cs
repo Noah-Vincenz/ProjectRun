@@ -10,8 +10,8 @@ public class getScore : MonoBehaviour {
     public GameObject background;
 	void Start () {
 
-        background = GameObject.Find("Background");
-        if (ScoreKeeper.recentGame== "InjectionGame")
+        background = GameObject.Find("Background"); //Find background sprite object
+        if (ScoreKeeper.recentGame== "InjectionGame") //Change the sprite based on the most recent game played
         {
             background.GetComponent<SpriteRenderer>().sprite = backgrounds[0];
             scoreText.text = "Your score is : " + ScoreKeeper.finalScore;

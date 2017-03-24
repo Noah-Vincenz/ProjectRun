@@ -15,7 +15,7 @@ public class creamTransparency : MonoBehaviour {
     {
         Material mat = creams[0].GetComponent<Renderer>().material;
         Color color = mat.color;
-        creams[0].GetComponent<Renderer>().material.color = new Color(color.r, color.g, color.b, 0);
+        creams[0].GetComponent<Renderer>().material.color = new Color(color.r, color.g, color.b, 0); //Initiating cream game object to be fully transparent
         creams[1].GetComponent<Renderer>().material.color = new Color(color.r, color.g, color.b, 0);
         creams[2].GetComponent<Renderer>().material.color = new Color(color.r, color.g, color.b, 0);
         creams[3].GetComponent<Renderer>().material.color = new Color(color.r, color.g, color.b, 0);
@@ -25,13 +25,13 @@ public class creamTransparency : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (this.name == "LeftArmCream")
+        if (this.name == "LeftArmCream") //Based on which cream object this script is being attached to...
         {
             Material mat = creams[0].GetComponent<Renderer>().material;
             Color color = mat.color;
-            if ((leftArmVal / 150) <= 1)
+            if ((leftArmVal / 150) <= 1) //If the fill bar isn't full (the value isn't great enough to fill the bar)
             {
-                creams[0].GetComponent<Renderer>().material.color = new Color(color.r, color.g, color.b, (leftArmVal / 150));
+                creams[0].GetComponent<Renderer>().material.color = new Color(color.r, color.g, color.b, (leftArmVal / 150)); //Change transparency of the image
             }
         }
         else

@@ -19,13 +19,13 @@ public class LoadLidAnim : MonoBehaviour {
     }
 
  
-    void OnMouseDown()
+    void OnMouseDown() //When lid of cream is clicked...
     {
 		source.Play ();
-        anim.Play("LidOpen");
-        openCreamCol.enabled = true;
-        text.enabled = false;
-        text2.enabled = true;
+        anim.Play("LidOpen"); //Play open lid animation
+        openCreamCol.enabled = true; //Enable open cream collider to allow for clicking
+        text.enabled = false; //Disable old text
+        text2.enabled = true; //Enable new text
 
     }
 }
