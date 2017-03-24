@@ -9,7 +9,7 @@ public class SlidingLeftDoor : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		aPosition1 = new Vector2 ( (float) -6.18, (float) -1.16);
+		aPosition1 = new Vector2 ( (float) -6.18, (float) -1.16); //control movement of left door
 		
 	}
 	

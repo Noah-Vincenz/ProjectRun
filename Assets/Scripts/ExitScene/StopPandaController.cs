@@ -42,13 +42,13 @@ public class StopPandaController : MonoBehaviour {
 		rb.velocity = Vector2.right * speed;
 		face.GetComponent<Animator> ().SetBool ("Walking", true);
 
-		if ( transform.localPosition.x > 0 ){
+		if ( transform.localPosition.x > 0 ){ //when panda reaches the center of screen
 
 			rb.velocity = new Vector2 (0, 0);
-			face.GetComponent<Animator> ().SetBool ("Walking", false);
-			speechBubble.SetActive (true);
+			face.GetComponent<Animator> ().SetBool ("Walking", false); //stop walking
+			speechBubble.SetActive (true); //activate speech bubble
 			canvas.SetActive (true);
-			anim.SetBool("IsWaving", true);
+			anim.SetBool("IsWaving", true); //activate waving animation
 			timeLeftHitTrigger -= Time.deltaTime;
 
 		}

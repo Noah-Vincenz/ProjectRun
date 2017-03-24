@@ -13,7 +13,7 @@ public class MoveBedOut : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		aPosition1 = new Vector2 ( (float) 3, (float) -0.78);
+		aPosition1 = new Vector2 ( (float) 3, (float) -0.78); //position it will move to
 
 		var material1 = background.GetComponent<Renderer>().material;
 		var color1 = material1.color;
@@ -33,7 +33,7 @@ public class MoveBedOut : MonoBehaviour {
 
 		if (transform.position.x >= 3) {
 
-			readyForTransition = true;
+			readyForTransition = true; //if the bed has moved out then start fade out
 
 		}
 

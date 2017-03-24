@@ -34,10 +34,10 @@ public class MoveBed : MonoBehaviour {
 		var color = material.color;
 
 		if (dirRight) {
-			transform.Translate (Vector2.right * speed * Time.deltaTime);
+			transform.Translate (Vector2.right * speed * Time.deltaTime); //move to the direction right
 		} 
 		else {
-			transform.Translate (-Vector2.right * speed * Time.deltaTime);
+			transform.Translate (-Vector2.right * speed * Time.deltaTime); //move to the direct left
 		}
 
 		if(transform.position.x >= rightPos) {
@@ -46,19 +46,19 @@ public class MoveBed : MonoBehaviour {
 		}
 
 		if(transform.position.x <= leftPos) {			
-			dirRight = true;
+			dirRight = true; //move to the right when it's bigger or equal to the left maximum position
 			count++;
 		}
 
 		if (count >= 2) {
-			readyForTransition = true; //move to the right when it's bigger or equal to the left maximum position
+			readyForTransition = true; //ready for transition when it has scanned twice
 		}
 
-		if (readyForTransition) {
+		if (readyForTransition) { //fade begins
 
 			background.SetActive (enabled);
 			material.color = new Color (color.r, color.g, color.b, color.a + (1f * Time.deltaTime));
-			timeLeftforTransition -= Time.deltaTime;
+			timeLeftforTransition -= Time.deltaTime; 
 
 		}
 

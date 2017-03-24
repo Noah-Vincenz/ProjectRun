@@ -13,7 +13,7 @@ public class MoveBedIn : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		aPosition1 = new Vector2 ( (float) -2.5, (float) -0.78);
+		aPosition1 = new Vector2 ( (float) -2.5, (float) -0.78); //position it will moved to
 
 		var material1 = background.GetComponent<Renderer>().material;
 		var color1 = material1.color;
@@ -33,7 +33,7 @@ public class MoveBedIn : MonoBehaviour {
 
 		if (transform.position.x <= -2.5) {
 
-			readyForTransition = true;
+			readyForTransition = true; //if scanning to left stopped then fade out will begin 
 
 		}
 

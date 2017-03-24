@@ -24,7 +24,7 @@ public class ExitPandaController : MonoBehaviour {
 	void Update () {
 		anim.SetFloat("Speed", rb.velocity.x);
 
-		if (leftDoor.transform.position.x > -5 ) {
+		if (leftDoor.transform.position.x > -5 ) { //when the left door opens, the panda starts walking
 
 			rb.velocity = Vector2.right * speed;
 			face.GetComponent<Animator> ().SetBool ("Walking", true);
