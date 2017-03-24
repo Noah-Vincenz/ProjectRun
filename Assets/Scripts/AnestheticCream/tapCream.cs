@@ -8,6 +8,7 @@ public class tapCream : MonoBehaviour {
     public Sprite sprite;
     Vector2 hotspot = Vector2.zero;
     public Collider2D[] colliders;
+	public GameObject circles;
     public SpriteRenderer cursor = null;
     public Text text2 = null;
     public Text text3 = null;
@@ -36,6 +37,7 @@ public class tapCream : MonoBehaviour {
         colliders[1].enabled = true;
         colliders[2].enabled = true;
         colliders[3].enabled = true;
+		circles.SetActive (true);
         cursor.enabled = true;
         text2.enabled = false;
         text3.enabled = true;
