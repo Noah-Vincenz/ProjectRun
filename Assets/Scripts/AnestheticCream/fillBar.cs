@@ -15,22 +15,22 @@ public class fillBar : MonoBehaviour {
 
     void Start () {
 		source = GetComponent<AudioSource>();
-        image.GetComponent<Image>();
-        image.fillAmount = 0;
+        image.GetComponent<Image>(); //Image used for the fill of the bar
+        image.fillAmount = 0; //the fill amount value initiated as 0
     }
 	
 	void Update () {
-        image.fillAmount = image.fillAmount + (timeDown / 20000);
-        if (image.fillAmount == 1)
+        image.fillAmount = image.fillAmount + (timeDown / 20000); //Math to generate a suitable fillAmount based on time held down on mouse
+        if (image.fillAmount == 1) //If the fillbar is full
         {
-            panda.sprite = sprites[2];
-            next.enabled = true;
+            panda.sprite = sprites[2]; //Normal panda face becomes happy panda face
+            next.enabled = true; //enable next button so we can move to the next scene
             text.text = "Well done! Press next to move on.";
         } else
-        if (image.fillAmount >= 0.5)
+        if (image.fillAmount >= 0.5) //If the fillbar is half full
         {
 			source.Play ();
-            panda.sprite = sprites[1];
+            panda.sprite = sprites[1]; //Sad panda face becomes normal panda face
         }
     }
 }

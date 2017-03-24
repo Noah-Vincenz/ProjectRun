@@ -32,25 +32,14 @@ public class tapCream : MonoBehaviour {
     private void OnMouseDown()
     {
 		source.Play ();
-        //Cursor.SetCursor(texture, hotspot, CursorMode.Auto);
-        colliders[0].enabled = true;
-        colliders[1].enabled = true;
+        colliders[0].enabled = true; //As soon as the cream is clicked on we enable the colliders for the cream
+        colliders[1].enabled = true; //so the panda can be interacted with
         colliders[2].enabled = true;
         colliders[3].enabled = true;
-		circles.SetActive (true);
-        cursor.enabled = true;
-        text2.enabled = false;
+		circles.SetActive (true); //Activate circle to denote region for user to click on
+        cursor.enabled = true; //Enable custom cursor image
+        text2.enabled = false; //Change text
         text3.enabled = true;
-    }
-    void createTexture()
-    {
-        texture = new Texture2D((int)sprite.rect.width, (int)sprite.rect.height);
-        var px = sprite.texture.GetPixels((int)sprite.textureRect.x,
-                                                (int)sprite.textureRect.y,
-                                                (int)sprite.textureRect.width,
-                                                (int)sprite.textureRect.height);
-        texture.SetPixels(px);
-        texture.Apply();
     }
   
 }
