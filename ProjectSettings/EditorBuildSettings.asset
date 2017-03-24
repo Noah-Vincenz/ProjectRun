@@ -22,6 +22,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Games/Food/FoodGame.unity
   - enabled: 1
+    path: Assets/Scenes/ClockScenes/20minsLater.unity
+  - enabled: 1
+    path: Assets/Scenes/ClockScenes/30minsLater.unity
+  - enabled: 1
+    path: Assets/Scenes/ClockScenes/3hrClockScene.unity
+  - enabled: 1
+    path: Assets/Scenes/ClockScenes/45minClockScene.unity
+  - enabled: 1
+    path: Assets/Scenes/ClockScenes/45minsLater.unity
+  - enabled: 1
     path: Assets/Scenes/Games/Food/FoodGameIntroduction.unity
   - enabled: 1
     path: Assets/Scenes/Games/Injection/Injection.unity
