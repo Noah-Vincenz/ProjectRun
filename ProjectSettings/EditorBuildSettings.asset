@@ -6,66 +6,46 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/intro.unity
+    path: Assets/Scenes/Intro/intro.unity
   - enabled: 1
-    path: Assets/Scenes/envelope.unity
+    path: Assets/Scenes/Intro/envelope.unity
   - enabled: 1
-    path: Assets/Scenes/OpenedLetter.unity
+    path: Assets/Scenes/Intro/OpenedLetter.unity
   - enabled: 1
-    path: Assets/Scenes/WaitingRoom.unity
+    path: Assets/Scenes/Ending/ExitScene.unity
   - enabled: 1
-    path: Assets/Scenes/EndWaitingRoom.unity
+    path: Assets/Scenes/Ending/EndWaitingRoom.unity
   - enabled: 1
-    path: Assets/Scenes/45minClockScene.unity
+    path: Assets/Scenes/Ending/ZoomOutExit.unity
   - enabled: 1
-    path: Assets/Scenes/FoodGameIntroduction.unity
+    path: Assets/Scenes/Games/gameEnd.unity
   - enabled: 1
-    path: Assets/Scenes/FoodGame.unity
+    path: Assets/Scenes/Games/Food/FoodGame.unity
   - enabled: 1
-    path: Assets/Scenes/ScanningRoom.unity
+    path: Assets/Scenes/Games/Food/FoodGameIntroduction.unity
   - enabled: 1
-    path: Assets/Scenes/IntroCatchRadiationGame.unity
+    path: Assets/Scenes/Games/Injection/Injection.unity
   - enabled: 1
-    path: Assets/Scenes/AnestheticCream.unity
+    path: Assets/Scenes/Games/Injection/InjectionGame.unity
   - enabled: 1
-    path: Assets/Scenes/CatchRadiationGame.unity
+    path: Assets/Scenes/Other/AnestheticCream.unity
   - enabled: 1
-    path: Assets/Scenes/Injection.unity
+    path: Assets/Scenes/Other/WaitingRoom.unity
   - enabled: 1
-    path: Assets/Scenes/InjectionGame.unity
+    path: Assets/Scenes/ToiletScenes/Toilet.unity
   - enabled: 1
-    path: Assets/Scenes/gameEnd.unity
+    path: Assets/Scenes/ToiletScenes/ToiletNoScan.unity
   - enabled: 1
-    path: Assets/Scenes/MovingScan.unity
+    path: Assets/Scenes/Scanning/BeltScene.unity
   - enabled: 1
-    path: Assets/Scenes/MovingScanIn.unity
+    path: Assets/Scenes/Scanning/MovingScan.unity
   - enabled: 1
-    path: Assets/Scenes/MovingScanOut.unity
+    path: Assets/Scenes/Scanning/MovingScanIn.unity
   - enabled: 1
-    path: Assets/Scenes/Toilet.unity
+    path: Assets/Scenes/Scanning/MovingScanOut.unity
   - enabled: 1
-    path: Assets/Scenes/ToiletNoScan.unity
-  - enabled: 0
-    path: Assets/Scenes/15minClockScene.unity
-  - enabled: 0
-    path: Assets/Scenes/1hrLater.unity
+    path: Assets/Scenes/Scanning/ScanningRoom.unity
   - enabled: 1
-    path: Assets/Scenes/30minsLater.unity
+    path: Assets/Scenes/Games/Radiation/CatchRadiationGame.unity
   - enabled: 1
-    path: Assets/Scenes/3hrClockScene.unity
-  - enabled: 0
-    path: Assets/Scenes/45minsLater.unity
-  - enabled: 0
-    path: Assets/Scenes/4hrClockScene.unity
-  - enabled: 1
-    path: Assets/Scenes/BeltScene.unity
-  - enabled: 0
-    path: Assets/Scenes/ClockScene.unity
-  - enabled: 0
-    path: Assets/Scenes/FoodGameEnd.unity
-  - enabled: 1
-    path: Assets/Scenes/ExitScene.unity
-  - enabled: 1
-    path: Assets/Scenes/ZoomOutExit.unity
-  - enabled: 1
-    path: Assets/Scenes/20minsLater.unity
+    path: Assets/Scenes/Games/Radiation/IntroCatchRadiationGame.unity
