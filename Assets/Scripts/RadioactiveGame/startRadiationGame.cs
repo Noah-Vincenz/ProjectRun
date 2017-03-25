@@ -4,50 +4,43 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+//Button that will start the game when pressed
 public class startRadiationGame : MonoBehaviour {
 
 	public Button myButton;
-	public Text time = null;
-	float timeLeft = 3;
-	bool clicked=false;
-	private AudioSource source;
+	public Text time;
+	float timeLeft;
+	bool clicked;
 
-	void Start()
-	{
-		source = GetComponent<AudioSource> ();
+	//initialising variables
+	void Start() {
+		time = null;
+		timeLeft = 3;
+		clicked = false;
 		Button btn = myButton.GetComponent<Button>();
 		btn.onClick.AddListener(TaskOnClick);
 	}
 
+	//starting the countdown when the Start button is clicked. After the countdown Scene CatchRadiationGame is loaded
 	void Update(){
 		if (clicked) {
-			if (!source.isPlaying&&timeLeft>2)
-				source.Play ();
-
-			if (timeLeft <= 1&&timeLeft>0) {
-				timeLeft -= Time.deltaTime;
+			if (Mathf.Round(timeLeft) == 0) {
 				time.text = "GO!";
-			}
-
-			else if(timeLeft<=0){
-				SceneManager.LoadScene("CatchRadiationGame");
-			}
-			else
-			{
 				timeLeft -= Time.deltaTime;
-				changeText();
+			}
+			else if (Mathf.Round (timeLeft) == -1) SceneManager.LoadScene ("CatchRadiationGame");
+			else {
+				timeLeft -= Time.deltaTime;
+				changeText ();
 			}
 		}
 	}
 
-	void TaskOnClick()
-	{
+	void TaskOnClick() {
 		clicked = true;
 	}
 
-	void changeText()
-	{
+	void changeText() {
 		time.text = "" + Mathf.Round(timeLeft);
 	}
-
 }
