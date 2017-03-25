@@ -32,14 +32,14 @@ public class TargetCreationControl : MonoBehaviour {
 				print (whatColourTargt);
 
 				if (whatColourTargt == 1) {
-					Vector3 screenPosition = Camera.main.ScreenToWorldPoint (new Vector3 (Random.Range (300, 700), Random.Range (50, 400), ZvalueAsFloat));
+					Vector3 screenPosition = Camera.main.ScreenToWorldPoint (new Vector3 (Random.Range (300, 1300), Random.Range (150, 1000), ZvalueAsFloat));
 					redTargetIn=(GameObject) Instantiate(redTarget, screenPosition, redTarget.transform.rotation);
 				} else if (whatColourTargt == 0||whatColourTargt == 2||whatColourTargt == 3) {
-					Vector3 screenPosition = Camera.main.ScreenToWorldPoint (new Vector3 (Random.Range (300, 700), Random.Range (50, 400), ZvalueAsFloat));
+					Vector3 screenPosition = Camera.main.ScreenToWorldPoint (new Vector3 (Random.Range (300, 1300), Random.Range (150, 1000), ZvalueAsFloat));
 					greenTargetIn=(GameObject) Instantiate (greenTarget, screenPosition, redTarget.transform.rotation);
 				}
 
-				timeLeftTillNextSetOfTargets = 3;
+				timeLeftTillNextSetOfTargets = 1;
 			}
 		}
 
