@@ -7,7 +7,7 @@
 * Chloe Workman
 * Iona Ryder
 * Jay Wong
-* Noah Vincenz
+* Noah-Vincenz 'The Beast' Nöh
 * Samuel Larsen-Disney
 
 [logo]: (http://www.chicksinfo.com/wp-content/uploads/2016/09/John-Cena-Family-Pictures-Wife-Siblings-Age-Height-Weight.jpg)
