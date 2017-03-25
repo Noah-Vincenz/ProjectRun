@@ -5,14 +5,17 @@ using UnityEngine;
 //class that spawns objects that will fall from the sky and for the panda to collect / dodge
 public class Spawner : MonoBehaviour {
 
-	public float delayRays = 1f;
-	public float delayBamboos = 6.8f;
-	public float delayCubes = 2.3f;
+	private float delayRays;
+	private float delayBamboos;
+	private float delayCubes;
 	public GameObject RadioActive;
 	public GameObject Bamboo;
 	public GameObject Cube;
 
 	void Start() {
+		delayRays = 1f;
+		delayBamboos = 6.8f;
+		delayCubes = 2.3f;
 		InvokeRepeating ("Spawn1", delayRays, delayRays);
 		InvokeRepeating ("Spawn2", delayBamboos, delayBamboos);
 		InvokeRepeating ("Spawn3", delayCubes, delayCubes);
