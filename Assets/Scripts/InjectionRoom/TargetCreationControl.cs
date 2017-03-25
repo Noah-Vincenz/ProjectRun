@@ -39,7 +39,7 @@ public class TargetCreationControl : MonoBehaviour {
 					greenTargetIn=(GameObject) Instantiate (greenTarget, screenPosition, redTarget.transform.rotation);
 				}
 
-				timeLeftTillNextSetOfTargets = 1;
+				timeLeftTillNextSetOfTargets = 3;
 			}
 		}
 
