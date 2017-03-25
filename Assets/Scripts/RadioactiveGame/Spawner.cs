@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
+//class that spawns objects that will fall from the sky and for the panda to collect / dodge
 public class Spawner : MonoBehaviour {
 
 	public float delayRays = 1f;
-	public float delayBamboos = 7f;
-	public float delayCubes = 2f;
+	public float delayBamboos = 6.8f;
+	public float delayCubes = 2.3f;
 	public GameObject RadioActive;
 	public GameObject Bamboo;
 	public GameObject Cube;
@@ -17,7 +17,7 @@ public class Spawner : MonoBehaviour {
 		InvokeRepeating ("Spawn2", delayBamboos, delayBamboos);
 		InvokeRepeating ("Spawn3", delayCubes, delayCubes);
 	}
-		
+
 	void Spawn1() {
 		Instantiate (RadioActive, new Vector3 (Random.Range (-6, 6), 5, 0), Quaternion.identity);
 	}
@@ -27,9 +27,4 @@ public class Spawner : MonoBehaviour {
 	void Spawn3() {
 		Instantiate (Cube, new Vector3 (Random.Range (-4, 4), 5, 0), Quaternion.identity);
 	}
-	/*
-	public void cancelInvoke() {
-		CancelInvoke ();
-	}
-	*/
 }

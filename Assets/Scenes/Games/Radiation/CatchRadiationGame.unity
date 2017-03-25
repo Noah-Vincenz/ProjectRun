@@ -1242,6 +1242,27 @@ GameObject:
   m_PrefabParentObject: {fileID: 1496988423160636, guid: 810d8a23729214dd79634b3f977312e8,
     type: 2}
   m_PrefabInternal: {fileID: 83983257}
+--- !u!114 &374827059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 374827055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bafa54482a87ac4cbd7ff1bfd1ac93a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkAfterTime: 10
+  repeatCheckTime: 0
+  repeatEveryTime: 1
+  checkAfterFrames: 1
+  repeatCheckFrame: 1
+  repeatEveryFrame: 1
+  hasFailed: 0
+  checkMethods: 1
+  m_ActionBase: {fileID: 1899530935}
+  checksPerformed: 0
 --- !u!60 &374827060
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1277,6 +1298,27 @@ PolygonCollider2D:
       - {x: 0.5877852, y: -0.80901706}
       - {x: -0.58778536, y: -0.80901694}
       - {x: -4.2713523, y: -1.0191011}
+--- !u!114 &374827061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 374827055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bafa54482a87ac4cbd7ff1bfd1ac93a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkAfterTime: 0
+  repeatCheckTime: 1
+  repeatEveryTime: 0.1
+  checkAfterFrames: 1
+  repeatCheckFrame: 1
+  repeatEveryFrame: 1
+  hasFailed: 0
+  checkMethods: 1
+  m_ActionBase: {fileID: 1791386391}
+  checksPerformed: 0
 --- !u!1 &445514634
 GameObject:
   m_ObjectHideFlags: 0
@@ -2028,7 +2070,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.31764707, g: 0.5921569, b: 0.7882353, a: 1}
+  m_Color: {r: 1, g: 0.80784315, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3159,6 +3201,43 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
+--- !u!114 &1791386391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da4a3a521c5c1494aae123742ca5c8f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  go: {fileID: 374827055}
+  thisPropertyPath: PandaRadiationControl.count
+  compareToType: 1
+  other: {fileID: 0}
+  otherPropertyPath: 
+  constantValueGeneric: 20
+  compareType: 5
+--- !u!114 &1899530935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4928c6c2b973874c8d4e6c9a69bb5b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  go: {fileID: 374827055}
+  thisPropertyPath: PandaRadiationControl.timeLeft
+  compareToType: 1
+  other: {fileID: 0}
+  otherPropertyPath: 
+  constantValueGeneric: 19.5
+  compareTypes: 2
+  floatingPointError: 0.00009999999747378752
 --- !u!1 &1916833436
 GameObject:
   m_ObjectHideFlags: 0

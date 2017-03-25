@@ -1,8 +1,10 @@
 ﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Assertions;
 
 public class ContinueButton : MonoBehaviour {
 
@@ -16,7 +18,6 @@ public class ContinueButton : MonoBehaviour {
 	public Text timeText;
 	public Button rightArrow;
 	public Button leftArrow;
-	//public Spawner spawner;
 
 	void Start () {
 		var material1 = background.GetComponent<Renderer>().material;
@@ -25,15 +26,15 @@ public class ContinueButton : MonoBehaviour {
 		gameObject.SetActive (false);
 		Button btn = gameObject.GetComponent<Button>();
 		btn.onClick.AddListener(TaskOnClick);
+
+		Assert.IsFalse(gameObject.activeInHierarchy, "ContinueButton is active, but should not be.");
 	}
 
 	void Update () {
 		var material = background.GetComponent<Renderer>().material;
 		var color = material.color;
 		if (readyToTransition) {
-			//spawner.CancelInvoke ();
 			background.SetActive (enabled);
-			//gameObject.SetActive (false);
 			tryAgainButton.gameObject.SetActive(false);
 			gameOverText.text = "";
 			winText.text = "";
@@ -45,45 +46,18 @@ public class ContinueButton : MonoBehaviour {
 			pos.x -= 10f;
 			gameObject.transform.position = pos;
 			material.color = new Color (color.r, color.g, color.b, color.a + (1f * Time.deltaTime));
-			timeLeftforTransition-=Time.deltaTime;
+			timeLeftforTransition -= Time.deltaTime;
 			Debug.Log (timeLeftforTransition);
 		}
 
 		if (timeLeftforTransition <= 0) {
-			switch (SceneManagerController.Instance.getProcedure()) { // switch dependant on selected game 
-
-			case "DMSA":
-				Debug.Log("LOAD DMSA");
-				SceneManager.LoadScene ("30minsLater");
-				break;
-
-			case "Meckel":
-				Debug.Log("LOAD Meckel");
-				SceneManager.LoadScene ("45minsLater");
-				//TODO Next scene for Meckel branch 
-				break;
-
-			case "RENOGRAMin":
-				SceneManager.LoadScene ("20minsLater");
-				//TODO Next scene for Renogram Indirect branch 
-				break;
-
-			case "RENOGRAM":
-				SceneManager.LoadScene ("20minsLater");
-				//TODO Next scene for Renogram branch 
-				break;
-
-			default:
-				SceneManager.LoadScene ("WaitingRoom");
-				break;
-			}
+			SceneManager.LoadScene ("MovingScanOut");
 		}
 	}
 
 	void TaskOnClick(){
+		Assert.IsTrue(gameObject.activeInHierarchy, "ContinueButton is not active.");
+
 		readyToTransition = true;
-		//gameObject.SetActive (false);
-		
-		//SceneManager.LoadScene ("gameEnd");
 	}
 }

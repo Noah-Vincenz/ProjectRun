@@ -307,6 +307,32 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0a34a67b60cb5e34cb5862dbefdea303, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &65174510 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1947259244533842, guid: 0a34a67b60cb5e34cb5862dbefdea303,
+    type: 2}
+  m_PrefabInternal: {fileID: 65174509}
+--- !u!114 &65174511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 65174510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bafa54482a87ac4cbd7ff1bfd1ac93a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkAfterTime: 1
+  repeatCheckTime: 1
+  repeatEveryTime: 1
+  checkAfterFrames: 1
+  repeatCheckFrame: 1
+  repeatEveryFrame: 1
+  hasFailed: 0
+  checkMethods: 2
+  m_ActionBase: {fileID: 511082908}
+  checksPerformed: 0
 --- !u!1 &323835216
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,6 +481,23 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &511082908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2586c8e41f35d2f4fadde53020bf4207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  go: {fileID: 65174510}
+  thisPropertyPath: gameObject.activeInHierarchy
+  compareToType: 1
+  other: {fileID: 0}
+  otherPropertyPath: 
+  constantValueGeneric: 1
 --- !u!1 &540794815
 GameObject:
   m_ObjectHideFlags: 0
@@ -1038,6 +1081,27 @@ MonoBehaviour:
   dest: -0.7
   speed: 2
   checkKeys: 1
+--- !u!114 &1063149795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1063149793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bafa54482a87ac4cbd7ff1bfd1ac93a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkAfterTime: 1
+  repeatCheckTime: 1
+  repeatEveryTime: 1
+  checkAfterFrames: 1
+  repeatCheckFrame: 1
+  repeatEveryFrame: 1
+  hasFailed: 0
+  checkMethods: 2
+  m_ActionBase: {fileID: 1699916323}
+  checksPerformed: 0
 --- !u!114 &1063149799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1777,6 +1841,24 @@ RectTransform:
   m_AnchoredPosition: {x: 2.43, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1699916323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da4a3a521c5c1494aae123742ca5c8f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  go: {fileID: 1063149793}
+  thisPropertyPath: TouchFood.foodScore
+  compareToType: 1
+  other: {fileID: 0}
+  otherPropertyPath: 
+  constantValueGeneric: 0
+  compareType: 0
 --- !u!1 &1715018375
 GameObject:
   m_ObjectHideFlags: 0
