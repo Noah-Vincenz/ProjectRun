@@ -1,14 +1,14 @@
 # JohnCena
 ##Team:
-* Jonathan Mounty 
-* Hailey Pun
-* Nicolas Zuluaga
-* Rob Hanns
-* Chloe Workman
-* Iona Ryder
-* Jay Wong
+* Jonathan 'The Skiier' Mounty 
+* Hailey 'No Pun Intended' Pun
+* Nicolas 'Copper' Zuluaga
+* Rob 'Banter' Hanns
+* Chloe 'I Can Always Ask My Dad ' Workman
+* Iona 'Minute Maid' Ryder
+* Jay 'Cream' Wong
 * Noah-Vincenz 'The Beast' Nöh
-* Samuel Larsen-Disney
+* Samuel 'The Git' Larsen-Disney
 
 [logo]: (http://www.chicksinfo.com/wp-content/uploads/2016/09/John-Cena-Family-Pictures-Wife-Siblings-Age-Height-Weight.jpg)
 
