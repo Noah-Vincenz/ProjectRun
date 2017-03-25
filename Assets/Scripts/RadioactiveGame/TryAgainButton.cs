@@ -12,11 +12,19 @@ public class TryAgainButton : MonoBehaviour {
 		gameObject.SetActive (false);
 		Button btn = gameObject.GetComponent<Button>();
 		btn.onClick.AddListener(TaskOnClick);
-		Assert.IsFalse(gameObject.activeInHierarchy, "TryAgainButton is active, but should not be.");
+		//TestNotActive();
 	}
 
 	void TaskOnClick(){
-		Assert.IsTrue(gameObject.activeInHierarchy, "TryAgainButton is not active.");
+		//TestActive();
 		SceneManager.LoadScene ("CatchRadiationGame");
+	}
+
+	//Tests 
+	void TestActive() {
+		Assert.IsTrue(gameObject.activeInHierarchy, "TryAgainButton is not active.");
+	}
+	void TestNotActive() {
+		Assert.IsFalse (gameObject.activeInHierarchy, "TryAgainButton is active, but should not be.");
 	}
 }

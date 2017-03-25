@@ -44,9 +44,7 @@ public class PandaRadiationControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start() {
-		Assert.IsTrue (gameObject.activeSelf, "Panda Game Object is not active.");
-		Assert.IsTrue(face.activeInHierarchy, "Panda Face Game Object is not active.");
-
+		//TestActive ();
 		thisGO = gameObject;
 		happy = false;
 		sad = false;
@@ -66,6 +64,7 @@ public class PandaRadiationControl : MonoBehaviour {
 		timeLeft = 30.0f;
 		count = 0;
 		SetCountText();
+		//TestTextField ();
 		winText.text = "";
 		gameOverText.text = "";
 		anim = GetComponent<Animator>();
@@ -75,9 +74,7 @@ public class PandaRadiationControl : MonoBehaviour {
 	// Making the panda move corresponding to the users keyboard and updating the time every frame.
 	// This also handles the pandas facial expressions after the panda has collided with other GameObjects.
 	void Update() {
-		Assert.AreNotEqual(-1, timeLeft, "Time is equal to 1, but should not be.");
-		Assert.AreNotEqual(21, count, "Count is equal to 21, but should only go up to 20.");
-
+		//TestValidTime ();
 		anim.SetFloat ("Speed", rb.velocity.x);
 		if (hitByBomb == false) {
 			if (Input.GetKeyDown ("left") || Input.GetKeyDown("a")) WalkLeft ();
@@ -89,7 +86,8 @@ public class PandaRadiationControl : MonoBehaviour {
 		timerLabel.text = "Timer: " + Mathf.Round(timeLeft);
 		if(timeLeft < 0) {
 			gameOverText.text = "Time over. Try again?";
-			finishGame ();
+			FinishGame ();
+			//TestFinishGame();
 		}
 		if (instantiatedObj != null) {
 			timeLeftTillDestroy -= Time.deltaTime;
@@ -152,6 +150,7 @@ public class PandaRadiationControl : MonoBehaviour {
 				count = count + 1;
 				happy = true;
 				SetCountText ();
+				//TestTextField ();
 			}
 			else if (coll.gameObject.tag == "Bamboo") { //when the panda collides with a bamboo timeLeft increases by 5 seconds
 				happy = true;
@@ -168,7 +167,8 @@ public class PandaRadiationControl : MonoBehaviour {
 				StopMoving ();
 				Destroy (left.GetComponent<EventTrigger> ());
 				Destroy (right.GetComponent<EventTrigger> ());
-				finishGame ();
+				FinishGame ();
+				//TestFinishGame();
 			}
 		}
 	}
@@ -179,12 +179,13 @@ public class PandaRadiationControl : MonoBehaviour {
 		if (count >= 20) { //player has won
 			winText.text = "You win! Captured all radiation!";
 			face.GetComponent<Animator> ().SetBool ("Happy", true);
-			finishGame ();
+			FinishGame ();
+			//TestFinishGame();
 		}
 	}
 
 	//method that ends the game by stopping objects from falling from the sky and making te tryAgain and continueButton appear
-	void finishGame() {
+	void FinishGame() {
 		gameOver = true;
 		spawner.CancelInvoke ();
 		tryAgainButton.gameObject.SetActive (true);
@@ -209,5 +210,21 @@ public class PandaRadiationControl : MonoBehaviour {
 	public void StopMoving() {
 		rb.velocity = new Vector2 (0, 0);
 		face.GetComponent<Animator> ().SetBool ("Walking", false);
+	}
+
+	//Tests
+	void TestActive() {
+		Assert.IsTrue (gameObject.activeSelf, "Panda Game Object is not active.");
+		Assert.IsTrue(face.activeInHierarchy, "Panda Face Game Object is not active.");
+	}
+	void TestValidTime() {
+		Assert.AreNotEqual(-1, timeLeft, "Time is equal to 1, but should not be.");
+		Assert.AreNotEqual(21, count, "Count is equal to 21, but should only go up to 20.");
+	}
+	void TestTextField() {
+		Assert.AreEqual (count.ToString(), countText.text);
+	}
+	void TestFinishGame() {
+		Assert.IsTrue (tryAgainButton.gameObject.activeInHierarchy, "tryAgainButton is not active, but it should be.");
 	}
 }

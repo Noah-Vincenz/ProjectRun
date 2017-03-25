@@ -9,8 +9,8 @@ using UnityEngine.Assertions;
 public class ContinueButton : MonoBehaviour {
 
 	public GameObject background;
-	float timeLeftforTransition=1;
-	private bool readyToTransition=false;
+	float timeLeftforTransition;
+	private bool readyToTransition;
 	public Button tryAgainButton;
 	public Text gameOverText;
 	public Text winText;
@@ -20,14 +20,15 @@ public class ContinueButton : MonoBehaviour {
 	public Button leftArrow;
 
 	void Start () {
+		timeLeftforTransition = 1;
+		readyToTransition = false;
 		var material1 = background.GetComponent<Renderer>().material;
 		var color1 = material1.color;
 		background.GetComponent<Renderer> ().material.color = new Color (color1.r, color1.g, color1.b, color1.a -color1.a);
 		gameObject.SetActive (false);
 		Button btn = gameObject.GetComponent<Button>();
 		btn.onClick.AddListener(TaskOnClick);
-
-		Assert.IsFalse(gameObject.activeInHierarchy, "ContinueButton is active, but should not be.");
+		TestNotActive ();
 	}
 
 	void Update () {
@@ -49,15 +50,19 @@ public class ContinueButton : MonoBehaviour {
 			timeLeftforTransition -= Time.deltaTime;
 			Debug.Log (timeLeftforTransition);
 		}
-
-		if (timeLeftforTransition <= 0) {
-			SceneManager.LoadScene ("MovingScanOut");
-		}
+		if (timeLeftforTransition <= 0) SceneManager.LoadScene ("MovingScanOut");
 	}
 
 	void TaskOnClick(){
-		Assert.IsTrue(gameObject.activeInHierarchy, "ContinueButton is not active.");
-
+		TestActive ();
 		readyToTransition = true;
+	}
+		
+	//Tests 
+	void TestActive() {
+		Assert.IsTrue(gameObject.activeInHierarchy, "ContinueButton is not active.");
+	}
+	void TestNotActive() {
+		Assert.IsFalse (gameObject.activeInHierarchy, "ContinueButton is active, but should not be.");
 	}
 }
