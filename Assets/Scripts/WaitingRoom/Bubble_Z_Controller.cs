@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class Bubble_Z_Controller : MonoBehaviour {
 	
@@ -17,6 +18,9 @@ public class Bubble_Z_Controller : MonoBehaviour {
 		rb.AddForce (Vector2.up * speed);
 		if (gameObject.transform.position.y > 10)
 			Destroy (gameObject);
+
+//		testPosition();
+//		testComp ();
 	}
 	/*
 	 *	destroy off screen !
@@ -26,4 +30,15 @@ public class Bubble_Z_Controller : MonoBehaviour {
 			Destroy (gameObject); // destroy if bubble 
 
 	}
+	/*
+	 * testing funcs 
+	 */
+
+	void testPosition () {
+		Assert.IsTrue (!(transform.localPosition.y > 10));
+	}
+	void testCompRigidBody(){
+		Assert.IsNotNull (transform.GetComponent<Rigidbody2D> ());
+	}
+		
 }

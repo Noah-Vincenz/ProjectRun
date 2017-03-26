@@ -1,15 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class PlantController : MonoBehaviour {
 
 	public float speed;
+
+	public void Start(){
+
+		testComp2DBoxCol();
+		testCompRigidBody ();
+	}
+
 	/**
 	 * slide right on click 
 	 */
 	void OnMouseDown(){
 		slideRight ();
+		testPosition ();
 	}
 	/*
 	 * mehtod to slide plant to right
@@ -21,5 +30,18 @@ public class PlantController : MonoBehaviour {
 			transform.position = Vector3.MoveTowards (transform.position, newPos, speed * Time.deltaTime); // move to new pos 
 		}
 
+	}
+	/*
+	 * testing funcs 
+	 */
+
+	void testPosition () {
+		Assert.IsTrue (!(transform.localPosition.y > 7.5f));
+	}
+	void testCompRigidBody(){
+		Assert.IsNotNull (transform.GetComponent<Rigidbody2D> ());
+	}
+	void testComp2DBoxCol(){
+		Assert.IsNotNull (transform.GetComponent<BoxCollider2D> ());
 	}
 }

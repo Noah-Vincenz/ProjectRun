@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class EndPandaController : MonoBehaviour {
 
@@ -10,7 +11,6 @@ public class EndPandaController : MonoBehaviour {
 	public GameObject speechBub;
 	//public GameObject text;
 
-	int click = 0;
 	bool walkOne;
 	bool finalMove;
 	bool middle;
@@ -23,9 +23,12 @@ public class EndPandaController : MonoBehaviour {
 		anim = GetComponent<Animator>();
 		rb = GetComponent<Rigidbody2D>();
 		walkOne = true;
+//		testCompRigidBody ();
+//		testCompBoxCol();
 	}
 
 	void Update(){
+//		testPosition ();
 		anim.SetFloat("Speed", rb.velocity.x);
 		if (walkOne) { // initial walk 
 			Debug.Log ("Inital walk");
@@ -35,6 +38,7 @@ public class EndPandaController : MonoBehaviour {
 			Debug.Log ("Show speech bubble");
 			happyFace ();
 			speechBub.SetActive (true);
+//			testGameObjectIsActive (speechBub);
 		}
 		if (transform.position.x >= 0) { // stop walk at centre 
 			walkOne = false;
@@ -89,5 +93,30 @@ public class EndPandaController : MonoBehaviour {
 	void OnDestroy(){
 		Debug.Log ("Load next scene");
 		SceneManager.LoadScene ("ExitScene");
+	}
+
+	/**
+	 * test funcs
+	 */
+
+	void testGameObjectIsActive(GameObject _obj){
+
+		Assert.IsTrue (_obj.activeSelf);
+
+	}
+	void testGameObjectIsNotActive(GameObject _obj){
+
+		Assert.IsFalse (_obj.activeSelf);
+
+	}
+	void testPosition () {
+		Assert.IsFalse (transform.localPosition.y < -10.5f);
+	}
+
+	void testCompRigidBody(){
+		Assert.IsNotNull (transform.GetComponent<Rigidbody2D> ());
+	}
+	void testCompBoxCol(){
+		Assert.IsNotNull (transform.GetComponent<BoxCollider2D> ());
 	}
 }
