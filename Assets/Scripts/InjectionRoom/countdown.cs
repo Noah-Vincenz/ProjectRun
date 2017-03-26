@@ -14,8 +14,6 @@ public class countdown : MonoBehaviour {
 	void Start () {
 		timeGaOb.SetActive (true);
 		source.Play ();
-
-
 	}
 
     void Update()
@@ -33,7 +31,6 @@ public class countdown : MonoBehaviour {
             timeLeft -= Time.deltaTime;
             changeText();
         }
-
     }
 
     void changeText()

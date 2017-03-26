@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class TargetCreationControl : MonoBehaviour {
 
@@ -39,7 +40,8 @@ public class TargetCreationControl : MonoBehaviour {
 					greenTargetIn=(GameObject) Instantiate (greenTarget, screenPosition, redTarget.transform.rotation);
 				}
 
-				timeLeftTillNextSetOfTargets = 3;
+                //testTargetCreation();
+                timeLeftTillNextSetOfTargets = 3;
 			}
 		}
 
@@ -49,6 +51,13 @@ public class TargetCreationControl : MonoBehaviour {
 		}
 	}
 
+    void testTargetCreation()
+    {
+        if (timeLeftTillNextSetOfTargets <= 0)
+        {
+            Assert.IsTrue((redTargetIn!=null)||(greenTargetIn!=null));
+        }
+    }
 
 		
 }

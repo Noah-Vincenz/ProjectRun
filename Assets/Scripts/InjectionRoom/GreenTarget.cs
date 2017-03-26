@@ -69,8 +69,6 @@ public class GreenTarget : MonoBehaviour {
 		spriteRenderer.enabled = false;	
 		coll.enabled = false;
 		instantiatedObj= Instantiate(starCelebration,gameObject.transform.position,starCelebration.transform.rotation);
-		
-
 	}
 		
 }

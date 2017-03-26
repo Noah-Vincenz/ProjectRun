@@ -20,6 +20,5 @@ public class ScoreKeeper : MonoBehaviour {
 	void Update () {
 		ScoreBoard.text = "" + Score;
         finalScore = Score; //finalScore used as a reference in Win screen
-        
 	}
 }

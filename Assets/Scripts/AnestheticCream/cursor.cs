@@ -14,4 +14,5 @@ public class cursor : MonoBehaviour {
         mousePosNeed.z = 5f;
         transform.position = mousePosNeed;
     }
+
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.UI;
 
 public class fillBar : MonoBehaviour {
@@ -32,5 +33,32 @@ public class fillBar : MonoBehaviour {
 			source.Play ();
             panda.sprite = sprites[1]; //Sad panda face becomes normal panda face
         }
+
+        //testFill();
     }
+
+    //Test
+    void testFill()
+    {
+        if (timeDown > 0)
+        {
+            Assert.IsTrue(image.fillAmount>0);
+        }
+
+        if (image.fillAmount == 1)
+        {
+            Assert.IsTrue(panda.sprite == sprites[2]);
+        } else
+
+        if (image.fillAmount >= 0.5)
+        {
+            Assert.IsTrue(panda.sprite == sprites[1]);
+        } else
+
+        if (image.fillAmount < 0.5)
+        {
+            Assert.IsTrue(panda.sprite == sprites[0]);
+        }
+    }
+
 }

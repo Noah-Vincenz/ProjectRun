@@ -19,15 +19,12 @@ public class tapCream : MonoBehaviour {
 		source = GetComponent<AudioSource>();
 		source.time = 1f;
     }
-
     
 	void Update () {
 		if (source.time >= 2) {
 			source.Stop ();
 		}
-			
     }
-
 
     private void OnMouseDown()
     {
