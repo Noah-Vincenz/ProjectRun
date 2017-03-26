@@ -42,6 +42,7 @@ public class ToiletNoScanPeePeeScreenController : MonoBehaviour {
 			Destroy (prompt.gameObject);
 			GetComponent<BoxCollider2D> ().enabled = false; // stops double click
 			++clicks;
+			//TestDisabled;
 			break;
 
 		case 1: // moves screen back to original position
@@ -52,6 +53,7 @@ public class ToiletNoScanPeePeeScreenController : MonoBehaviour {
 			Destroy (prompt2.gameObject);
 			GetComponent<BoxCollider2D> ().enabled = false;
 			++clicks;
+			//TestDisabled;
 			break;
 
 		}
@@ -80,8 +82,6 @@ public class ToiletNoScanPeePeeScreenController : MonoBehaviour {
 
 		speechBubble.SetActive (true);
 		finalText.SetActive (true);
-//		testGameObjectIsActive (speechBubble);
-//		testGameObjectIsActive(finalText);
 
 	}
 
@@ -94,18 +94,14 @@ public class ToiletNoScanPeePeeScreenController : MonoBehaviour {
 		yield return new WaitForSeconds(wait);
 		GetComponent<BoxCollider2D> ().enabled = true;
 		prompt2.SetActive (true);
-//		testGameObjectIsActive (prompt2);
-	}
-	/**
-	 * test funcs
-	 */
-
-	void testGameObjectIsActive(GameObject _obj){
-		Assert.IsTrue (_obj.activeSelf);
-	}
-	void testGameObjectIsNotActive(GameObject _obj){
-		Assert.IsFalse (_obj.activeSelf);
+		//TestEnabled;
 	}
 
-
+	//Tests 
+	void TestEnabled() {
+		Assert.IsTrue (GetComponent<BoxCollider2D> ().enabled);
+	}
+	void TestDisabled() {
+		Assert.IsFalse (GetComponent<BoxCollider2D> ().enabled);
+	}
 }
