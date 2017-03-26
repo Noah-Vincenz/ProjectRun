@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.Assertions;
 using UnityEngine;
 
 public class MoveBed : MonoBehaviour {
@@ -34,28 +35,42 @@ public class MoveBed : MonoBehaviour {
 		var color = material.color;
 
 		if (dirRight) {
+			
+			//testDirectionRight ();
 			transform.Translate (Vector2.right * speed * Time.deltaTime); //move to the direction right
+
 		} 
 		else {
+			
+			//testDirectionLeft ();
 			transform.Translate (-Vector2.right * speed * Time.deltaTime); //move to the direct left
+
 		}
 
 		if(transform.position.x >= rightPos) {
+			
 			dirRight = false; //move to the left when it's bigger or equal to the right maximum position
+			//testLeftMove();
 
 		}
 
-		if(transform.position.x <= leftPos) {			
+		if(transform.position.x <= leftPos) {
+			
 			dirRight = true; //move to the right when it's bigger or equal to the left maximum position
+			//testRightMove();
 			count++;
+
 		}
 
 		if (count >= 2) {
+			
 			readyForTransition = true; //ready for transition when it has scanned twice
+
 		}
 
 		if (readyForTransition) { //fade begins
 
+			//testTransitionReady ();
 			background.SetActive (enabled);
 			material.color = new Color (color.r, color.g, color.b, color.a + (1f * Time.deltaTime));
 			timeLeftforTransition -= Time.deltaTime; 
@@ -69,4 +84,37 @@ public class MoveBed : MonoBehaviour {
 		}
 		
 	}
+
+	//test functions
+
+	void testDirectionRight(){
+
+		Assert.IsTrue (dirRight);
+
+	}
+
+	void testDirectionLeft(){
+
+		Assert.IsFalse (dirRight);
+
+	}
+
+	void testRightMove(){
+
+		Assert.IsTrue (transform.position.x <= leftPos);
+
+	}
+
+	void testLeftMove(){
+
+		Assert.IsTrue (transform.position.x >= rightPos);
+
+	}
+
+	void testTransitionReady(){
+
+		Assert.IsTrue (readyForTransition);
+
+	}
+
 }

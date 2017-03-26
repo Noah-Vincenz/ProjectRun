@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.Assertions;
 using UnityEngine;
 
 public class MoveBedIn : MonoBehaviour {
@@ -32,19 +33,35 @@ public class MoveBedIn : MonoBehaviour {
 			aPosition1, 1 * Time.deltaTime);
 
 		if (transform.position.x <= -2.5) {
-
+			
+			//testXPosition ();
 			readyForTransition = true; //if scanning to left stopped then fade out will begin 
 
 		}
 
 		if (readyForTransition) {
 
+			//testTransitionReady();
 			background.SetActive (enabled);
 			material.color = new Color (color.r, color.g, color.b, color.a + (1f * Time.deltaTime));
 			timeLeftforTransition -= Time.deltaTime;
 
 		}
 			
+
+	}
+
+	//test functions
+
+	void testTransitionReady(){
+
+		Assert.IsTrue (readyForTransition);
+
+	}
+
+	void testXPosition(){
+
+		Assert.IsTrue (transform.position.x <= -2.5);
 
 	}
 }
