@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.Assertions;
 using UnityEngine;
 
 public class MoveBedOut : MonoBehaviour {
@@ -33,12 +34,14 @@ public class MoveBedOut : MonoBehaviour {
 
 		if (transform.position.x >= 3) {
 
+			//testXPosition ();
 			readyForTransition = true; //if the bed has moved out then start fade out
 
 		}
 
 		if (readyForTransition) {
 
+			//testTransitionReady();
 			background.SetActive (enabled);
 			material.color = new Color (color.r, color.g, color.b, color.a + (1f * Time.deltaTime));
 			timeLeftforTransition -= Time.deltaTime;
@@ -79,4 +82,20 @@ public class MoveBedOut : MonoBehaviour {
 
 
 	}
+
+	//test functions
+
+	void testTransitionReady(){
+
+		Assert.IsTrue (readyForTransition);
+
+	}
+
+	void testXPosition(){
+
+		Assert.IsTrue (transform.position.x >= 3);
+
+	}
+
+
 }
