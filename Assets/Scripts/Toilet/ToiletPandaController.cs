@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Assertions;
 
 public class ToiletPandaController : MonoBehaviour {
 	Animator anim;
@@ -20,12 +21,15 @@ public class ToiletPandaController : MonoBehaviour {
 		walkIn = true;
 		anim = GetComponent<Animator>();
 		rb = GetComponent<Rigidbody2D>();
+//		testCompRigidBody ();
+//		testCompBoxCol ();
 
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
+//		testPosition ();
 
 		anim.SetFloat("Speed", rb.velocity.x);
 
@@ -41,6 +45,7 @@ public class ToiletPandaController : MonoBehaviour {
 			walkIn = false;
 			awakeFace ();
 			screenPrompt.SetActive (true);
+//			testGameObjectIsActive (screenPrompt);
 			screen.GetComponent<BoxCollider2D> ().enabled = true;
 	
 		}
@@ -108,5 +113,23 @@ public class ToiletPandaController : MonoBehaviour {
 			break;
 		}
 	}
-		
+	/**
+	 * test funcs
+	 */
+
+	void testGameObjectIsActive(GameObject _obj){
+		Assert.IsTrue (_obj.activeSelf);
+	}
+	void testGameObjectIsNotActive(GameObject _obj){
+		Assert.IsFalse (_obj.activeSelf);
+	}
+	void testPosition () {
+		Assert.IsFalse (transform.localPosition.y < -10.5f);
+	}
+	void testCompRigidBody(){
+		Assert.IsNotNull (transform.GetComponent<Rigidbody2D> ());
+	}
+	void testCompBoxCol(){
+		Assert.IsNotNull (transform.GetComponent<BoxCollider2D> ());
+	}
 }

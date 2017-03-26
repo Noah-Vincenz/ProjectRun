@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;   //for loading scene 
+using UnityEngine.Assertions;
 
 public class NextButtonController : MonoBehaviour {
 
@@ -53,6 +54,8 @@ public class NextButtonController : MonoBehaviour {
 			speechBubble.SetActive (false); 
 			Destroy (textOne.gameObject);
 			sofa.GetComponent<BoxCollider2D> ().enabled = false;
+
+			testGameObjectIsNotActive (speechBubble);
 			++clicks;
 			break;
 		case 1: // panda leave 
@@ -84,6 +87,20 @@ public class NextButtonController : MonoBehaviour {
 		GameObject procedure =  GameObject.Find ("SceneManager");
 		procedure.GetComponent<SceneManagerController> ().setProcedure(itemTag);
 		readyToMove = true;
+
+	}
+	/**
+	 * test funcs
+	 */
+
+	void testGameObjectIsActive(GameObject _obj){
+
+		Assert.IsTrue (_obj.activeSelf);
+
+	}
+	void testGameObjectIsNotActive(GameObject _obj){
+
+		Assert.IsFalse (_obj.activeSelf);
 
 	}
 }

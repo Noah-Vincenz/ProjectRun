@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class SceneManagerController : MonoBehaviour {
 	public static SceneManagerController Instance = null;
-
+	public static int count = 0;
 	private string procedure ; // saves procedure 
 
 	/**
@@ -14,10 +15,12 @@ public class SceneManagerController : MonoBehaviour {
 	{
 		if (Instance == null) { // only have one instance of this object 
 			Instance = this;
+			++count;
 			DontDestroyOnLoad (gameObject); // game object never destroyed between scenes 
 		} else {
 			DestroyImmediate (gameObject);
 		}
+//		testSingleton();
 	}
 	/**
 	 * public mehtod to get the procedure - for loading scenes
@@ -33,5 +36,13 @@ public class SceneManagerController : MonoBehaviour {
 
 		procedure = _procedure;
 	}
+
+	/**
+	 * test func
+	 */
+	void testSingleton(){
+		Assert.AreEqual (1, count, "There is more than one sceneManager eeeeK!");
+	}
+
 
 }

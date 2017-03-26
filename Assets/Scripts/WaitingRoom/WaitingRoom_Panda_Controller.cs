@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Assertions;
 
 public class WaitingRoom_Panda_Controller : MonoBehaviour {
 
@@ -40,9 +41,12 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 		InvokeRepeating ("SpawnZ", 0, spawnTime); // calls the spawnZ method repeatedly
 		StartCoroutine("prompt_time"); // start Coroutine for click me prompt 
 		yawn.time = 0.2f;
+//		testCompBoxCol ();
+//		testCompRigidBody();
 	}
 
 	void Update(){
+//		testPosition ();
 		anim.SetFloat("Speed", rb.velocity.x);
 //		Debug.Log (needToMove); 
 		if (needToMove) { // bool for first walk (right)
@@ -57,6 +61,8 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 			awakeFace ();
 			speechBub.SetActive(true);// renders speech bubble 
 			text.SetActive(true);
+//			testGameObjectIsActive (speechBub);
+//			testGameObjectIsActive(text);
 			happyFace(); // method to make panda happy 
 			speech = true;
 			}
@@ -102,6 +108,7 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 			interacted = true; // stops prompt 
 			transform.position = new Vector3 (transform.localPosition.x, transform.localPosition.y + 1f, transform.localPosition.z);
 			prompt.SetActive (false);
+//			testGameObjectIsNotActive (prompt);
 			interacted = false;
 			StartCoroutine ("prompt_time");
 			prompt.GetComponent<Text> ().text = "Click me!";
@@ -117,21 +124,10 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 				Destroy (prompt.gameObject);
 				anim.SetBool ("noIdle", false);
 				chair.GetComponent<BoxCollider2D> ().enabled = true; //sets chair colider to acitve 
-
-
 				++click;
 			}
 			break;
-//		case 2: // show speech bubble 
-//			if (anim.GetCurrentAnimatorStateInfo (0).IsName ("Idle")) {
-//				Debug.Log ("Panda Click event-3");
-//				speechBub.SetActive(true);// renders speech bubble 
-//				text.SetActive(true);
-//				happyFace(); // method to make panda happy 
-//				++click;
-//			}
-//			break;
-//
+
 		default : // panda wave 
 			waveClick = true;
 			break;
@@ -186,6 +182,7 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 		yield return new WaitForSeconds(wait);
 		if (!(interacted)) {
 			prompt.SetActive (true);
+//			testGameObjectIsActive (prompt);
 		}
 	}
 	/**
@@ -196,6 +193,25 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 		finalMove = true;
 	}
 
+	/**
+	 * test funcs
+	 */
+
+	void testGameObjectIsActive(GameObject _obj){
+		Assert.IsTrue (_obj.activeSelf);
+	}
+	void testGameObjectIsNotActive(GameObject _obj){
+		Assert.IsFalse (_obj.activeSelf);
+	}
+	void testPosition () {
+		Assert.IsFalse (transform.localPosition.y < -10.5f);
+	}
+	void testCompRigidBody(){
+		Assert.IsNotNull (transform.GetComponent<Rigidbody2D> ());
+	}
+	void testCompBoxCol(){
+		Assert.IsNotNull (transform.GetComponent<BoxCollider2D> ());
+	}
 
 }
 

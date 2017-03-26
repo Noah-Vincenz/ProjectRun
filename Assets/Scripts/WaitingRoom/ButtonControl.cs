@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class ButtonControl : MonoBehaviour {
 	private SpriteRenderer sr;
@@ -25,6 +26,7 @@ public class ButtonControl : MonoBehaviour {
 		sr = gameObject.GetComponent<SpriteRenderer> ();
 		sunSR = sunObj.GetComponent<SpriteRenderer> ();
 		anim = sunObj.GetComponent<Animator> ();
+//		testCompSpriteRend ();
 	}
 	
 	// Update is called once per frame
@@ -105,6 +107,14 @@ public class ButtonControl : MonoBehaviour {
 		anim.SetBool ("Up", true);
 		anim.SetBool ("Down", false);
 
+	}
+
+	/**
+	 * test funcs
+	 */
+
+	void testCompSpriteRend(){
+		Assert.IsNotNull (transform.GetComponent<SpriteRenderer> ());
 	}
 
 }

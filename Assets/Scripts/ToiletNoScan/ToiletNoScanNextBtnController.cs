@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class ToiletNoScanNextBtnController : MonoBehaviour {
 
@@ -26,8 +27,10 @@ public class ToiletNoScanNextBtnController : MonoBehaviour {
 		case 0:// activate panda & disable speech bubble 
 
 			playerPanda.SetActive (true);
+//			testGameObjectIsActive (playerPanda);
 			Destroy (text1.gameObject);
 			speechBubble.SetActive (false);
+//			testGameObjectIsNotActive (speechBubble);
 			++clicks;
 			break;
 
@@ -41,5 +44,15 @@ public class ToiletNoScanNextBtnController : MonoBehaviour {
 			break;
 
 		}
+	}
+	/**
+	 * test funcs
+	 */
+
+	void testGameObjectIsActive(GameObject _obj){
+		Assert.IsTrue (_obj.activeSelf);
+	}
+	void testGameObjectIsNotActive(GameObject _obj){
+		Assert.IsFalse (_obj.activeSelf);
 	}
 }

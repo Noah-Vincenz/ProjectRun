@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class FishController : MonoBehaviour {
 
@@ -16,6 +17,8 @@ public class FishController : MonoBehaviour {
 		rb = GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
 		source = GetComponent<AudioSource>();
+//		testCompRigidBody ();
+//		testCompBoxCol ();
 
 	}
 	
@@ -66,5 +69,15 @@ public class FishController : MonoBehaviour {
 
 
 		}
+	}
+	/*
+	 * testing funcs 
+	 */
+
+	void testCompRigidBody(){
+		Assert.IsNotNull (transform.GetComponent<Rigidbody2D> ());
+	}
+	void testCompBoxCol(){
+		Assert.IsNotNull (transform.GetComponent<BoxCollider2D> ());
 	}
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class PeePeeScreenController : MonoBehaviour {
 	Animator anim;
@@ -78,6 +79,8 @@ public class PeePeeScreenController : MonoBehaviour {
 
 		speechBubble.SetActive (true);
 		finalText.SetActive (true);
+//		testGameObjectIsActive (speechBubble);
+//		testGameObjectIsActive (finalText);
 
 	}
 
@@ -90,6 +93,18 @@ public class PeePeeScreenController : MonoBehaviour {
 		yield return new WaitForSeconds(wait);
 		GetComponent<BoxCollider2D> ().enabled = true;
 		prompt2.SetActive (true);
+//		testGameObjectIsActive (prompt2);
 		Destroy (scanTxt.gameObject);
+	}
+
+	/**
+	 * test funcs
+	 */
+
+	void testGameObjectIsActive(GameObject _obj){
+		Assert.IsTrue (_obj.activeSelf);
+	}
+	void testGameObjectIsNotActive(GameObject _obj){
+		Assert.IsFalse (_obj.activeSelf);
 	}
 }
