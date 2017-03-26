@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class TargetCreationControl : MonoBehaviour {
 
@@ -49,6 +50,13 @@ public class TargetCreationControl : MonoBehaviour {
 		}
 	}
 
+    void testTargetCreation()
+    {
+        if (timeLeftTillNextSetOfTargets <= 0)
+        {
+            Assert.IsTrue();
+        }
+    }
 
 		
 }

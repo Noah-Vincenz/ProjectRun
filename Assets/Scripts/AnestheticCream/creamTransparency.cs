@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.UI;
 
 public class creamTransparency : MonoBehaviour {
@@ -33,6 +34,7 @@ public class creamTransparency : MonoBehaviour {
             {
                 creams[0].GetComponent<Renderer>().material.color = new Color(color.r, color.g, color.b, (leftArmVal / 150)); //Change transparency of the image
             }
+            //testAlphaValues();
         }
         else
         if (this.name == "LeftLegCream")
@@ -43,6 +45,7 @@ public class creamTransparency : MonoBehaviour {
             {
                 creams[1].GetComponent<Renderer>().material.color = new Color(color.r, color.g, color.b, (leftLegVal / 150));
             }
+            //testAlphaValues();
         } else
         if (this.name == "RightArmCream")
         {
@@ -52,6 +55,7 @@ public class creamTransparency : MonoBehaviour {
             {
                 creams[2].GetComponent<Renderer>().material.color = new Color(color.r, color.g, color.b, (rightArmVal / 150));
             }
+            //testAlphaValues();
         } else
         if (this.name == "RightLegCream")
         {
@@ -61,8 +65,32 @@ public class creamTransparency : MonoBehaviour {
             {
                 creams[3].GetComponent<Renderer>().material.color = new Color(color.r, color.g, color.b, (rightLegVal / 150));
             }
-
+            //testAlphaValues();
         }
-
+    }
+    
+    //Tests
+    void testAlphaValues()
+    {
+        if ((leftArmVal > 0) && (this.name == "LeftArmCream"))
+        {
+            Color testColor = creams[0].GetComponent<Renderer>().material.color;
+            Assert.IsTrue(testColor.a > 0);
+        }
+        if ((leftLegVal > 0) && (this.name == "LeftlegCream"))
+        {
+            Color testColor = creams[1].GetComponent<Renderer>().material.color;
+            Assert.IsTrue(testColor.a > 0);
+        }
+        if ((rightArmVal > 0) && (this.name == "RightArmCream"))
+        {
+            Color testColor = creams[2].GetComponent<Renderer>().material.color;
+            Assert.IsTrue(testColor.a > 0);
+        }
+        if ((rightLegVal > 0) && (this.name == "RightlegCream"))
+        {
+            Color testColor = creams[3].GetComponent<Renderer>().material.color;
+            Assert.IsTrue(testColor.a > 0);
+        }
     }
 }
