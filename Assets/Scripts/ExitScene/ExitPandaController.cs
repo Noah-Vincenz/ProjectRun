@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.Assertions;
 using UnityEngine;
 
 public class ExitPandaController : MonoBehaviour {
@@ -26,14 +27,18 @@ public class ExitPandaController : MonoBehaviour {
 
 		if (leftDoor.transform.position.x > -5 ) { //when the left door opens, the panda starts walking
 
+			//testLeftDoorPosition ();
 			rb.velocity = Vector2.right * speed;
 			face.GetComponent<Animator> ().SetBool ("Walking", true);
+			//testWalkingAnimationBool ();
 
 		}
 
 		if (transform.position.x > 10.5f ) { // test if panda is off screen to kill 
-			
+
+			//testExitPosition ();
 			Destroy (this.gameObject);
+			//testGameObjectNotActive (this.gameObject);
 
 		}
 		
@@ -44,4 +49,31 @@ public class ExitPandaController : MonoBehaviour {
 		SceneManager.LoadScene ("ZoomOutExit");
 
 	}
+
+	//test functions
+
+	void testExitPosition(){
+
+		Assert.IsTrue (transform.position.x > 10.5f);
+
+	}
+
+	void testGameObjectNotActive(GameObject _obj){
+
+		Assert.IsFalse (_obj.activeSelf);
+
+	}
+
+	void testLeftDoorPosition(){
+
+		Assert.IsTrue (leftDoor.transform.position.x > -5);
+
+	}
+
+	void testWalkingAnimationBool(){
+
+		Assert.AreEqual (true, face.GetComponent<Animator>().GetBool("Walking"));
+
+	}
+
 }
