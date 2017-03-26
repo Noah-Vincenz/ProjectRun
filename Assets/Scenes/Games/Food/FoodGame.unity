@@ -402,7 +402,7 @@ MonoBehaviour:
   repeatEveryFrame: 1
   hasFailed: 0
   checkMethods: 1
-  m_ActionBase: {fileID: 0}
+  m_ActionBase: {fileID: 751460508}
   checksPerformed: 0
 --- !u!1 &502649271
 GameObject:
@@ -813,6 +813,25 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 2.01, y: 1.42}
+--- !u!114 &751460508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4928c6c2b973874c8d4e6c9a69bb5b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  go: {fileID: 461242679}
+  thisPropertyPath: Timer.timeLeft
+  compareToType: 1
+  other: {fileID: 0}
+  otherPropertyPath: 
+  constantValueGeneric: 19.5
+  compareTypes: 2
+  floatingPointError: 0.00009999999747378752
 --- !u!1001 &824351597
 Prefab:
   m_ObjectHideFlags: 0

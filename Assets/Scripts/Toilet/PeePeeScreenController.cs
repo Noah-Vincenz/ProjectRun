@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class PeePeeScreenController : MonoBehaviour {
 	Animator anim;
@@ -39,6 +40,7 @@ public class PeePeeScreenController : MonoBehaviour {
 			Destroy (prompt.gameObject);
 			GetComponent<BoxCollider2D> ().enabled = false; // stops double click
 			++clicks;
+			//TestDisabled ();
 			break;
 
 		case 1: // moves screen back to original position
@@ -49,6 +51,7 @@ public class PeePeeScreenController : MonoBehaviour {
 			Destroy (prompt2.gameObject);
 			GetComponent<BoxCollider2D> ().enabled = false;
 			++clicks;
+			//TestDisabled ();
 			break;
 			
 		}
@@ -91,5 +94,13 @@ public class PeePeeScreenController : MonoBehaviour {
 		GetComponent<BoxCollider2D> ().enabled = true;
 		prompt2.SetActive (true);
 		Destroy (scanTxt.gameObject);
+	}
+
+	//Tests 
+	void TestEnabled() {
+		Assert.IsTrue (GetComponent<BoxCollider2D> ().enabled);
+	}
+	void TestDisabled() {
+		Assert.IsFalse (GetComponent<BoxCollider2D> ().enabled);
 	}
 }
