@@ -14,7 +14,6 @@ public class startRadiationGame : MonoBehaviour {
 
 	//initialising variables
 	void Start() {
-		time = null;
 		timeLeft = 3;
 		clicked = false;
 		Button btn = myButton.GetComponent<Button>();

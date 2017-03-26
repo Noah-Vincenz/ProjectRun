@@ -134,7 +134,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 6d7dd1e1ad524974886d1725a7f33235,
+      objectReference: {fileID: 21300000, guid: 348561c799a804d84b6481045fac04cb,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0155451e9280c644eafc17d255c2ba28, type: 2}
@@ -988,7 +988,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8f3744683961440449bc89f38f66ccc7, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0

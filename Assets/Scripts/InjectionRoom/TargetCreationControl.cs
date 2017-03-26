@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Assertions;
 
 public class TargetCreationControl : MonoBehaviour {
 
@@ -13,6 +12,10 @@ public class TargetCreationControl : MonoBehaviour {
 	float timeLeftTillNextSetOfTargets=0; //3 seconds set later
 	public GameObject timerKeeper;
 	Timer timer;
+	public GameObject topRight;
+	public GameObject BottomLeft;
+	public GameObject topLeft;
+	public GameObject BottomRight;
 
 	// Use this for initialization
 	void Start () {
@@ -33,15 +36,14 @@ public class TargetCreationControl : MonoBehaviour {
 				print (whatColourTargt);
 
 				if (whatColourTargt == 1) {
-					Vector3 screenPosition = Camera.main.ScreenToWorldPoint (new Vector3 (Random.Range (300, 1300), Random.Range (150, 1000), ZvalueAsFloat));
+					Vector3 screenPosition = new Vector3 (Random.Range (BottomLeft.transform.localPosition.x, topRight.transform.localPosition.x), Random.Range (BottomLeft.transform.localPosition.y, topRight.transform.localPosition.y), 0);
 					redTargetIn=(GameObject) Instantiate(redTarget, screenPosition, redTarget.transform.rotation);
 				} else if (whatColourTargt == 0||whatColourTargt == 2||whatColourTargt == 3) {
-					Vector3 screenPosition = Camera.main.ScreenToWorldPoint (new Vector3 (Random.Range (300, 1300), Random.Range (150, 1000), ZvalueAsFloat));
+					Vector3 screenPosition = new Vector3 (Random.Range (BottomLeft.transform.localPosition.x, topRight.transform.localPosition.x), Random.Range (BottomLeft.transform.localPosition.y, topRight.transform.localPosition.y), 0);
 					greenTargetIn=(GameObject) Instantiate (greenTarget, screenPosition, redTarget.transform.rotation);
 				}
 
-                //testTargetCreation();
-                timeLeftTillNextSetOfTargets = 3;
+				timeLeftTillNextSetOfTargets = 3;
 			}
 		}
 
@@ -51,13 +53,6 @@ public class TargetCreationControl : MonoBehaviour {
 		}
 	}
 
-    void testTargetCreation()
-    {
-        if (timeLeftTillNextSetOfTargets <= 0)
-        {
-            Assert.IsTrue((redTargetIn!=null)||(greenTargetIn!=null));
-        }
-    }
 
 		
 }

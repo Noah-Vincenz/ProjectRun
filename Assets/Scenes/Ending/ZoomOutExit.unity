@@ -213,7 +213,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 6d7dd1e1ad524974886d1725a7f33235,
+      objectReference: {fileID: 21300000, guid: 3b1feb0cc497c4e4f904227808bd2da7,
         type: 3}
     - target: {fileID: 1181961073097900, guid: 0155451e9280c644eafc17d255c2ba28, type: 2}
       propertyPath: m_IsActive
