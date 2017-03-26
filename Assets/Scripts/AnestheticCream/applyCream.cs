@@ -70,6 +70,7 @@ public class applyCream : MonoBehaviour {
         source.Stop();
     }
 
+    //Testing
     void testTimeDownIncrease()
     {
         Assert.IsTrue(fillBar.timeDown>0);

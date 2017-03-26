@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Assertions;
 
 public class Timer : MonoBehaviour {
 	Text timer;
@@ -50,9 +51,25 @@ public class Timer : MonoBehaviour {
 				SceneManager.LoadScene ("gameEnd");
 			}
         }
+        //testFade();
 	}
 
 	public float getTime(){
 		return timeLeft;
 	}
+
+    //Test
+
+    void testFade()
+    {
+        if (timeLeftforTransition <= 2)
+        {
+            Assert.IsTrue(background.active == true);
+        } else
+
+        if (timeLeftforTransition <= 1.5)
+        {
+            Assert.IsTrue(canvas.alpha == 0);
+        } 
+    }
 }

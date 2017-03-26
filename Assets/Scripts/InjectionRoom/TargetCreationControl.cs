@@ -40,7 +40,8 @@ public class TargetCreationControl : MonoBehaviour {
 					greenTargetIn=(GameObject) Instantiate (greenTarget, screenPosition, redTarget.transform.rotation);
 				}
 
-				timeLeftTillNextSetOfTargets = 3;
+                //testTargetCreation();
+                timeLeftTillNextSetOfTargets = 3;
 			}
 		}
 
@@ -54,7 +55,7 @@ public class TargetCreationControl : MonoBehaviour {
     {
         if (timeLeftTillNextSetOfTargets <= 0)
         {
-            Assert.IsTrue();
+            Assert.IsTrue((redTargetIn!=null)||(greenTargetIn!=null));
         }
     }
 

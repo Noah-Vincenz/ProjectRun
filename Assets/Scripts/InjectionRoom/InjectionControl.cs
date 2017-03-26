@@ -32,11 +32,6 @@ public class InjectionControl : MonoBehaviour {
 		else if(timer.getTime () <= 0.5){
 			transform.position = transform.position;
 		}
-			
-
-	
-
-
 	}
 
 

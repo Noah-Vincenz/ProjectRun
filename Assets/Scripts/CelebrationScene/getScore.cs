@@ -25,7 +25,7 @@ public class getScore : MonoBehaviour {
             scoreText.text = "Your score is : " + ScoreKeeper.finalScore;
             ScoreKeeper.finalScore = 0;
         }
-        testBackGround();
+        //testBackGround();
 	}
 
     //Test
