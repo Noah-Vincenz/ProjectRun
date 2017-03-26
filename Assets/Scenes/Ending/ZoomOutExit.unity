@@ -222,6 +222,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0155451e9280c644eafc17d255c2ba28, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &529432733
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4227337663766080, guid: d178296e8deba4b0abe355cb4178642a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227337663766080, guid: d178296e8deba4b0abe355cb4178642a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227337663766080, guid: d178296e8deba4b0abe355cb4178642a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227337663766080, guid: d178296e8deba4b0abe355cb4178642a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227337663766080, guid: d178296e8deba4b0abe355cb4178642a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227337663766080, guid: d178296e8deba4b0abe355cb4178642a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227337663766080, guid: d178296e8deba4b0abe355cb4178642a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227337663766080, guid: d178296e8deba4b0abe355cb4178642a, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: d178296e8deba4b0abe355cb4178642a, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &655093567
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,6 +670,7 @@ GameObject:
   - component: {fileID: 1127794473}
   - component: {fileID: 1127794478}
   - component: {fileID: 1127794479}
+  - component: {fileID: 1127794480}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -863,6 +906,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &1127794480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1127794472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eca96268d30dd4cbca94630f79953e79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1231411477 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1577633003615254, guid: 4689ac7b568f00d47bae85308b809d96,
