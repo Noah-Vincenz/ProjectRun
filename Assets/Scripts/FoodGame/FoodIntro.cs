@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.Assertions;
 
 
 public class FoodIntro : MonoBehaviour {
@@ -35,41 +36,37 @@ public class FoodIntro : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetMouseButtonDown(0) && click == 0){
+		if (Input.GetMouseButtonDown(0) && click == 0){ 
 			Debug.Log("0 button clicked" + firstClick);
 			interacted = true; //stops prompt
 			prompt.SetActive (false); //removes the prompt
-			speechBub.SetActive(true);
-			//speechBub.GetComponent<Renderer> ().enabled = true;// renders speech bubble
-			text1.SetActive(true);
+			speechBub.SetActive(true); //speech bubble active if mouse pressed
+			text1.SetActive(true); //text active at same time as speech bubble
 			arrow.GetComponent<Renderer> ().enabled = true; //renders the arrow
-			++click;
+			++click; //increases click number 
 		}
 	}
 
 
 	void OnMouseDown(){
-
+		//testMouseDown ();
 		Debug.Log ("Clicks:" + click);
 		switch (click) {
-		case 1:// show text 
+		case 1:// show second text 
 			Debug.Log ("Panda Click event 2");
-//			firstClick = false;
-			Destroy (text1.gameObject);
-			text2.SetActive (true);
-			//text2.GetComponent<Renderer> ().enabled = true;// renders text 2
-			++click;
+			Destroy (text1.gameObject); //destroys the first piece of text
+			text2.SetActive (true); //activates the second piece of text
+			++click; //clicks increase by one
 			break;
 		case 2:// show text 
 			Debug.Log ("Panda Click event 3");
-			//			firstClick = false;
-			Destroy (text2.gameObject);
-			Destroy (speechBub.gameObject);
+			Destroy (text2.gameObject); //Destroys text 
+			Destroy (speechBub.gameObject); //Destroys speech bubble
 			FoodInstructions.GetComponent<Renderer> ().enabled = true;// renders instructions
-			arrow.GetComponent<Renderer> ().enabled = false;
-			startBtn.GetComponent<SpriteRenderer> ().enabled = true;
-			startBtn.GetComponent<StartBtnScript> ().enabled = true;
-			++click;
+			arrow.GetComponent<Renderer> ().enabled = false; //disables the arrow 
+			startBtn.GetComponent<SpriteRenderer> ().enabled = true; //renders the start button sprite
+			startBtn.GetComponent<StartBtnScript> ().enabled = true; // renders the start button script
+			++click; //increments clicks
 			break;
 
 		}
@@ -83,6 +80,11 @@ public class FoodIntro : MonoBehaviour {
 		if (!(interacted)) {
 			prompt.SetActive (true);
 		}
+	}
+
+	//TESTS
+	void testMouseDown(){
+		Assert.IsTrue (OnMouseDown);
 	}
 
 }
