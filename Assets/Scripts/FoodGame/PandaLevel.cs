@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.Assertions;
 //using UnityEngine.Mathf;
 
+/*
+ This script is responsible for the movement of the panda across the lanes displayed in the scene.
+*/
 public class PandaLevel : MonoBehaviour
 {
 	public double dest;

@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/*
+ This script is responsible for the movement of the food across the lanes displayed in the scene.
+*/
+
 public class FoodMovementScript : MonoBehaviour {
 
 	public double speed;

@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ This script is responsible for the reoccuring background scene
+*/
+
 public class ReoccuringBackground : MonoBehaviour {
 
 	public double speed;
