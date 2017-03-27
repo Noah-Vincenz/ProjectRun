@@ -3,22 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/*
+ * This script is in charge of the whole belt scene, animations +action on click
+ */ 
 public class BeltSceneController : MonoBehaviour {
 
-	public GameObject background;
-	private int click = 1;
-	public Animator animScanner;
-	public Animator animBelt;
-	public Animator animPanda;
-	float timeLeftforTransition=2;
-	float timeLeftForMovingScanner=3;
-	private bool readyToTransition;
-	private bool startMovingTimer=false;
+	public GameObject background; //fading
+	private int click = 1; //click for next action
+	public Animator animScanner; //scanner machine animation
+	public Animator animBelt; //belt animation
+	public Animator animPanda; //panda face animation
+	private float timeLeftforTransition=2; // fade starts
+	private float timeLeftForMovingScanner=3; //time until scanner stops
+	private bool readyToTransition; //ready to fade
+	private bool startMovingTimer=false; 
+
+	//prompts
 	public GameObject prompt;
-	bool interacted = false;
+	private bool interacted = false;
 	public float wait;
-	bool interacted2 = false;
+	private bool interacted2 = false;
 	public float wait2;
+
 	private AudioSource source;
 
 	// Use this for initialization
@@ -29,7 +35,7 @@ public class BeltSceneController : MonoBehaviour {
 		background.GetComponent<Renderer> ().material.color = new Color (color1.r, color1.g, color1.b, color1.a -color1.a);
 		StartCoroutine ("prompt_time"); 
 		source = GetComponent<AudioSource>();
-		source.time = 3f;
+		source.time = 3f; //start 3secs into sound
 	}
 	
 	// Update is called once per frame
@@ -37,17 +43,17 @@ public class BeltSceneController : MonoBehaviour {
 
 		var material = background.GetComponent<Renderer> ().material;
 		var color = material.color;
-		if (readyToTransition) {
+		if (readyToTransition) { //when scene is ready to fade and later transition
 			background.SetActive (enabled);
 			material.color = new Color (color.r, color.g, color.b, color.a + (1f * Time.deltaTime));
 			timeLeftforTransition -= Time.deltaTime;
 		}
 
 		if (timeLeftforTransition <= 0) {
-			SceneManager.LoadScene ("IntroCatchRadiationGame");
+			SceneManager.LoadScene ("IntroCatchRadiationGame"); //next scene
 		}
 
-		if (startMovingTimer) {
+		if (startMovingTimer) { //scanner starts moving and later fades
 			timeLeftForMovingScanner -= Time.deltaTime;
 			if (timeLeftForMovingScanner <= 0) {
 				readyToTransition = true;
@@ -60,24 +66,25 @@ public class BeltSceneController : MonoBehaviour {
 	
 	}
 
+	//On mouse click, move onto next action in scene if the past one is finished
 	void OnMouseDown(){
 		
-			interacted = true; // stops prompt 
+			interacted = true; // stops first prompt 
 			prompt.SetActive (false);
 			
 		if (click == 2) {
-			interacted2 = true;
+			interacted2 = true; //stops second prompt
 		}
 
 		switch (click) {
 
-		case 1:// show text 
-			StartCoroutine ("prompt2_time"); 
-			animBelt.SetTrigger ("attachBelt");
+		case 1:// belt moves
+			StartCoroutine ("prompt2_time"); //start timer for second prompt
+			animBelt.SetTrigger ("attachBelt");// start belt animation
 			++click;
 			break;
-		case 2:// show text 
-			if (animBelt.GetCurrentAnimatorStateInfo (0).IsName ("endIdle")) {
+		case 2:// machine starts
+			if (animBelt.GetCurrentAnimatorStateInfo (0).IsName ("endIdle")) { //checks if last actions is finished
 				source.Play ();
 				interacted = true; // stops prompt 
 				prompt.SetActive (false);
@@ -92,7 +99,7 @@ public class BeltSceneController : MonoBehaviour {
 		}
 	}
 
-	IEnumerator prompt_time()
+	IEnumerator prompt_time() //first prompt after 2 seconds 
 	{
 		yield return new WaitForSeconds(wait);
 		if (!(interacted)) {
@@ -100,9 +107,9 @@ public class BeltSceneController : MonoBehaviour {
 		}
 	}
 
-	IEnumerator prompt2_time() //4 seconds
+	IEnumerator prompt2_time() //second prompt after 4 seconds + 1 click
 	{
-		yield return new WaitForSeconds(wait2);
+		yield return new WaitForSeconds(wait2);//4 seconds
 		if (!(interacted2)) {
 			prompt.SetActive (true);
 		}

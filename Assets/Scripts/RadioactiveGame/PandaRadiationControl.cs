@@ -38,6 +38,7 @@ public class PandaRadiationControl : MonoBehaviour {
 	private bool collidingleft;
 	private bool collidingRight;
 	private bool hitByBomb;
+	private bool won=false;
 	Animator anim;
 	Rigidbody2D rb;
 	GameObject thisGO;
@@ -162,6 +163,7 @@ public class PandaRadiationControl : MonoBehaviour {
 				sad = true;
 				Vector3 bombPos = new Vector3 (coll.gameObject.transform.position.x, coll.gameObject.transform.position.y, -2);
 				instantiatedObj2= Instantiate(fireLoseParticle,bombPos,fireLoseParticle.transform.rotation);
+				if(!won)
 				gameOverText.text = "You were hit by a bomb.\nTry again?";
 				hitByBomb = true;
 				StopMoving ();
@@ -177,6 +179,7 @@ public class PandaRadiationControl : MonoBehaviour {
 	public void SetCountText() {
 		countText.text = count.ToString ();
 		if (count >= 20) { //player has won
+			won=true;
 			winText.text = "You win! Captured all radiation!";
 			face.GetComponent<Animator> ().SetBool ("Happy", true);
 			FinishGame ();
