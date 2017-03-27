@@ -387,7 +387,6 @@ MonoBehaviour:
   background: {fileID: 1882230663}
   endText: {fileID: 2133745399}
   canvas: {fileID: 1613406879}
-  scoreText: {fileID: 0}
 --- !u!114 &461242683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1567,7 +1566,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 158.9, y: 97.4}
+  m_AnchoredPosition: {x: 158.9, y: 83.2}
   m_SizeDelta: {x: 41.1, y: 16}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1529448045

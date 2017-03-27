@@ -37,7 +37,7 @@ public class StartButton : MonoBehaviour {
 
 
 	public void TaskOnClick(){
-		Debug.Log ("Start button clicked");
+		//Debug.Log ("Start button clicked");
 		readyToTransition = true;
 	}
 }

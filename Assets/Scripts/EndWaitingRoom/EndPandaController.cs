@@ -34,11 +34,11 @@ public class EndPandaController : MonoBehaviour {
 //		testPosition ();
 		anim.SetFloat("Speed", rb.velocity.x);
 		if (walkOne) { // initial walk 
-			Debug.Log ("Inital walk");
+			//Debug.Log ("Inital walk");
 			walk ();
 		}
 		if (middle) {
-			Debug.Log ("Show speech bubble");
+			//Debug.Log ("Show speech bubble");
 			happyFace ();
 			speechBub.SetActive (true);
 //			testGameObjectIsActive (speechBub);
@@ -51,7 +51,7 @@ public class EndPandaController : MonoBehaviour {
 			anim.SetBool ("IsWaving", true); // start waving 
 		}
 		if (finalMove) { // final walk off scene
-			Debug.Log ("final Walk");
+			//Debug.Log ("final Walk");
 			middle = false;
 			anim.SetBool ("IsWaving", false); // end waving 
 			walk ();
@@ -94,7 +94,7 @@ public class EndPandaController : MonoBehaviour {
 	 * load next scene on pada destory
 	 */
 	void OnDestroy(){
-		Debug.Log ("Load next scene");
+		//Debug.Log ("Load next scene");
 		SceneManager.LoadScene ("ExitScene");
 	}
 

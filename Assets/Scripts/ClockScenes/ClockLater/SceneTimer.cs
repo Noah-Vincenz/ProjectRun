@@ -8,7 +8,6 @@ public class SceneTimer : MonoBehaviour {
 	public float waitTime = 6;
 	public GameObject background;
 
-	private float loadTime;
 	private float timeLeftForTransition = 6;
 	private Material material;
 	private Color color;
@@ -16,7 +15,6 @@ public class SceneTimer : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//set the transition time to the current time + waitTime seconds
-		loadTime = Time.time + waitTime;
 
 		//fade code
 		Material material1 = background.GetComponent<Renderer>().material;
