@@ -433,7 +433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: {fileID: 1990986405}
-  timeGaOb: {fileID: 1450172211}
+  timeGameObj: {fileID: 1450172211}
   source: {fileID: 1990986408}
 --- !u!82 &844159681
 AudioSource:
