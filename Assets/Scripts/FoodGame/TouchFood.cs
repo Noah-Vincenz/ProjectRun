@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class TouchFood : MonoBehaviour {
 
@@ -24,6 +25,7 @@ public class TouchFood : MonoBehaviour {
 	void Start () {
 		nTime = Time.time;
 		pandaFaceEmotionObject = GameObject.Find ("PandaFaceReaction");
+		TestIsActive (pandaFaceEmotionObject);
 		normalFace = pandaFaceEmotionObject.transform.Find ("Normal Face").gameObject;
 		sadFace = pandaFaceEmotionObject.transform.Find ("SadFace").gameObject;
 		ScoreKeeperScoreBoard = GameObject.Find ("Canvas/ScoreBoard").gameObject;
@@ -35,7 +37,7 @@ public class TouchFood : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//Debug.Log (foodScore);
+		TestScoreMultipleOf20();
 		if (nTime < Time.time && timerScript.getTime() > 1) {
 			scoreKeeper.Score += scoreIncrease;
 			nTime = Time.time + scoreDelay;
@@ -46,23 +48,36 @@ public class TouchFood : MonoBehaviour {
 				timeLeftAnimation -= Time.deltaTime;
 				normalFace.SetActive (false);
 				sadFace.SetActive (true);
+				//TestIsActive (sadFace);
+				//TestIsInactive (normalFace);
 			} else {
 				timeLeftAnimation = 2;
 				sad = false;
 				sadFace.SetActive (false);
 				normalFace.SetActive (true);
+				//TestIsActive (normalFace);
+				//TestIsInactive (sadFace);
 			}
 		}
 		foodScore = scoreKeeper.Score;
 	}
 
 	void OnCollisionEnter2D(Collision2D coll) {
-
 		if(coll.gameObject.tag == "Food" && timerScript.getTime() > 1){
 				source.Play ();
 				scoreKeeper.Score -=100;
 				sad = true;
-			}
-			
 		}
+	}
+
+	//Tests
+	void TestScoreMultipleOf20() {
+		Assert.IsTrue (foodScore % 20 == 0);
+	}
+	void TestIsActive(GameObject go) {
+		Assert.IsTrue (go.activeInHierarchy);
+	}
+	void TestIsInactive(GameObject go) {
+		Assert.IsFalse (go.activeInHierarchy);
+	}
 }

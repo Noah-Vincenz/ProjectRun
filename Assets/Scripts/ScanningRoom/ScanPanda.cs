@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.Assertions;
 using UnityEngine;
 
 public class ScanPanda : MonoBehaviour {
@@ -42,17 +43,21 @@ public class ScanPanda : MonoBehaviour {
 		anim.SetFloat("Speed", rb.velocity.x);
 
 		if (canWalk) {
-			
+
+			//testCanWalk ();
 			rb.velocity = Vector2.left * speed;
 			face.GetComponent<Animator>().SetBool("Walking", true); //if true, walk to the left 
-
+			//testWalkingAnimationBool ();
 		}
+
 		if (canClimb){
-
-
+			
+			//testCanClimb ();
 			rb.velocity = new Vector2(0, 0);
 			anim.SetBool("IsClimbing", true); //when it approaches the collider climbing animation is activated
+			//testClimbAnimationBool();
 			face.GetComponent<Animator>().SetBool("Walking", true);
+			//testWalkingAnimationBool ();
 			timeLeftHitTrigger -= Time.deltaTime; //timer counts down leading to fade out
 
 		}
@@ -61,11 +66,11 @@ public class ScanPanda : MonoBehaviour {
 
 			readyForTransition = true; //start fade out when the timer hits 0
 
-
 		}
 
 		if (readyForTransition) {
 
+			//testTransitionReady();
 			background.SetActive (enabled);
 			material.color = new Color (color.r, color.g, color.b, color.a + (1f * Time.deltaTime));
 			timeLeftforTransition -= Time.deltaTime;
@@ -90,6 +95,38 @@ public class ScanPanda : MonoBehaviour {
 	public void canWalkOn(){
 
 		canWalk = true; 
+
+	}
+		
+	//test functions
+
+	void testCanWalk(){
+
+		Assert.IsTrue (canWalk);
+
+	}
+
+	void testCanClimb(){
+
+		Assert.IsTrue (canClimb);
+
+	}
+
+	void testTransitionReady(){
+
+		Assert.IsTrue (readyForTransition);
+
+	}
+
+	void testClimbAnimationBool(){
+
+		Assert.AreEqual (true, anim.GetBool("IsClimbing"));
+
+	}
+
+	void testWalkingAnimationBool(){
+
+		Assert.AreEqual (true, face.GetComponent<Animator>().GetBool("Walking"));
 
 	}
 

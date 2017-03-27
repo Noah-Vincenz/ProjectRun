@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Assertions;
 using UnityEngine;
 
 public class SlidingRightDoor : MonoBehaviour {
@@ -18,6 +19,16 @@ public class SlidingRightDoor : MonoBehaviour {
 
 		transform.position = Vector2.MoveTowards(new Vector2(transform.position.x, transform.position.y), 
 			aPosition1, 3 * Time.deltaTime);
+		//testPosition ();
 		
+	}
+
+	//test function
+
+	void testPosition(){
+
+		Assert.IsTrue (aPosition1.x <= 0.65);
+		Assert.IsTrue (aPosition1.y >= -1.16);
+
 	}
 }

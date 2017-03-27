@@ -4,8 +4,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Assertions;
 using UnityEngine;
 
-public class MoveBedOut : MonoBehaviour {
-
+public class MoveBedIn : MonoBehaviour {
+	
 	private Vector2 aPosition1;
 	public GameObject background;
 	float timeLeftforTransition=2;
@@ -14,7 +14,7 @@ public class MoveBedOut : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		aPosition1 = new Vector2 ( (float) 3, (float) -0.78); //position it will move to
+		aPosition1 = new Vector2 ( (float) -2.5, (float) -0.78); //position it will moved to
 
 		var material1 = background.GetComponent<Renderer>().material;
 		var color1 = material1.color;
@@ -32,10 +32,10 @@ public class MoveBedOut : MonoBehaviour {
 		transform.position = Vector2.MoveTowards(new Vector2(transform.position.x, transform.position.y), 
 			aPosition1, 1 * Time.deltaTime);
 
-		if (transform.position.x >= 3) {
-
+		if (transform.position.x <= -2.5) {
+			
 			//testXPosition ();
-			readyForTransition = true; //if the bed has moved out then start fade out
+			readyForTransition = true; //if scanning to left stopped then fade out will begin 
 
 		}
 
@@ -48,38 +48,6 @@ public class MoveBedOut : MonoBehaviour {
 
 		}
 			
-		if (timeLeftforTransition <= 0) {
-
-			switch (SceneManagerController.Instance.getProcedure()) { // switch dependant on selected game 
-
-			case "DMSA":
-				Debug.Log("LOAD DMSA");
-				SceneManager.LoadScene ("EndWaitingRoom");
-				break;
-
-			case "Meckel":
-				Debug.Log("LOAD Meckel");
-				SceneManager.LoadScene ("EndWaitingRoom");
-				//TODO Next scene for Meckel branch 
-				break;
-
-			case "RENOGRAMin":
-				SceneManager.LoadScene ("Toilet");
-				//TODO Next scene for Renogram Indirect branch 
-				break;
-
-			case "RENOGRAM":
-				SceneManager.LoadScene ("ToiletNoScan");
-				//TODO Next scene for Renogram branch 
-				break;
-
-			default:
-				SceneManager.LoadScene ("WaitingRoom");
-				break;
-			}
-
-		}
-
 
 	}
 
@@ -93,9 +61,7 @@ public class MoveBedOut : MonoBehaviour {
 
 	void testXPosition(){
 
-		Assert.IsTrue (transform.position.x >= 3);
+		Assert.IsTrue (transform.position.x <= -2.5);
 
 	}
-
-
 }
