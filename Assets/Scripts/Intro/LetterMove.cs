@@ -1,9 +1,9 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+using UnityEngine.Assertions;
 
 /*This script is used to move the letter in the envelope scene. 
  * The envelope moves and the triggers are set to to enable the animation to move on.
@@ -33,11 +33,6 @@ public class LetterMove : MonoBehaviour {
 		StartCoroutine ("prompt_time");
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-	
 	void ChangeSprite(){
 		sp.sprite = back;
 	}
@@ -50,8 +45,8 @@ public class LetterMove : MonoBehaviour {
 				anim.SetTrigger ("flip");
 				anim.SetBool ("flipped", true);
 				prompt.SetActive (false);
+				//TestIsInactive (prompt);
 				prompt.GetComponent<Text> ().text = "Click to Open";
-
 				++clicks;
 				break;
 			}
@@ -66,7 +61,7 @@ public class LetterMove : MonoBehaviour {
 		swapBottom.GetComponent<SpriteRenderer> ().enabled=true;
 		swapTop.GetComponent<SpriteRenderer> ().enabled = true;
 		gameObject.SetActive (false);
-
+		//TestIsInactive (gameObject);
 	}
 	/**
 	 * Enum to wait the given seconds argument before rendering the prompt
@@ -76,7 +71,14 @@ public class LetterMove : MonoBehaviour {
 		yield return new WaitForSeconds(wait);
 		if (!(clicked)) {
 			prompt.SetActive (true);
+			//TestIsActive(prompt);
 		}
 	}
-
+	//Tests
+	void TestIsActive(GameObject go) {
+		Assert.IsTrue (go.activeInHierarchy);
+	}
+	void TestIsInactive(GameObject go) {
+		Assert.IsFalse (go.activeInHierarchy);
+	}
 }
