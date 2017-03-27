@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/*
+ * Loads the next scene on mouse down
+ * 
+ */
+
 public class OpenLetterLoad : MonoBehaviour {
 
 	// Use this for initialization

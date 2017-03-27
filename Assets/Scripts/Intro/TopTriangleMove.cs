@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/**This script is responsible for controlling the top triangle to allow the changing of sprites.
+ * By changing the sprites over, the top triangle can move on its own to allow the envelope to open.
+ * 
+ */ 
 public class TopTriangleMove : MonoBehaviour {
 
 	private int clicks = 0;
@@ -25,6 +29,7 @@ public class TopTriangleMove : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
+	//sets the triggers to allow animation to move on and continue
 	void Update () {
 		if (!frontLetter.activeInHierarchy && !open) {
 			source.Play ();
@@ -39,7 +44,7 @@ public class TopTriangleMove : MonoBehaviour {
 		}
 	}
 		
-
+	//depending on the no of clicks, a certain event happens.
 	void OnMouseDown(){
 		switch (clicks) {
 
@@ -55,6 +60,8 @@ public class TopTriangleMove : MonoBehaviour {
 			break;
 		}
 	}
+
+	//adds the top to the animation so it can be used later to open.
 	void swapTop(){
 		sp.sprite = top;
 
