@@ -5,6 +5,8 @@ using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+//Gets score based on the game played
+
 public class getScore : MonoBehaviour {
     public Text scoreText = null;
     public Sprite[] backgrounds;

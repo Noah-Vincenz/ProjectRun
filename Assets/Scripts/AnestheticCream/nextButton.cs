@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//Reset incremented values and loading new scene
+
 public class nextButton : MonoBehaviour {
 
 	void Start () {

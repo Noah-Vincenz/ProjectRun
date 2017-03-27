@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
 
+//Used to modify values of transparency (alpha values) of the cream sprites
+
 public class creamTransparency : MonoBehaviour {
 
     public static float leftArmVal = 0;

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 
+//Apply cream is used to detect user interaction with cream objects in order to increment a value to fill up the completion bar
+
 public class applyCream : MonoBehaviour {
 
     bool mouseDown = false;
