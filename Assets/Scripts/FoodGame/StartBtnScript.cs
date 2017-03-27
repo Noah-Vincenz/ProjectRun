@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Assertions;
 
 
+/*
+ *This script creates the start button of the game, which also has a countdown and music attached. It then transitions to the next scene. 
+ */
+
+
 public class StartBtnScript : MonoBehaviour {
 	private Rigidbody2D rb;
 

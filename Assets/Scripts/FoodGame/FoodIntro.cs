@@ -5,6 +5,10 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.Assertions;
 
+/*
+ * This script renders and destroys objects/sprites depending on the clicks the user has made and how they proceed through the game
+ */
+
 
 public class FoodIntro : MonoBehaviour {
 
@@ -31,7 +35,7 @@ public class FoodIntro : MonoBehaviour {
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
 		StartCoroutine ("prompt_time");
-		speechBub.SetActive (false);
+		speechBub.SetActive (false); 
 
 	}
 	// Update is called once per frame
@@ -83,8 +87,8 @@ public class FoodIntro : MonoBehaviour {
 	}
 
 	//TESTS
-	void testMouseDown(){
-		Assert.IsTrue (OnMouseDown);
-	}
+//	void testMouseDown(){
+//		Assert.IsTrue (OnMouseDown());
+//	}
 
 }
