@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿/**
+ * end waiting room controller for panda
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;

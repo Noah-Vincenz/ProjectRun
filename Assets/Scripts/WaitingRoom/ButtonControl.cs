@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿/**
+ * This script controls the red button for sky animaiton.
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;

@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿/**
+ * This script allows the user to rotate the painting
+ */
+using UnityEngine;
 using System.Collections;
 
 public class RotatePainting : MonoBehaviour {

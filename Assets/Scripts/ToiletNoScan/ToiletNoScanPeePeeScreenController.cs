@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿/**
+ * script for peePee screne on scene with no scan on toilet
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;

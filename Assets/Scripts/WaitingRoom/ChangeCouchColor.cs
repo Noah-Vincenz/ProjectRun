@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿/**
+ * this script changes sofa colour on click
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;

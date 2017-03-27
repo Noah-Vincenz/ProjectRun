@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/**
+ * This script saves the procedure the player selects, its never deleted on scene load and is a 
+ * singleton.
+ * 
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;

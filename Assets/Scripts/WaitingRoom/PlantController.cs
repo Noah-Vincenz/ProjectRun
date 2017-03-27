@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿/**
+ *  this script moves the plant on click 
+ * 
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;

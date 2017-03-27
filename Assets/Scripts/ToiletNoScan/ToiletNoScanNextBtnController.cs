@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿/**
+ * script for next button in next button controller
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;

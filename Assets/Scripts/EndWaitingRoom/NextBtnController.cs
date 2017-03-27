@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿/**
+ * script for next button in end waiting room
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

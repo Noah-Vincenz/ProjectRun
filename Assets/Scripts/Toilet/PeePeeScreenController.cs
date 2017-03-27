@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿/**
+ * controller for peePee screne in toilet scene 
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;

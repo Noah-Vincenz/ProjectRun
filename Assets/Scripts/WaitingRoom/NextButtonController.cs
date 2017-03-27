@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿/**
+ * this controls the next button on the speech bubble for UI interaction 
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;   //for loading scene 

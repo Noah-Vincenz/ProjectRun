@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿/**
+ * controls the fish in fish tank. responds to user click.
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;

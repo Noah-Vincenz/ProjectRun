@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿/**
+ * script for UI menu game select, saves selected game to scenemanager
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;

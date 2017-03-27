@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿/**
+ * Script that controls the panda player. handles diffrent click interactions for the panda and its animator
+ * 
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
