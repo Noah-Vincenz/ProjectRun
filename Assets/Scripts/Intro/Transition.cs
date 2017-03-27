@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
+/**
+ * This script allows for the transition between scenes so the player can move on through the game
+ */
+
 public class Transition : MonoBehaviour {
 
 	public GameObject prompt;

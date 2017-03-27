@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
+/*This script is used to move the letter in the envelope scene. 
+ * The envelope moves and the triggers are set to to enable the animation to move on.
+ * Prompts are also rendered after a certain time to help with moving through the game 
+ *
+ */
 
 public class LetterMove : MonoBehaviour {
 
@@ -51,11 +56,7 @@ public class LetterMove : MonoBehaviour {
 				break;
 			}
 			break;
-		//case 1:
-			//sp.sprite = openLet;
-			//++clicks;
-			//break;
-
+		
 		 default:
 			break;
 		}
