@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Assertions;
 using UnityEngine;
 
+//move scanning bed between two points along the x axis
+
 public class MoveBed : MonoBehaviour {
 
 	private bool dirRight;

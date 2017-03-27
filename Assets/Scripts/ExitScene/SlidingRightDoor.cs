@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine.Assertions;
 using UnityEngine;
 
+//control movement of right sliding door
+
 public class SlidingRightDoor : MonoBehaviour {
 
 	private Vector2 aPosition1;
