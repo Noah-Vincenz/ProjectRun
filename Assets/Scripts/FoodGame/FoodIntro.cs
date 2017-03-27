@@ -13,7 +13,6 @@ using UnityEngine.Assertions;
 public class FoodIntro : MonoBehaviour {
 
 	private int click = 0;
-	private Rigidbody2D rb;
 
 	public GameObject speechBub;
 	public GameObject text1;
@@ -33,7 +32,6 @@ public class FoodIntro : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		rb = GetComponent<Rigidbody2D> ();
 		StartCoroutine ("prompt_time");
 		speechBub.SetActive (false); 
 
@@ -41,7 +39,7 @@ public class FoodIntro : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetMouseButtonDown(0) && click == 0){ 
-			Debug.Log("0 button clicked" + firstClick);
+			//Debug.Log("0 button clicked" + firstClick);
 			interacted = true; //stops prompt
 			prompt.SetActive (false); //removes the prompt
 			speechBub.SetActive(true); //speech bubble active if mouse pressed
@@ -54,16 +52,16 @@ public class FoodIntro : MonoBehaviour {
 
 	void OnMouseDown(){
 		//testMouseDown ();
-		Debug.Log ("Clicks:" + click);
+		//Debug.Log ("Clicks:" + click);
 		switch (click) {
 		case 1:// show second text 
-			Debug.Log ("Panda Click event 2");
+			//Debug.Log ("Panda Click event 2");
 			Destroy (text1.gameObject); //destroys the first piece of text
 			text2.SetActive (true); //activates the second piece of text
 			++click; //clicks increase by one
 			break;
 		case 2:// show text 
-			Debug.Log ("Panda Click event 3");
+			//Debug.Log ("Panda Click event 3");
 			Destroy (text2.gameObject); //Destroys text 
 			Destroy (speechBub.gameObject); //Destroys speech bubble
 			FoodInstructions.GetComponent<Renderer> ().enabled = true;// renders instructions

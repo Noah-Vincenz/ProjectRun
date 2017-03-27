@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class tapCream : MonoBehaviour {
     Texture2D texture;
     public Sprite sprite;
-    Vector2 hotspot = Vector2.zero;
     public Collider2D[] colliders;
 	public GameObject circles;
     public SpriteRenderer cursor = null;

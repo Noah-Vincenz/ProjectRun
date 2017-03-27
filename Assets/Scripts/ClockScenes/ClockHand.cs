@@ -23,7 +23,7 @@ public class ClockHand : MonoBehaviour {
 
 	void Start () {
 		uBound = correctPos + snapAngle;
-		Debug.Log (correctPos + " + " + snapAngle + " = " + correctPos);
+		//Debug.Log (correctPos + " + " + snapAngle + " = " + correctPos);
 		lBound = correctPos - snapAngle;
 
 		if (lBound < 0)
@@ -53,7 +53,7 @@ public class ClockHand : MonoBehaviour {
 	bool checkPos() {
 		float targetRot = transform.eulerAngles.z;
 
-		Debug.Log ("Angle: " + targetRot + " | uBound: " + uBound + " | lBound: " + lBound);
+		//Debug.Log ("Angle: " + targetRot + " | uBound: " + uBound + " | lBound: " + lBound);
 
 		if (lBound > uBound) {
 			if (targetRot > lBound)

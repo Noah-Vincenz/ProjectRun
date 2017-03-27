@@ -21,13 +21,13 @@ public class MenuController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Debug.Log ("START!");
+		//Debug.Log ("START!");
 		StartCoroutine ("select_Prompt"); // start prompt enum
 	}
 	void OnMouseDown(){
 
 		string tag = this.tag; // get the tag of object picked 
-		Debug.Log (tag);
+		//Debug.Log (tag);
 		nextBtn.setTag (tag); // give tag to nextBtn 
 		Destroy (menu.gameObject);
 		Destroy (prompt.gameObject);
@@ -43,7 +43,7 @@ public class MenuController : MonoBehaviour {
 		
 		yield return new WaitForSeconds(wait);
 		if (!(clicked)) { // if nothing is picked 
-			Debug.Log("Select prompt active");
+			//Debug.Log("Select prompt active");
 			prompt.SetActive (true);
 		}
 	}

@@ -12,7 +12,6 @@ using UnityEngine.Assertions;
 
 
 public class StartBtnScript : MonoBehaviour {
-	private Rigidbody2D rb;
 
 	public GameObject background;
 
@@ -25,7 +24,6 @@ public class StartBtnScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		source = GetComponent<AudioSource> ();
-		rb = GetComponent<Rigidbody2D> ();
 		readyToTransition = false; //
 		var material1 = background.GetComponent<Renderer>().material;
 		var color1 = material1.color;
@@ -65,7 +63,7 @@ public class StartBtnScript : MonoBehaviour {
 
 
 	void OnMouseDown() { //on click boolean readyToTransition changes to true
-		Debug.Log ("Clicks on startBtn");
+		//Debug.Log ("Clicks on startBtn");
 		readyToTransition = true;
 	}
 

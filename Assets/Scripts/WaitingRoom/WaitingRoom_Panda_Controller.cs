@@ -54,7 +54,7 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 		anim.SetFloat("Speed", rb.velocity.x);
 //		Debug.Log (needToMove); 
 		if (needToMove) { // bool for first walk (right)
-			Debug.Log ("Moving.."); 
+			//Debug.Log ("Moving.."); 
 			rb.velocity = Vector2.right * speed;
 			walkFace ();
 
@@ -80,7 +80,7 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 			waveClick = false;
 		}
 		if (finalMove) { // final move test, after game select 
-			Debug.Log ("FinalMove"); 
+			//Debug.Log ("FinalMove"); 
 			rb.velocity = Vector2.left * speed;
 			walkFace ();
 		}
@@ -94,7 +94,7 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 
 	}
 	void OnMouseDown(){
-		Debug.Log ("Panda Clicks:" + click);
+		//Debug.Log ("Panda Clicks:" + click);
 
 		switch (click) {// switch for each click on panda 
 
@@ -106,7 +106,7 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 			foreach (GameObject z in zObjects) { 
 				Destroy (z.gameObject);  //kill all Z's
 			}
-			Debug.Log ("Panda Click event-1");
+		//	Debug.Log ("Panda Click event-1");
 			anim.SetBool ("IsSleep", false);// stop sleep animation 
 			anim.SetTrigger ("Wake"); // start wake animation 
 			interacted = true; // stops prompt 
@@ -122,7 +122,7 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 
 		case 1: // walk to right 
 			if (endOfWake) { // if wake animation has completed 
-				Debug.Log ("Panda Click event-2");
+				//Debug.Log ("Panda Click event-2");
 				needToMove = true;
 				interacted = true;
 				Destroy (prompt.gameObject);
@@ -193,7 +193,7 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 	 * public method to make the panda walk off tp the Left
 	 */
 	public void walkOff(){
-		Debug.Log ("Walkoff called");
+		//Debug.Log ("Walkoff called");
 		finalMove = true;
 	}
 

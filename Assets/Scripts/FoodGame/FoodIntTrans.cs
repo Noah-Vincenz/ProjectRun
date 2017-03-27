@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class FoodIntTrans : MonoBehaviour {
 
 	public GameObject background;
-	float timeLeftforTransition=2;
-	private bool readyToTransition = false;
 	Button startButton;
 
 	// Use this for initialization

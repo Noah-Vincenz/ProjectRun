@@ -118,12 +118,12 @@ public class ClockController : MonoBehaviour {
 					switch (SceneManagerController.Instance.getProcedure ()) { // switch dependant on selected game 
 
 					case "DMSA":
-						Debug.Log ("LOAD DMSA");
+						//Debug.Log ("LOAD DMSA");
 						SceneManager.LoadScene ("Injection");
 						break;
 
 					case "Meckel":
-						Debug.Log ("LOAD Meckel");
+						//Debug.Log ("LOAD Meckel");
 						SceneManager.LoadScene ("Injection");
 						//TODO Next scene for Meckel branch 
 						break;
@@ -146,7 +146,7 @@ public class ClockController : MonoBehaviour {
 					switch (SceneManagerController.Instance.getProcedure ()) {
 
 					case "DMSA":
-						Debug.Log ("LOAD DMSA");
+					//	Debug.Log ("LOAD DMSA");
 						SceneManager.LoadScene ("ScanningRoom");
 						break;
 					default:
@@ -175,7 +175,7 @@ public class ClockController : MonoBehaviour {
 
 			//if the hour hand is correct, the clock is satisfied
 			if (hourHand.GetComponent<ClockHand> ().isCorrect && minuteHand.GetComponent<ClockHand>().isCorrect&&Time.time>waitUntil) {
-				Debug.Log("Clock in satisfied state");
+				//Debug.Log("Clock in satisfied state");
 				minuteHint.SetActive(false);
 				hourHint.SetActive(false);
 				waitUntil = Time.time + 4;

@@ -35,7 +35,7 @@ public class NextButtonController : MonoBehaviour {
 		
 		var material = background.GetComponent<Renderer>().material;
 		var color = material.color;
-		Debug.Log (readyToMove);
+		//Debug.Log (readyToMove);
 
 		if (readyToMove) { // makes fade start !
 			background.SetActive (enabled);
@@ -62,7 +62,7 @@ public class NextButtonController : MonoBehaviour {
 			++clicks;
 			break;
 		case 1: // panda leave 
-			Debug.Log (tag);
+			//Debug.Log (tag);
 			panda.walkOff ();// call to method to make panda walk away 
 			Destroy (textOne.gameObject);
 			Destroy (textTwo.gameObject);
@@ -85,8 +85,8 @@ public class NextButtonController : MonoBehaviour {
 	 * method to laod new scene.
 	 */
 	public void loadNext(){
-		Debug.Log ("calling loadnext");
-		Debug.Log (itemTag);
+		//Debug.Log ("calling loadnext");
+		//Debug.Log (itemTag);
 		GameObject procedure =  GameObject.Find ("SceneManager");
 		procedure.GetComponent<SceneManagerController> ().setProcedure(itemTag);
 		readyToMove = true;
