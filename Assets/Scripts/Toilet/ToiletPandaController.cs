@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿/**
+ * controller for player pnader in toileet scan scenes
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;

@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿/**
+ * This script controls the Z and bubbleLyf prefabs. objects are killed off screen.
+ * 
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
