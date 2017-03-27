@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 
+/*
+ This script is responsible for reactions based of touching the food.
+*/
+
 public class TouchFood : MonoBehaviour {
 
 	public int scoreIncrease = 20;
