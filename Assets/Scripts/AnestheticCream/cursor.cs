@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Set custom cursor
+
 public class cursor : MonoBehaviour {
 
     void Start () {

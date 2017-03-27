@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Enable colliders to allow for user interaction with game as a result of clicking the cream object
+
 public class tapCream : MonoBehaviour {
     Texture2D texture;
     public Sprite sprite;

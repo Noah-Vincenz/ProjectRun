@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
 
+//Used to fill the completion bar based on incremented values from other scripts
+
 public class fillBar : MonoBehaviour {
 
     public static float timeDown = 0;
