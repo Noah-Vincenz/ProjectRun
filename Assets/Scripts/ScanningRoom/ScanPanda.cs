@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Assertions;
 using UnityEngine;
 
+//control movement of panda, including walking towards and climbing on the bed
+
 public class ScanPanda : MonoBehaviour {
 
 	public float speed;

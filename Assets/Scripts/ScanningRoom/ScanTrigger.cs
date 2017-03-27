@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//when scanning bed is clicked on, the panda walks
+
 public class ScanTrigger : MonoBehaviour {
 
 	public ScanPanda scanScript;

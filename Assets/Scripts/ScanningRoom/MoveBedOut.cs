@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Assertions;
 using UnityEngine;
 
+//move scanning bed to the right side of screen along the x axis
+
 public class MoveBedOut : MonoBehaviour {
 
 	private Vector2 aPosition1;

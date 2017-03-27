@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Assertions;
 using UnityEngine;
 
+//control the panda movements for the exit scene when the sliding door opens
+
 public class ExitPandaController : MonoBehaviour {
 
 	public float speed;

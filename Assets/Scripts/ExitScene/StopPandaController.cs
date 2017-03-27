@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Assertions;
 using UnityEngine;
 
+//control movement of panda on zoom out exit scene, it stops in the middle of screen and speech bubble appears
+
 public class StopPandaController : MonoBehaviour {
 
 	public float speed;
