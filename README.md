@@ -1,6 +1,6 @@
 # JohnCena
 ##Team:
-* Jonathan 'The Skiier' Mounty 
+* Jonathan 'The Skiier' Mounty
 * Hailey 'No Pun Intended' Pun
 * Nicolas 'Copper' Zuluaga
 * Rob 'Banter' Hanns
@@ -13,8 +13,8 @@
 [logo]: (http://www.chicksinfo.com/wp-content/uploads/2016/09/John-Cena-Family-Pictures-Wife-Siblings-Age-Height-Weight.jpg)
 
 ##Delivarables:
-###Please Review today! 
-[Click Here] (https://keats.kcl.ac.uk/mod/book/view.php?id=1420574&chapterid=64061) 
+###Please Review today!
+[Click Here] (https://keats.kcl.ac.uk/mod/book/view.php?id=1420574&chapterid=64061)
 ##Scrum:
 [Click Here] (https://app.scrumdo.com/organization/john-cena/dashboard#/overview)
 ##Google Doc:
@@ -23,7 +23,7 @@
 ##Objective:
 Hospitals are daunting places patients of all ages, but especially for children. One way to make medical examinations less intimidating is to explain to patients what will happen. It can be very difficult to explain to small children what will happen though. The purpose of this project is to develop a game for small children (2-6 years old) that explains what will happen at an examination in the Nuclear Medicine Department of Chelsea & Westminster Hospital. It should be easy for the hospital to deploy the game and make it available to patients and their parents/guardians.
 
-## Latest Minutes: 
+## Latest Minutes:
   <p><p><strong>Meeting 16</strong></p>
 <p><em>Discussion:</em></p>
 <p>Discussed the progress that was made during the weekend as we prepare for the big Merge and to put the rest of the protocols together.</p>
@@ -66,11 +66,11 @@ Hospitals are daunting places patients of all ages, but especially for children.
 <p>Aim is to complete the project by Friday by the latest</p>
 <p>The next meeting will take place on<strong> THURSDAY&nbsp;</strong>and we will all celebrate our success with a Waterfront Burger and a Lime and Soda (they are free).&nbsp;</p></p>
 
-  
-## WEBGL Current Build: 
+
+## WEBGL Current Build:
 
  [Latest Build Link] (http://aws-website-johncenabuildv-zjdtq.s3-website-us-east-1.amazonaws.com/)
- 
+
 ### Previous Builds:
 
 [Build 25/03/2017] (http://aws-website-johncenabuildv-qvxg6.s3-website-us-east-1.amazonaws.com/)
@@ -79,7 +79,7 @@ Hospitals are daunting places patients of all ages, but especially for children.
 
 [Build 24/03/2017 (2)] (http://aws-website-johncenabuildv-ksuj0.s3-website-us-east-1.amazonaws.com/)
 
-[Build 24/03/2017] (http://aws-website-johncenabuildv-5xh6p.s3-website-us-east-1.amazonaws.com/) 
+[Build 24/03/2017] (http://aws-website-johncenabuildv-5xh6p.s3-website-us-east-1.amazonaws.com/)
 
 [Build 23/03/2017 (2)] (http://aws-website-johncenabuildv-9bz1d.s3-website-us-east-1.amazonaws.com/)
 
