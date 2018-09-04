@@ -1,5 +1,5 @@
 # JohnCena
-##Team:
+## Team:
 * Jonathan 'The Skiier' Mounty
 * Hailey 'No Pun Intended' Pun
 * Nicolas 'Copper' Zuluaga
@@ -7,20 +7,20 @@
 * Chloe 'I Can Always Ask My Dad ' Workman
 * Iona 'Minute Maid' Ryder
 * Jay 'Cream' Wong
-* Noah-Vincenz 'The Beast' Nöh
+* Noah-Vincenz 'The Beast' Noeh
 * Samuel 'The Git' Larsen-Disney
 
 [logo]: (http://www.chicksinfo.com/wp-content/uploads/2016/09/John-Cena-Family-Pictures-Wife-Siblings-Age-Height-Weight.jpg)
 
-##Delivarables:
-###Please Review today!
+## Delivarables:
+### Please Review today!
 [Click Here] (https://keats.kcl.ac.uk/mod/book/view.php?id=1420574&chapterid=64061)
-##Scrum:
+## Scrum:
 [Click Here] (https://app.scrumdo.com/organization/john-cena/dashboard#/overview)
-##Google Doc:
+## Google Doc:
 [Click Here] (https://docs.google.com/document/d/1o-Yhm41zplTdZvFoZd_rdcgUHbVU2HVc0ZqglRRbbtI/edit?usp=sharing)
 
-##Objective:
+## Objective:
 Hospitals are daunting places patients of all ages, but especially for children. One way to make medical examinations less intimidating is to explain to patients what will happen. It can be very difficult to explain to small children what will happen though. The purpose of this project is to develop a game for small children (2-6 years old) that explains what will happen at an examination in the Nuclear Medicine Department of Chelsea & Westminster Hospital. It should be easy for the hospital to deploy the game and make it available to patients and their parents/guardians.
 
 ## Latest Minutes:
@@ -92,4 +92,4 @@ Hospitals are daunting places patients of all ages, but especially for children.
 [Build 23/02/2017] (http://aws-website-johncenabuild-hhzod.s3-website-us-east-1.amazonaws.com/)
 
 ## Intellectual Property Agreement
-The software must be released under a free software license at the end of the project. Both the client and the development team should have unrestricted rights to deploy the software and have the software extended or modified
+The software must be released under a free software license at the end of the project. Both the client and the development team should have unrestricted rights to deploy the software and have the software extended or modified.
