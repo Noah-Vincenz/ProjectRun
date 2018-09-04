@@ -13,9 +13,7 @@
 [logo]: (http://www.chicksinfo.com/wp-content/uploads/2016/09/John-Cena-Family-Pictures-Wife-Siblings-Age-Height-Weight.jpg)
 
 ## Screenshot:
-
 ![screen shot 2018-09-02 at 17 42 30 png_ipad_white_portrait](https://user-images.githubusercontent.com/16804823/45029351-a78d7680-b048-11e8-8d26-e9b6fe460d85.png)
-
 ## Delivarables:
 ### Please Review today!
 [Click Here] (https://keats.kcl.ac.uk/mod/book/view.php?id=1420574&chapterid=64061)
