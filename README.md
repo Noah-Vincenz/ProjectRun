@@ -23,7 +23,7 @@
 [Click Here] (https://docs.google.com/document/d/1o-Yhm41zplTdZvFoZd_rdcgUHbVU2HVc0ZqglRRbbtI/edit?usp=sharing)
 
 ## Objective:
-Hospitals are daunting places patients of all ages, but especially for children. One way to make medical examinations less intimidating is to explain to patients what will happen. It can be very difficult to explain to small children what will happen though. The purpose of this project is to develop a game for small children (2-6 years old) that explains what will happen at an examination in the Nuclear Medicine Department of Chelsea & Westminster Hospital. It should be easy for the hospital to deploy the game and make it available to patients and their parents/guardians.
+Hospitals are daunting places for patients of all ages, but especially for children. One way to make medical examinations less intimidating is to explain to patients what will happen. It can be very difficult to explain to small children what will happen though. The purpose of this project is to develop a game for small children (2-6 years old) that explains what will happen at an examination in the Nuclear Medicine Department of Chelsea & Westminster Hospital. It should be easy for the hospital to deploy the game and make it available to patients and their parents/guardians.
 
 ## Latest Minutes:
   <p><p><strong>Meeting 16</strong></p>
