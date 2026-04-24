@@ -15,9 +15,4 @@ public class FoodIntTrans : MonoBehaviour {
 		background.GetComponent<Renderer> ().material.color = new Color (color1.r, color1.g, color1.b, color1.a -color1.a);
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		var material = background.GetComponent<Renderer>().material;
-		var color = material.color;
-	}
 }

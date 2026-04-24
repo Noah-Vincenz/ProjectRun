@@ -36,8 +36,7 @@ public class ToiletPandaController : MonoBehaviour {
 
 		anim.SetFloat("Speed", rb.velocity.x);
 
-		if (walkIn) { // inital walk in 
-			Debug.Log ("adding velocity");
+		if (walkIn) { // inital walk in
 			rb.velocity = Vector2.left * speed;
 			walkFace ();
 
@@ -52,8 +51,7 @@ public class ToiletPandaController : MonoBehaviour {
 			screen.GetComponent<BoxCollider2D> ().enabled = true;
 	
 		}
-		if (finalWalk) { // final move test, after game select 
-			Debug.Log ("FinalMove"); 
+		if (finalWalk) { // final move test, after game select
 			rb.velocity = Vector2.right * speed;
 			walkFace ();
 		}
@@ -80,12 +78,10 @@ public class ToiletPandaController : MonoBehaviour {
 	 * methods to move panda to and from toilet
 	 */
 	public void moveUp(){
-		Debug.Log ("moveUP called");
 		transform.position = new Vector3 (transform.localPosition.x, transform.localPosition.y+1.0f, transform.localPosition.z);
 	}
 
 	public void moveDown(){
-		Debug.Log ("moveUP called");
 		transform.position = new Vector3 (transform.localPosition.x, transform.localPosition.y-1.0f, transform.localPosition.z);
 	}
 	/**
@@ -103,12 +99,12 @@ public class ToiletPandaController : MonoBehaviour {
 
 		case "RENOGRAMin":
 			SceneManager.LoadScene ("EndWaitingRoom");
-			//TODO Next scene for Renogram Indirect branch 
+			// protocol not implemented — only DMSA path is supported
 			break;
 
 		case "RENOGRAM":
 			SceneManager.LoadScene ("MovingScan");
-			//TODO Next scene for Renogram branch 
+			// protocol not implemented — only DMSA path is supported
 			break;
 
 		default:

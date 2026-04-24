@@ -22,12 +22,6 @@ public class Transition : MonoBehaviour {
 		
 	}
 	
-	// Update is called once per frame
-	void Update () {
-			
-			
-	}
-
 	void OnMouseDown(){
 
 		interacted = true; // stops prompt 

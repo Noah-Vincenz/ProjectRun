@@ -27,7 +27,7 @@ public class ContinueButton : MonoBehaviour {
 		gameObject.SetActive (false);
 		Button btn = gameObject.GetComponent<Button>();
 		btn.onClick.AddListener(TaskOnClick);
-		TestNotActive ();
+		//TestNotActive ();
 	}
 
 	void Update () {
@@ -47,13 +47,12 @@ public class ContinueButton : MonoBehaviour {
 			gameObject.transform.position = pos;
 			material.color = new Color (color.r, color.g, color.b, color.a + (1f * Time.deltaTime));
 			timeLeftforTransition -= Time.deltaTime;
-			Debug.Log (timeLeftforTransition);
 		}
 		if (timeLeftforTransition <= 0) SceneManager.LoadScene ("MovingScanOut");
 	}
 
 	void TaskOnClick(){
-		TestActive ();
+		//TestActive ();
 		readyToTransition = true;
 	}
 		

@@ -55,24 +55,22 @@ public class MoveBedOut : MonoBehaviour {
 			switch (SceneManagerController.Instance.getProcedure()) { // switch dependant on selected game 
 
 			case "DMSA":
-				Debug.Log("LOAD DMSA");
 				SceneManager.LoadScene ("EndWaitingRoom");
 				break;
 
 			case "Meckel":
-				Debug.Log("LOAD Meckel");
 				SceneManager.LoadScene ("EndWaitingRoom");
-				//TODO Next scene for Meckel branch 
+				// protocol not implemented — only DMSA path is supported
 				break;
 
 			case "RENOGRAMin":
 				SceneManager.LoadScene ("Toilet");
-				//TODO Next scene for Renogram Indirect branch 
+				// protocol not implemented — only DMSA path is supported
 				break;
 
 			case "RENOGRAM":
 				SceneManager.LoadScene ("ToiletNoScan");
-				//TODO Next scene for Renogram branch 
+				// protocol not implemented — only DMSA path is supported
 				break;
 
 			default:

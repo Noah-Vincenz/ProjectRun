@@ -47,7 +47,7 @@ public class applyCream : MonoBehaviour {
 
     private void OnMouseExit() //On the mouse exiting the valid region to click in we reset the timeDown value
     {
-        if ((fillBar.timeDown != 0) & (mouseDown))
+        if ((fillBar.timeDown != 0) && (mouseDown))
         {
             fillBar.timeDown = 0;
             //testTimeDownReset();

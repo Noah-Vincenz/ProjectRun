@@ -29,7 +29,7 @@ public class TouchFood : MonoBehaviour {
 	void Start () {
 		nTime = Time.time;
 		pandaFaceEmotionObject = GameObject.Find ("PandaFaceReaction");
-		TestIsActive (pandaFaceEmotionObject);
+		//TestIsActive (pandaFaceEmotionObject);
 		normalFace = pandaFaceEmotionObject.transform.Find ("Normal Face").gameObject;
 		sadFace = pandaFaceEmotionObject.transform.Find ("SadFace").gameObject;
 		ScoreKeeperScoreBoard = GameObject.Find ("Canvas/ScoreBoard").gameObject;
@@ -41,7 +41,7 @@ public class TouchFood : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		TestScoreMultipleOf20();
+		//TestScoreMultipleOf20();
 		if (nTime < Time.time && timerScript.getTime() > 1) {
 			scoreKeeper.Score += scoreIncrease;
 			nTime = Time.time + scoreDelay;

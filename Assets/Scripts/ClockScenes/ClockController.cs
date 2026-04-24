@@ -123,19 +123,18 @@ public class ClockController : MonoBehaviour {
 						break;
 
 					case "Meckel":
-						//Debug.Log ("LOAD Meckel");
 						SceneManager.LoadScene ("Injection");
-						//TODO Next scene for Meckel branch 
+						// protocol not implemented — only DMSA path is supported
 						break;
 
 					case "RENOGRAMin":
 						SceneManager.LoadScene ("Injection");
-						//TODO Next scene for Renogram Indirect branch 
+						// protocol not implemented — only DMSA path is supported
 						break;
 
 					case "RENOGRAM":
 						SceneManager.LoadScene ("Injection");
-						//TODO Next scene for Renogram branch 
+						// protocol not implemented — only DMSA path is supported
 						break;
 
 					default:

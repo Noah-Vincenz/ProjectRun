@@ -59,7 +59,7 @@ public class WaitingRoom_Panda_Controller : MonoBehaviour {
 			walkFace ();
 
 		}
-		if (transform.localPosition.x >= 1.3f && !finalMove & !speech) { // stop first walk to right 
+		if (transform.localPosition.x >= 1.3f && !finalMove && !speech) { // stop first walk to right
 			needToMove = false;
 			rb.velocity = new Vector2 (0, 0);
 			awakeFace ();

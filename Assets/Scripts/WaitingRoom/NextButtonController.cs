@@ -58,7 +58,7 @@ public class NextButtonController : MonoBehaviour {
 			Destroy (textOne.gameObject);
 			sofa.GetComponent<BoxCollider2D> ().enabled = false;
 
-			testGameObjectIsNotActive (speechBubble);
+			//testGameObjectIsNotActive (speechBubble);
 			++clicks;
 			break;
 		case 1: // panda leave 

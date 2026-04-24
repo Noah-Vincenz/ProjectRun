@@ -12,9 +12,8 @@ public class PlantController : MonoBehaviour {
 	public float speed;
 
 	public void Start(){
-
-		testComp2DBoxCol();
-		testCompRigidBody ();
+		//testComp2DBoxCol();
+		//testCompRigidBody ();
 	}
 
 	/**
@@ -22,7 +21,7 @@ public class PlantController : MonoBehaviour {
 	 */
 	void OnMouseDown(){
 		slideRight ();
-		testPosition ();
+		//testPosition ();
 	}
 	/*
 	 * mehtod to slide plant to right

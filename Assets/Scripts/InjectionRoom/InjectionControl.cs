@@ -38,9 +38,6 @@ public class InjectionControl : MonoBehaviour {
 			}
 		} 
 
-		//If game is over, freeze location
-		else if(timer.getTime () <= 0.5)
-			transform.position = transform.position;
 	}
 
 }

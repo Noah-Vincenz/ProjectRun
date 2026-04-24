@@ -67,17 +67,14 @@ public class PeePeeScreenController : MonoBehaviour {
 	 * 
 	 */
 	void movePanda(){
-		Debug.Log ("Call to movePanda");
 		panda.moveUp ();
 	}
 
 	void movePandaDown(){
-		Debug.Log ("Call to movePanda");
 		panda.moveDown ();
 	}
 
 	void inProgreesText(){
-		Debug.Log ("Call to inProgText");
 		scanTxt.SetActive(true);
 	}
 	void activateBubble(){

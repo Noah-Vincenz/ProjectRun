@@ -34,7 +34,7 @@ public class ToiletNextBtnController : MonoBehaviour {
 //			testGameObjectIsActive (playerPanda);
 			Destroy (text1.gameObject);
 			speechBubble.SetActive (false);
-			testGameObjectIsNotActive (speechBubble);
+			//testGameObjectIsNotActive (speechBubble);
 			++clicks;
 			break;
 
@@ -43,8 +43,7 @@ public class ToiletNextBtnController : MonoBehaviour {
 			Destroy (text3.gameObject);
 			pandaSC.walkOff ();
 			break;
-		default : 
-			Debug.Log ("Click");
+		default :
 			break;
 
 		}

@@ -79,7 +79,7 @@ public class StartBtnScript : MonoBehaviour {
 
 	//TESTS
 	void testReadyToTransition(){ 
-		Assert.IsTrue (readyToTransition = true);
+		Assert.IsTrue (readyToTransition == true);
 	}
 	 
 	void testReadytoLoadScene(){ 

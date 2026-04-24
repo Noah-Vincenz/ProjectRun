@@ -14,7 +14,7 @@ public class gameEndNext : MonoBehaviour {
 
 			case "Meckel":
 				SceneManager.LoadScene ("ScanningRoom");
-				//TODO Next scene for Meckel branch 
+				// protocol not implemented — only DMSA path is supported
 				break;
 
 
@@ -30,24 +30,22 @@ public class gameEndNext : MonoBehaviour {
 			switch (SceneManagerController.Instance.getProcedure()) { // switch dependant on selected game 
 
 			case "DMSA":
-				Debug.Log("LOAD DMSA");
 				SceneManager.LoadScene ("3hrClockScene");
 				break;
 
 			case "Meckel":
-				Debug.Log("LOAD Meckel");
 				SceneManager.LoadScene ("FoodGameIntroduction");
-				//TODO Next scene for Meckel branch 
+				// protocol not implemented — only DMSA path is supported
 				break;
 
 			case "RENOGRAMin":
 				SceneManager.LoadScene ("ScanningRoom");
-				//TODO Next scene for Renogram Indirect branch 
+				// protocol not implemented — only DMSA path is supported
 				break;
 
 			case "RENOGRAM":
 				SceneManager.LoadScene ("ScanningRoom");
-				//TODO Next scene for Renogram branch 
+				// protocol not implemented — only DMSA path is supported
 				break;
 
 			default:

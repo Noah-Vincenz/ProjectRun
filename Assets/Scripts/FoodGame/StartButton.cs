@@ -15,7 +15,7 @@ public class StartButton : MonoBehaviour {
 		readyToTransition = false;
 		var material1 = background.GetComponent<Renderer>().material;
 		var color1 = material1.color;
-		//background.GetComponent<Renderer> ().material.color = new Color (color1.r, color1.g, color1.b, color1.a -color1.a);fz
+		//background.GetComponent<Renderer> ().material.color = new Color (color1.r, color1.g, color1.b, color1.a -color1.a);
 		Button btn = myButton.GetComponent<Button>();
 		btn.onClick.AddListener(TaskOnClick);
 

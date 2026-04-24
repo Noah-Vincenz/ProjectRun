@@ -11,16 +11,6 @@ using UnityEngine.SceneManagement;
 
 public class Loadenvelope : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-	
 	void OnMouseDown(){
 		NextScene();
 	}

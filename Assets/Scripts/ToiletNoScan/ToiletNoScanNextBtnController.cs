@@ -42,8 +42,7 @@ public class ToiletNoScanNextBtnController : MonoBehaviour {
 			Destroy (text2.gameObject);
 			pandaSC.walkOff ();
 			break;
-		default : 
-			Debug.Log ("Click");
+		default :
 			break;
 
 		}
